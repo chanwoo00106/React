@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
+  width: 100%;
+  height: fit-content;
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  margin-bottom: 1rem;
+}
+
+.member{
+  display: block;
+  margin: 10px;
+  font-size: 20px;
+  color: #121314;
+  text-decoration: none;
+}
+
+.App {
+  margin: 0 auto;
+}
+
+.memberList-div{
+  margin-left: 20px;
+  display: grid;
+  grid-template-columns: 300px 1200px;
+  grid-template-rows: 510px;
+}
+
+.image-fieldset{
+  margin-left: 20px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.memberList {
+  width:300px;
+  height: 500px;
+  padding-top: 10px;
+  padding-left:0px;
+  text-align: center;
+  border-radius: 15px;
+  list-style: none;
+  border: 1px solid #121314;
+  background-color: #f7f9fa;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(7, 1fr);
+}
+
+.memberList > div{
+  display: inline-block;
+  margin: 0;
+  font-size: 28px;
+}
+
+.classLogo{
+  text-decoration: none;
+  color: white;
+}
+
+.memberList > li {
+  width: 130px;
+  list-style: none;
+}
+
+.logo{
+  font-size: 50px;
+  padding: 20px;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
