@@ -1,3 +1,7 @@
 var fs = require('fs');
  
-fs.readdir('./any', (err, file_list) => { console.log(file_list.length); });
+const a = fs.readdir('./public/images/10', (err, file_list) => {
+    return file_list;
+});
+
+console.log(a);

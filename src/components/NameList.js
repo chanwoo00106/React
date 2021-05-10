@@ -13,7 +13,6 @@ export default function NameList(){
                     </a>
                 ))}
             </ul>
-            <Image />
         </div>
     );
 }
