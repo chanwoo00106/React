@@ -30,14 +30,22 @@
   margin: 0 auto;
 }
 
+.show_image{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
 .image-fieldset{
-  height: 510px;
   margin-left: 20px;
+  margin-right: 35px;
   border: 1px solid black;
   border-radius: 15px;
+  width: 70em;
 }
 
 .memberList {
+  margin-left: 20px;
   width:300px;
   height: 500px;
   padding-top: 10px;

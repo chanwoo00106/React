@@ -94,98 +94,136 @@
     "dream":[
         {
             "num":1,
-            "say":"",
-            "job":""
+            "say":"아무거나 해",
+            "birthday":"2005년 7월 6일",
+            "job":"공사취직",
+            "picNum": 1
         },
         {
             "num":2,
-            "say":"",
-            "job":""
+            "say":"열심히 살자",
+            "birthday":"2005년 2월 23일",
+            "job":"한전",
+            "picNum": 0
         },
         {
             "num":3,
-            "say":"",
-            "job":""
+            "say":"이동현 멍청이",
+            "birthday":"2005년 3월 10일",
+            "job":"AI개발자",
+            "picNum": 0
         },
         {
             "num":4,
-            "say":"",
-            "job":""
+            "say":"유시온 내꺼",
+            "birthday":"2005년 8월 27일",
+            "job":"아마도 게임 개발자",
+            "picNum": 0
         },
         {
             "num":5,
-            "say":"",
-            "job":""
+            "say":"이동현 바보",
+            "birthday":"2005년 2월 12일",
+            "job":"AI개발자",
+            "picNum": 0
         },
         {
             "num":6,
-            "say":"",
-            "job":""
+            "say":"종진 개이야",
+            "birthday":"2005년 1월 20일",
+            "job":"미정",
+            "picNum": 0
         },
         {
             "num":7,
-            "say":"",
-            "job":""
+            "say":"이동현 바보",
+            "birthday":"2005년 6월 7일",
+            "job":"몰라",
+            "picNum": 0
         },
         {
             "num":8,
-            "say":"",
-            "job":""
+            "say":"???",
+            "birthday":"2005년 5월 11일",
+            "job":"모름",
+            "picNum": 0
         },
         {
             "num":9,
-            "say":"",
-            "job":""
+            "say":"최강귀여미 손정민",
+            "birthday":"2005년 5월 9일",
+            "job":"공기업",
+            "picNum": 0
         },
         {
             "num":10,
-            "say":"",
-            "job":""
+            "say":"나는 우리반 ㅅㅅ킹",
+            "birthday":"2005년 10월 10일",
+            "job":"없어",
+            "picNum": 3
         },
         {
             "num":11,
-            "say":"",
-            "job":""
-        },
-        {
-            "num":11,
-            "say":"",
-            "job":""
+            "say":" ",
+            "birthday":"2005년 11월 9일",
+            "job":"돈많은 백수",
+            "picNum": 0
         },
         {
             "num":12,
-            "say":"",
-            "job":""
+            "say":"그냥",
+            "birthday":"2005년 8월 25일",
+            "job":"회사원",
+            "picNum": 0
         },
         {
             "num":13,
-            "say":"",
-            "job":""
+            "say":"ㅈㅈ빈은 준화를 좋아해",
+            "birthday":"2005년 7월 6일",
+            "job":"주식 부자",
+            "picNum": 0
         },
         {
             "num":14,
-            "say":"",
-            "job":""
+            "say":"변찬우 ㅅ발럼아 이걸 왜 나한테 시키냐",
+            "birthday":"2005년 3월 13일",
+            "job":"200만 유튜버",
+            "picNum": 0
         },
         {
             "num":15,
-            "say":"",
-            "job":""
+            "say":"없어",
+            "birthday":"2005년 2월 27일",
+            "job":"없어",
+            "picNum": 0
         },
         {
             "num":16,
-            "say":"",
-            "job":""
+            "say":"잠자고싶다",
+            "birthday":"2005년 5월 18일",
+            "job":"해커",
+            "picNum": 0
         },
         {
             "num":17,
-            "say":"",
-            "job":""
+            "say":"몰라",
+            "birthday":"2005년 1월 19일",
+            "job":"몰라",
+            "picNum": 0
+        },
+        {
+            "num":18,
+            "say":"우욱 씹",
+            "birthday":"2005년 3월 11일",
+            "job":"app",
+            "picNum": 0
         },
         {
             "num":18,
             "say":"",
-            "job":""
+            "birthday":"2005년 7월 6일",
+            "job":"AI개발자",
+            "picNum": 1
         }
     ]
 }

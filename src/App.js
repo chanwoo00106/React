@@ -1,5 +1,5 @@
 import Header from './components/Header';
-import Image from './components/Image'
+import Images from './components/Images'
 import {BrowserRouter, Route, Switch  } from 'react-router-dom';
 import NameList from './components/NameList';
 import './App.css';
@@ -9,14 +9,16 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Header />
-        <NameList />
         <Switch>
 
           <Route exact path="/">
-            
+            <NameList />
           </Route>
           <Route path="/:num">
-            <Image />
+            <div className="show_image">
+              <NameList />
+              <Images />
+            </div>
           </Route>
 
         </Switch>
