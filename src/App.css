@@ -21,19 +21,26 @@
   transition: 0.3s;
 }
 
+.show{
+  display: flex;
+  justify-content: center;
+}
+
 .member:hover{
   font-size: 23px;
   font-weight: bold;
 }
 
 .App {
-  margin: 0 auto;
+  width: 100%;
+  height: 100%;
 }
 
-.show_image{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+.sayList{
+  border: 1px solid black;
+  list-style: none;
+  border-radius: 15px;
+  display: inline;
 }
 
 .image-fieldset{
@@ -44,7 +51,7 @@
   width: 70em;
 }
 
-.memberList {
+.memberList, .newsList, .sayList {
   margin-left: 20px;
   width:300px;
   height: 500px;
@@ -55,9 +62,20 @@
   list-style: none;
   border: 1px solid #121314;
   background-color: #f7f9fa;
+}
+
+.memberList{
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(7, 1fr);
+}
+
+.newsList > li{
+  margin-bottom: 20px;
+}
+
+.sayList > li{
+  margin-bottom: 20px;
 }
 
 .memberList > div{
@@ -81,8 +99,3 @@
   font-size: 50px;
   padding: 20px;
 }
-
-.App-link {
-  color: #61dafb;
-}
-

@@ -1,5 +1,6 @@
 import Header from './components/Header';
-import Images from './components/Images'
+import Images from './components/Images';
+import News from './components/News';
 import {BrowserRouter, Route, Switch  } from 'react-router-dom';
 import NameList from './components/NameList';
 import './App.css';
@@ -10,12 +11,16 @@ function App() {
       <div className="App">
         <Header />
         <Switch>
-
+          
           <Route exact path="/">
-            <NameList />
+            <div className="show">
+              <NameList />
+              <News />
+            </div>
           </Route>
+
           <Route path="/:num">
-            <div className="show_image">
+            <div className="show">
               <NameList />
               <Images />
             </div>
@@ -24,7 +29,6 @@ function App() {
         </Switch>
       </div>
     </BrowserRouter>
-    
   );
 }
 
