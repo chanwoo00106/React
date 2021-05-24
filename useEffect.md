@@ -1,5 +1,5 @@
 # useEffect
-useEffect는 기본적으로 몇 가지 조건에 의해 작동하게 됩니다.
+useEffect는 기본적으로 몇 가지 조건에 의해 작동하게 된다
 
 1. 페이지가 렌더링 되고 난 후 한 번 실행됨
 2. useEffect에서 배열로 지정한 useState 값이 변경되면 실행됨
