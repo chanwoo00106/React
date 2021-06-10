@@ -50,16 +50,16 @@ function App() {
 ```
 ### state 쓰는법
 
-> React에서는 js의 변수보단 state라는 변수를 쓰는게 좋다
+> React에서는 리렌더링이 필요할 때에 useState를 쓴다
 > state는 from { useState } import 'react'; 라고 코드 위에 선언을 해준다
 > 사용 방법은 useState('변수값') 이렇게 적는다
-> state를 쓰면 2개의 array가 남는데 하나는 변수값이 나오고 하나는 변수값을 수정할 변수가 나온다
+> state를 쓰면 2개의 array가 남는데 하나는 변수가 나오고 다른 하나는 변수값을 수정할 수 있는 함수가 나온다
 > 그래서 let [변수값이 저장되는 변수, 변수값을 수정할 변수] = useState( '변수값' ) 이렇게 된다
 > 변경을 하지 않는 변수는 let이나 const, var를 쓰면 된다
 
 ```Javascript
 function App() {
-  let [title, title_edit] = useState('hi')
+  let [title, setTitle] = useState('hi')
  return (
     <div className="{ title }">
       <div className="title">
@@ -71,8 +71,6 @@ function App() {
 
 ```
 
-## 2Day
-
 ### Event 처리
 
 > html에서는 onclick을 통해 javascript 함수를 실행했지만 React에서는 onClick으로 함수를 실행한다
@@ -83,8 +81,8 @@ function App() {
 
 ```javascript
 function App() {
- let [title, title_edit] = useState('hi')
- let [score, score_edit] = useState(0)
+ let [title, seTtitle] = useState('hi')
+ let [score, seTscore] = useState(0)
  return (
     <div className="{ title }">
       <div className="title">
@@ -100,8 +98,8 @@ function App() {
 
 ```javascript
 function App() {
- let [title, title_edit] = useState('hi')
- let [score, score_edit] = useState(0)
+ let [title, seTtitle] = useState('hi')
+ let [score, seTscore] = useState(0)
  return (
     <div className="{ title }">
       <div className="title">
@@ -119,12 +117,12 @@ function App() {
 
 ```javascript
 function App() {
- let [title, title_edit] = useState('hi')
- let [score, score_edit] = useState(0)
+ let [title, seTtitle] = useState('hi')
+ let [score, seTscore] = useState(0)
  return (
     <div className="{ title }">
       <div className="title">
-        <div onClick={ ()=>{ score_edit(score + 1) } }>GOOD {score}</div>
+        <div onClick={ ()=>{ seTscore(score + 1) } }>GOOD {score}</div>
         <div>{ title }</div>
       </div>
     </div>
@@ -133,25 +131,26 @@ function App() {
 ```
 > 문자열은 변경 함수에 다른 문자열을 넣으면 되지만 리스트는
 ``` javascript 
-[title, title_edit] = useState(['hi', 'teemo', 'nice'])
-title_edit(title[0] = 'hello')
+[title, seTtitle] = useState(['hi', 'teemo', 'nice'])
+seTtitle(title[0] = 'hello')
 ```
 > 와 같이 할 수가 없다 왜나하면 랜더링을 할때 리스트 안에 있은 모든 값을 그대로 넣어 주어야 하기 때문이다.
 ``` javascript
-[title, title_edit] = useState(['hi', 'teemo', 'nice'])
-title_edit(['hello', 'teemo', 'nice'])
+[title, seTtitle] = useState(['hi', 'teemo', 'nice'])
+seTtitle(['hello', 'teemo', 'nice'])
 ```
 > 이런 형식으로 적어주면 된다
 > 하지만 이건 너무 좋지 않은 코드이므로
 ``` javascript
-[title, title_edit] = useState(['hi', 'teemo', 'nice'])
+[title, seTtitle] = useState(['hi', 'teemo', 'nice'])
 a = [...title]
 a[0] = 'hello'
-title_edit(a)
+seTtitle(a)
 ```
 > 이런 형식으로 적어주는게 좋다
-> 여기서 ...은 title이 리스트여서 []에 감싸져 있다
-> 그래서 ...은 []를 지워주는 역할을 한다.
+> 여기서 ...은 전개 연산자로 나열형 자료를 추출하거나 연결할 때 사용한다.
+
+
 ### component
 > div 태그가 너무 많아지면 보기에 별로 좋지 않아서 함수로 div를 묶어서 쓴다
 > 예)  function 컴포넌트명() { return( <div>어쩌고 저쩌고</div> ) }
