@@ -1,34 +1,23 @@
-import Header from './components/Header';
-import Images from './components/Images';
-import News from './components/News';
-import {BrowserRouter, Route, Switch  } from 'react-router-dom';
-import NameList from './components/NameList';
+import React from 'react';
 import './App.css';
+import MyComponent from './components/MyComponent';
+import Usestate from './components/UseState';
+import EventPractice from './components/EventPactice';
+import Validation from './components/Validation';
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Header />
-        <Switch>
-          
-          <Route exact path="/">
-            <div className="show">
-              <NameList />
-              <News />
-            </div>
-          </Route>
-
-          <Route path="/:num">
-            <div className="show">
-              <NameList />
-              <Images />
-            </div>
-          </Route>
-
-        </Switch>
-      </div>
-    </BrowserRouter>
+    <>
+      <MyComponent name="Teemo" favoriteNumber={5}>
+        chan
+      </MyComponent>
+      <hr />
+      <Usestate />
+      <hr />
+      <EventPractice />
+      <hr />
+      <Validation />
+    </>
   );
 }
 
