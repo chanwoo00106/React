@@ -12,6 +12,10 @@ const Validation = () => {
     setPassword('');
   };
 
+  const keyPress = (e) => {
+    if (e.key === 'Enter') handleClick();
+  };
+
   return (
     <div>
       <input
@@ -22,6 +26,7 @@ const Validation = () => {
         onChange={(e) => {
           setPassword(e.target.value);
         }}
+        onKeyPress={keyPress}
       />
       <button onClick={handleClick}>submit</button>
     </div>

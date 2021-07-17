@@ -24,6 +24,10 @@ const EventPractice = () => {
     });
   };
 
+  const keyPress = (e) => {
+    if (e.key === 'Enter') handleClick();
+  };
+
   return (
     <div>
       <h1>Event Practice</h1>
@@ -43,6 +47,7 @@ const EventPractice = () => {
         placeholder="아무거나"
         value={username}
         onChange={handleChage}
+        onKeyPress={keyPress}
       />
       <br />
       <button onClick={handleClick}>submit</button>
