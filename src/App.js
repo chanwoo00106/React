@@ -6,6 +6,7 @@ import EventPractice from './components/EventPactice';
 import Validation from './components/Validation';
 import Map from './components/Map';
 import Map2 from './components/Map2';
+import LifeCycle from './components/LifeCycle';
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
       <Map />
       <hr />
       <Map2 />
+      <hr />
+      <LifeCycle />
     </>
   );
 }
