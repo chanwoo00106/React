@@ -4,6 +4,9 @@ import MyComponent from './components/MyComponent';
 import Usestate from './components/UseState';
 import EventPractice from './components/EventPactice';
 import Validation from './components/Validation';
+{
+  /*import Scroll from './components/Scroll';*/
+}
 
 function App() {
   return (
@@ -17,6 +20,10 @@ function App() {
       <EventPractice />
       <hr />
       <Validation />
+      <hr />
+      {
+        //<Scroll />
+      }
     </>
   );
 }
