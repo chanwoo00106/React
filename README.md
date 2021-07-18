@@ -9,7 +9,6 @@ npx create-react-app
 npm start
 ```
 
-
 > 코드는 App.js에서 짠다
 > React는 html대신 JSX를 사용한다
 > 이유는 js와 충돌이 일어나기 때문이다
@@ -30,6 +29,7 @@ function App() {
   );
 }
 ```
+
 ### style 쓰는 법
 
 > style은 html과 비슷하게 쓰되 ""안에 적는게 아니라 {}안에 적는다
@@ -48,6 +48,7 @@ function App() {
   );
 }
 ```
+
 ### state 쓰는법
 
 > React에서는 리렌더링이 필요할 때에 useState를 쓴다
@@ -81,30 +82,41 @@ function App() {
 
 ```javascript
 function App() {
- let [title, seTtitle] = useState('hi')
- let [score, seTscore] = useState(0)
- return (
+  let [title, seTtitle] = useState('hi');
+  let [score, seTscore] = useState(0);
+  return (
     <div className="{ title }">
       <div className="title">
-        <div onClick={ ()=>{ console.log('hi!') } }>GOOD {score}</div>
-        <div>{ title }</div>
+        <div
+          onClick={() => {
+            console.log('hi!');
+          }}
+        >
+          GOOD {score}
+        </div>
+        <div>{title}</div>
       </div>
     </div>
   );
 }
 ```
+
 > input태그에서 키가 눌릴때 이벤트 처리는 onChage이다
 > onClick과 동일하게 작성 하면 된다
 
 ```javascript
 function App() {
- let [title, seTtitle] = useState('hi')
- let [score, seTscore] = useState(0)
- return (
+  let [title, seTtitle] = useState('hi');
+  let [score, seTscore] = useState(0);
+  return (
     <div className="{ title }">
       <div className="title">
-        <input onChage={ e => {console.log(e.target.value)} }></input>
-        <div>{ title }</div>
+        <input
+          onChage={(e) => {
+            console.log(e.target.value);
+          }}
+        ></input>
+        <div>{title}</div>
       </div>
     </div>
   );
@@ -117,132 +129,133 @@ function App() {
 
 ```javascript
 function App() {
- let [title, seTtitle] = useState('hi')
- let [score, seTscore] = useState(0)
- return (
+  let [title, seTtitle] = useState('hi');
+  let [score, seTscore] = useState(0);
+  return (
     <div className="{ title }">
       <div className="title">
-        <div onClick={ ()=>{ seTscore(score + 1) } }>GOOD {score}</div>
-        <div>{ title }</div>
+        <div
+          onClick={() => {
+            seTscore(score + 1);
+          }}
+        >
+          GOOD {score}
+        </div>
+        <div>{title}</div>
       </div>
     </div>
   );
 }
 ```
+
 > 문자열은 변경 함수에 다른 문자열을 넣으면 되지만 리스트는
-``` javascript 
-[title, seTtitle] = useState(['hi', 'teemo', 'nice'])
-seTtitle(title[0] = 'hello')
+
+```javascript
+[title, seTtitle] = useState(['hi', 'teemo', 'nice']);
+seTtitle((title[0] = 'hello'));
 ```
+
 > 와 같이 할 수가 없다 왜나하면 랜더링을 할때 리스트 안에 있은 모든 값을 그대로 넣어 주어야 하기 때문이다.
-``` javascript
-[title, seTtitle] = useState(['hi', 'teemo', 'nice'])
-seTtitle(['hello', 'teemo', 'nice'])
+
+```javascript
+[title, seTtitle] = useState(['hi', 'teemo', 'nice']);
+seTtitle(['hello', 'teemo', 'nice']);
 ```
+
 > 이런 형식으로 적어주면 된다
 > 하지만 이건 너무 좋지 않은 코드이므로
-``` javascript
-[title, seTtitle] = useState(['hi', 'teemo', 'nice'])
-a = [...title]
-a[0] = 'hello'
-seTtitle(a)
+
+```javascript
+[title, seTtitle] = useState(['hi', 'teemo', 'nice']);
+a = [...title];
+a[0] = 'hello';
+seTtitle(a);
 ```
-> 이런 형식으로 적어주는게 좋다
+
+> 이런 형식으로 적어주는 게 좋다
 > 여기서 ...은 전개 연산자로 나열형 자료를 추출하거나 연결할 때 사용한다.
 
-
 ### component
-> div 태그가 너무 많아지면 보기에 별로 좋지 않아서 함수로 div를 묶어서 쓴다
-> 예)  function 컴포넌트명() { return( <div>어쩌고 저쩌고</div> ) }
-> 이 컴포넌트를 넣고 싶은곳에 넣으면 된다
 
-``` javascript
-function App(){
-  return (
-    <Newss></Newss>
-  )
+> div 태그가 너무 많아지면 보기에 별로 좋지 않아서 함수로 div를 묶어서 쓴다
+> 예) function 컴포넌트명() { return( <div>어쩌고저쩌고</div> ) }
+> 이 컴포넌트를 넣고 싶은 곳에 넣으면 된다
+
+```javascript
+function App() {
+  return <Newss></Newss>;
 }
 
-function Newss(){
-    return (
-      <div className="news">
-        <div>Teemo 만세!</div>
-        <dl>
-          <li>hello</li>
-          <li>안녕</li>
-        </dl>
-        <hr/>
-      </div>
-    )
+function Newss() {
+  return (
+    <div className="news">
+      <div>Teemo 만세!</div>
+      <dl>
+        <li>hello</li>
+        <li>안녕</li>
+      </dl>
+      <hr />
+    </div>
+  );
 }
 ```
 
 ### export의 의미
-> export는 영어로 수출한다는 뜻으로 export를 사용하여 전달하면 해당 변수 안에 있는 객체 안에 담아 전달 할 수 있다.
-> 다른 파일에서는 import를 사용해 export한 파일의 객체를 볼 수 있다.
-``` javascript
+
+> export는 영어로 수출한다는 뜻으로 export를 사용하여 전달하면 해당 변수 안에 있는 객체 안에 담아 전달할 수 있다.
+> 다른 파일에서는 import를 사용해 export 한 파일의 객체를 볼 수 있다.
+
+```javascript
 /*export 파일*/
 
-let a = 'hello'
-export {a}
-
+let a = 'hello';
+export { a };
 ```
-``` javascript
+
+```javascript
 /*improt 파일*/
 
-import a from './export'
-consol.log(a)
+import a from './export';
+consol.log(a);
 // 출력 : hello
 ```
 
 > 2개도 export 할 수 있음
 
 ### export default의 의미
-> export default는 변수 뿐만 아니라 함수, 오브젝트, 클래스도 보낼 수 있다
+
+> export default는 변수뿐만 아니라 함수, 오브젝트, 클래스도 보낼 수 있다
 > default는 기본이라는 뜻을 갖고 있으며 괄호 같은 것을 생략한다
 
-``` javascript
+```javascript
 /*export_default 파일*/
 
 export function sayHi(user) {
   console.log('Hello, ${user}');
 }
 ```
-``` javascript
+
+```javascript
 /*import 파일*/
 
-import sayhello from './exprot_default'
-sayhello('Teemo')
+import sayhello from './exprot_default';
+sayhello('Teemo');
 //출력 : Hello, Teemo
 ```
-> 만약 export default 할때 전달하는 데이터를 {}로 감싸서 보내면 객체 형태로 값을 받는다
 
+> 만약 export default 할 때 전달하는 데이터를 {}로 감싸서 보내면 객체 형태로 값을 받는다
 
 ### props
-> props는 component에 값을 전달 할때 사용한다
-``` javascript
-function a(props){
-  console.log(props.name);
-  <h1>{ props.name }</h1>
-}
 
-function App(){
-  return (
-    <div>
-      <a name="Teemo" />
-    </div>
-  );
-}
-```
-> 여기서 a함수에 props의 변수 이름을 바꿀 수 있다.
-> 아래와 같은 코드 처럼
+> props는 component에 값을 전달할 때 사용한다
+
 ```javascript
-function a({name}){
-  console.log(name);
-  <h1>{ name }</h1>
+function a(props) {
+  console.log(props.name);
+  <h1>{props.name}</h1>;
 }
 
-function App(){
+function App() {
   return (
     <div>
       <a name="Teemo" />
@@ -250,24 +263,46 @@ function App(){
   );
 }
 ```
+
+> 여기서 a 함수에 props의 변수 이름을 바꿀 수 있다.
+> 아래와 같은 코드처럼
+
+```javascript
+function a({ name }) {
+  console.log(name);
+  <h1>{name}</h1>;
+}
+
+function App() {
+  return (
+    <div>
+      <a name="Teemo" />
+    </div>
+  );
+}
+```
+
 ### map
+
 > component가 늘어나고 그에 따라 props가 바뀐다고 해보자 이걸 코드로 작성하면 굉장히 더러운 코드가 될 것이다
-> 이럴 때일수록 map함수를 꼭 사용해야 한다
+> 이럴 때일수록 map 함수를 꼭 사용해야 한다
 > map의 사용법은 배열.map(변수명 => ( 하나하나에 적용할 것들 ))
 > 함수를 중괄호로 만들면 return을 해줘야 하지만 소괄호로 만들면 return을 적지 않아도 된다
 
 ```javascript
-function a({name}){
+function a({ name }) {
   console.log(name);
-  <h1>{ name }</h1>
+  <h1>{name}</h1>;
 }
 
-let a = ['Teemo', 'is', 'great', 'code']
+let a = ['Teemo', 'is', 'great', 'code'];
 
-function App(){
+function App() {
   return (
     <div>
-      {a.map(title => ( <a name={title} /> ))}
+      {a.map((title) => (
+        <a name={title} />
+      ))}
     </div>
   );
 }

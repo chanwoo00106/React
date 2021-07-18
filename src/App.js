@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import MyComponent from './components/MyComponent';
-import Usestate from './components/UseState';
+import Usestate from './hooks/UseState';
+import Counter from './hooks/Counter';
 import EventPractice from './components/EventPactice';
 import Validation from './components/Validation';
 import Map from './components/Map';
@@ -16,6 +17,8 @@ function App() {
       </MyComponent>
       <hr />
       <Usestate />
+      <hr />
+      <Counter />
       <hr />
       <EventPractice />
       <hr />
