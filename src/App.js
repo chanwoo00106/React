@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import MyComponent from './components/MyComponent';
 import Usestate from './hooks/UseState';
@@ -8,8 +8,11 @@ import Validation from './components/Validation';
 import Map from './components/Map';
 import Map2 from './components/Map2';
 import LifeCycle from './components/LifeCycle';
+import UseEffect from './hooks/UseEffect';
 
 function App() {
+  const [visible, setVisible] = useState(false);
+
   return (
     <>
       <MyComponent name="Teemo" favoriteNumber={5}>
@@ -29,6 +32,15 @@ function App() {
       <Map2 />
       <hr />
       <LifeCycle />
+      <hr />
+      <button
+        onClick={() => {
+          setVisible(!visible);
+        }}
+      >
+        {visible ? '숨기기' : '보이기'}
+      </button>
+      {visible && <UseEffect />}
     </>
   );
 }
