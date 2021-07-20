@@ -9,6 +9,7 @@ import Map from './components/Map';
 import Map2 from './components/Map2';
 import LifeCycle from './components/LifeCycle';
 import UseEffect from './hooks/UseEffect';
+import UseMemo from './hooks/UseMemo';
 
 function App() {
   const [visible, setVisible] = useState(false);
@@ -41,6 +42,8 @@ function App() {
         {visible ? '숨기기' : '보이기'}
       </button>
       {visible && <UseEffect />}
+      <hr />
+      <UseMemo />
     </>
   );
 }
