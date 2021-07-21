@@ -10,6 +10,7 @@ import Map2 from './components/Map2';
 import LifeCycle from './components/LifeCycle';
 import UseEffect from './hooks/UseEffect';
 import UseMemo from './hooks/UseMemo';
+import UseCallback from './hooks/UseCallback';
 
 function App() {
   const [visible, setVisible] = useState(false);
@@ -44,6 +45,7 @@ function App() {
       {visible && <UseEffect />}
       <hr />
       <UseMemo />
+      <UseCallback />
     </>
   );
 }
