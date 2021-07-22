@@ -1,7 +1,14 @@
 import './App.css';
+import TodoTemplate from './components/TodoTemplate';
+import TodoInsert from './components/TodoInsert';
 
 function App() {
-  return <div>Todo App을 만들자!</div>;
+  return (
+    <TodoTemplate>
+      <TodoInsert />
+    </TodoTemplate>
+
+  );
 }
 
 export default App;
