@@ -12,9 +12,11 @@ function TodoInsert({onInsert}) {
 
     const onSubmit = useCallback(
         e => {
-            onInsert(value);
-            setValue('');
             e.preventDefault();
+            if (value.replace(' ', '') !== ''){
+                onInsert(value);
+                setValue('');
+            }
         },
         [onInsert, value],
     );
@@ -23,7 +25,7 @@ function TodoInsert({onInsert}) {
         <div>
             <form className="TodoInsert" onSubmit={onSubmit}>
                 <input placeholder="할 일을 입력하세요" onChange={onChage} value={value} />
-                <button type="submit">
+                <button type="submit" onClick={onSubmit}>
                     <MdAdd />
                 </button>
             </form>
