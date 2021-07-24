@@ -1,7 +1,5 @@
 # React
 
-## 1Day
-
 > node를 설치한 후에 입력
 
 ```
@@ -30,7 +28,15 @@ function App() {
 }
 ```
 
-### style 쓰는 법
+## [useCallback](useCallback.md)
+
+## [useEffect](useEffect.md)
+
+## [useMemo](useMemo.md)
+
+## [useReducer](useReducer)
+
+## style 쓰는 법
 
 > style은 html과 비슷하게 쓰되 ""안에 적는게 아니라 {}안에 적는다
 > font-size와 같이 -가 들어가면 -를 지우고 -뒤의 문자를 대문자로 바꾼다
@@ -49,7 +55,7 @@ function App() {
 }
 ```
 
-### state 쓰는법
+## state 쓰는법
 
 > React에서는 리렌더링이 필요할 때에 useState를 쓴다
 > state는 from { useState } import 'react'; 라고 코드 위에 선언을 해준다
@@ -72,7 +78,7 @@ function App() {
 
 ```
 
-### Event 처리
+## Event 처리
 
 > html에서는 onclick을 통해 javascript 함수를 실행했지만 React에서는 onClick으로 함수를 실행한다
 >
@@ -123,7 +129,7 @@ function App() {
 }
 ```
 
-### State 변경
+## State 변경
 
 > State 변수를 바꾸는 법은 State의 두 변수중 두 번째로 나오는 함수로 변경해야 재 랜더링이 일어난다.
 
@@ -175,7 +181,7 @@ seTtitle(a);
 > 이런 형식으로 적어주는 게 좋다
 > 여기서 ...은 전개 연산자로 나열형 자료를 추출하거나 연결할 때 사용한다.
 
-### component
+## component
 
 > div 태그가 너무 많아지면 보기에 별로 좋지 않아서 함수로 div를 묶어서 쓴다
 > 예) function 컴포넌트명() { return( <div>어쩌고저쩌고</div> ) }
@@ -200,7 +206,7 @@ function Newss() {
 }
 ```
 
-### export의 의미
+## export의 의미
 
 > export는 영어로 수출한다는 뜻으로 export를 사용하여 전달하면 해당 변수 안에 있는 객체 안에 담아 전달할 수 있다.
 > 다른 파일에서는 import를 사용해 export 한 파일의 객체를 볼 수 있다.
@@ -222,10 +228,10 @@ consol.log(a);
 
 > 2개도 export 할 수 있음
 
-### export default의 의미
+## export default의 의미
 
 > export default는 변수뿐만 아니라 함수, 오브젝트, 클래스도 보낼 수 있다
-> default는 기본이라는 뜻을 갖고 있으며 괄호 같은 것을 생략한다
+> default는 기본이라는 뜻을 갖고 있으며 괄호 같은 것을 생략한다.
 
 ```javascript
 /*export_default 파일*/
@@ -245,7 +251,7 @@ sayhello('Teemo');
 
 > 만약 export default 할 때 전달하는 데이터를 {}로 감싸서 보내면 객체 형태로 값을 받는다
 
-### props
+## props
 
 > props는 component에 값을 전달할 때 사용한다
 
@@ -282,7 +288,7 @@ function App() {
 }
 ```
 
-### map
+## map
 
 > component가 늘어나고 그에 따라 props가 바뀐다고 해보자 이걸 코드로 작성하면 굉장히 더러운 코드가 될 것이다
 > 이럴 때일수록 map 함수를 꼭 사용해야 한다
