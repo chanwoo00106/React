@@ -34,7 +34,11 @@ function App() {
 
 ## [useMemo](useMemo.md)
 
-## [useReducer](useReducer)
+## [useReducer](useReducer.md)
+
+## [SPA란?](SPA.md)
+
+## [immer](immer.md)
 
 ## style 쓰는 법
 
