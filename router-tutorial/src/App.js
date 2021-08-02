@@ -3,7 +3,7 @@ import {Route, Link} from 'react-router-dom';
 import Home from './Home';
 import About from './About';
 import Example from './Example';
-import Profile from './Profile';
+import Profiles from './Profiles';
 
 function App() {
   return (
@@ -19,16 +19,14 @@ function App() {
           <Link to="/example">test</Link>
         </li>
         <li>
-          <Link to="/profile/teemo">Teemo</Link>
-        </li>
-        <li>
-          <Link to="/profile/chan">chanwoo</Link>
+          <Link to="/profiles">프로필</Link>
         </li>
       </ul>
+      <hr />
       <Route path="/" component={Home} exact={true} />
       <Route path="/about" component={About} />
       <Route path={["/example", "/info"]} component={Example} />
-      <Route path="/profile/:username" component={Profile} />
+      <Route path="/profiles" component={Profiles} />
     </div>
   );
 }
