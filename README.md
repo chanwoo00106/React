@@ -28,17 +28,13 @@ function App() {
 }
 ```
 
-## [useCallback](useCallback.md)
-
-## [useEffect](useEffect.md)
-
-## [useMemo](useMemo.md)
-
-## [useReducer](useReducer.md)
-
-## [SPA란?](SPA.md)
-
-## [immer](immer.md)
+* ## [useCallback](useCallback.md)
+* ## [useEffect](useEffect.md)
+* ## [useMemo](useMemo.md)
+* ## [useReducer](useReducer.md)
+* ## [SPA란?](SPA.md)
+* ## [immer](immer.md)
+* ## [promise & async](promise&async.md)
 
 ## style 쓰는 법
 
