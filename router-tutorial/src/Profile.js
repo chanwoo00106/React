@@ -1,4 +1,6 @@
 import React from 'react'
+import WithRouterSample from './WithRouterSample';
+import { withRouter } from 'react-router'
 
 const data = {
     teemo: {
@@ -23,6 +25,7 @@ export default function Profile({match}) {
         <div>
             <h3>{username}({profile.name})</h3>
             <p>{profile.description}</p>
+            <WithRouterSample />
         </div>
     )
 }
