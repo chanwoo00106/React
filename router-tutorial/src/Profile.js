@@ -1,6 +1,5 @@
 import React from 'react'
 import WithRouterSample from './WithRouterSample';
-import { withRouter } from 'react-router'
 
 const data = {
     teemo: {
