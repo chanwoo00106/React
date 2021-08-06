@@ -2,9 +2,8 @@ import React from 'react'
 import Categories from '../components/Categories'
 import NewsList from '../components/NewsList'
 
-const NewPage = ({match}) => {
+const NewsPage = ({match}) => {
     const category = match.params.category || 'all';
-    console.log(match);
     return (
         <>
             <Categories />
@@ -13,4 +12,4 @@ const NewPage = ({match}) => {
     )
 }
 
-export default NewPage
+export default NewsPage
