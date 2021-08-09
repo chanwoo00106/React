@@ -60,4 +60,6 @@ NavLink에는 activeStyle과 activeClassName이라는 속성이 있는데<br>
 리액트 웹의 현재 URL과 to가 가리키는 링크가 일치할 때,<br>
 activeStyle과 activeClassName이 활성화 되고 일치하지 않으면 비활성화 된다.
 
+마지막으로 exact는 url과 to가 가리키는 링크가 정확히 맞아 떨어져야만 설정한 컴포넌트가 보이게 된다.
+
 [참고 자료](https://velog.io/@seong-dodo/React-Link%EC%99%80-NavLink)
