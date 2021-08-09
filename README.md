@@ -31,8 +31,6 @@ function App() {
 
 + 기초
   + [style 작성법](knowledge/style.md)
-  + [useState](knowledge/useState.md)
-    + [immer](knowledge/immer.md)
   + [Event 처리](knowledge/Event.md)
   + [component](knowledge/component.md)
   + [export default](knowledge/export-default.md)
@@ -47,3 +45,5 @@ function App() {
   + [useMemo](knowledge/useMemo.md)
   + [useReducer](knowledge/useReducer.md)
   + [NavLink와 Link](knowledge/NavLink와Link.md)
+  + [useState](knowledge/useState.md)
+    + [immer](knowledge/immer.md)
