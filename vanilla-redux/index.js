@@ -10,6 +10,8 @@ const INCREASE = 'INCREASE';
 const DECREASE = 'DECREASE';
 
 // actions
+// 상태에 어떠한 변화가 필요하면 액션이란 것이 발생합니다.
+// 액션 객체는 type 필드를 반드시 가지고 있어야 합니다.
 const toggleSwitch = () => ({type: TOGGLE_SWITCH});
 const increase = difference => ({type: INCREASE, difference});
 const decrease = () => ({type: DECREASE});
