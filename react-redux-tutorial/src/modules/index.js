@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux';
+import {combineReducers} from 'redux'; // 두 리듀서를 합쳐주는 함수
 import counter from './counter';
 import todos from './todos';
 
