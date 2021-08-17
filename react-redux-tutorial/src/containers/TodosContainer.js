@@ -1,32 +1,25 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { useCallback } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import {changeInput, insert, toggle, remove} from '../modules/todos';
 import Todos from '../components/Todos';
 
-const TodosContainer = ({remove, toggle, todos, input, changeInput, insert}) => {
+const TodosContainer = () => {
+    const {input, todos} = useSelector(({todos}) => ({
+        input: todos.input,
+        todos: todos.todos
+    }));
+    const dispatch = useDispatch();
     return (
         <div>
             <Todos
             input={input}
             todos={todos}
-            onChangeInput={changeInput}
-            onInsert={insert}
-            onToggle={toggle}
-            onRemove={remove}/>
+            onChangeInput={useCallback(input => dispatch(changeInput(input)), [dispatch])}
+            onInsert={useCallback(text => dispatch(insert(text)), [dispatch])}
+            onToggle={useCallback(id => dispatch(toggle(id)), [dispatch])}
+            onRemove={useCallback(id => dispatch(remove(id)), [dispatch])}/>
         </div>
     )
 };
 
-export default connect(
-    ({todos}) => ({
-        todos: todos.todos,
-        input: todos.input 
-    }),
-    {
-        changeInput,
-        insert,
-        toggle,
-        remove
-        
-    }
-)(TodosContainer);
+export default TodosContainer;
