@@ -38,6 +38,7 @@ function App() {
   + [map](knowledge/map.md)
   + [promise & async](knowledge/promise&async.md)
   + [SPA란?](knowledge/SPA.md)
+  + [React.memo](knowledge/React.memo.md)
 
 + Hooks
   + [useCallback](knowledge/useCallback.md)
