@@ -47,3 +47,6 @@ function App() {
   + [NavLink와 Link](knowledge/NavLink와Link.md)
   + [useState](knowledge/useState.md)
     + [immer](knowledge/immer.md)
+
++ Redux
+  + [connect](knowledge/connect.md)
