@@ -4,9 +4,11 @@ import {applyMiddleware, createStore} from 'redux';
 import {Provider} from 'react-redux';
 import App from './App';
 import rootReducer from './modules'; // index는 생략 가능
-import loggerMiddleware from './lib/loggerMiddleware';
+// import loggerMiddleware from './lib/loggerMiddleware';
+import {createLogger} from 'redux-logger';
 
-const store = createStore(rootReducer, applyMiddleware(loggerMiddleware));
+const logger = createLogger();
+const store = createStore(rootReducer, applyMiddleware(logger));
 
 ReactDOM.render(
   <Provider store={store}>
