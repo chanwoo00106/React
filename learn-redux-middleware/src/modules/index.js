@@ -1,10 +1,12 @@
 import { combineReducers } from "redux";
 import sample from "./sample";
 import counter from "./counter";
+import loading from "./loading";
 
 const routReducer = combineReducers({
     counter,
-    sample
+    sample,
+    loading
 });
 
 export default routReducer;
