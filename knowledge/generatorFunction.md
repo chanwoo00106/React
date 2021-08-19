@@ -62,3 +62,25 @@ generator.next();
 
 제너레이터 함수를 사용하면 함수를 도중에 멈출 수도 있고, 순차적으로 여러 값을 반환시킬 수도 있습니다.<br>
 `next()` 함수에 파라미터를 넣으면 제너레이터 함수에서 `yield`를 사용하여 해당 값을 조회할 수도 있습니다.
+
+아래와 같은 코드가 있다면
+
+```js
+function* sumGenerator() {
+    console.log('sumGenerator가 만들어졌습니다.');
+    let a = yield;
+    let b = yield;
+    yield a + b;
+}
+
+const sum= sumGenerator();
+sum.next();
+// sumGenerator가 만들어졌습니다.
+// {value: undefined, done: false}
+sum.next(1);
+// {value: undefined, done: false}
+sum.next(2);
+// {value: 3, done: true}
+sum.next();
+// {value: undefined, done: true}
+```
