@@ -7,13 +7,15 @@ const initialState = [{
     phone: '010-1234-1234'
 }]
 
+let id = 2;
+
 const reducer = (state=initialState, action) => {
     switch(action.type){
         case ActionType.ADD:
             return [
                 ...state,
                 {
-                    id: action.id,
+                    id: id++,
                     name: action.name,
                     email: action.email,
                     phone: action.phone
