@@ -1,16 +1,17 @@
 import React from 'react';
 import './ContactList.css'
-import { Table } from 'react-bootstrap';
+import { Table, Button } from 'react-bootstrap';
 
 const ContactList = () => {
     return (
-        <Table striped bordered hover>
+        <Table>
             <thead>
                 <tr>
                     <th>#</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Phone</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -19,12 +20,10 @@ const ContactList = () => {
                     <td>Mark</td>
                     <td>Otto</td>
                     <td>@mdo</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
+                    <td>
+                        <Button variant="primary">Edit</Button>
+                        <Button variant="danger">Delete</Button>    
+                    </td>
                 </tr>
             </tbody>
         </Table>

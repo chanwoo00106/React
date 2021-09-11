@@ -1,0 +1,19 @@
+table {
+    border: none;
+}
+
+
+thead {
+    background-color: #576574;
+    color: #ffffff;
+}
+
+tr td:last-child {
+    padding: 0;
+    width: 20%;
+
+}
+
+tr td:last-child button {
+    margin: 0 5px;
+}
