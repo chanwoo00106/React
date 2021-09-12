@@ -4,6 +4,7 @@ import './App.css';
 import ContactList from './components/ContactList';
 import {Switch, Route, useHistory} from 'react-router-dom'
 import Add from './components/Add';
+import Edit from './components/Edit';
 
 function App() {
   const history = useHistory();
@@ -28,6 +29,9 @@ function App() {
           <>
             <Add />
           </>
+        </Route>
+        <Route path="/edit">
+          <Edit />
         </Route>
       </Switch>
     </div>

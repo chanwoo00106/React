@@ -3,7 +3,7 @@ import {Button} from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import './Add.css';
 
-const Add = () => {
+const Edit = () => {
     const [input, setInput] = useState({name: "", email: "", phone: ""})
     const history = useHistory();
     const onClick = () => history.goBack();
@@ -27,7 +27,7 @@ const Add = () => {
                     <input placeholder="phone" value={input.phone} onChange={onChange} name="phone" type="number" />
                     <div className="buttons">
                         <Button variant="primary">Update Contact</Button>
-                        <Button onClick={onClick} variant="danger">Cancel</Button>
+                        <Button onClick={onClick} variant="danger">Cencel</Button>
                     </div>
                 </div>
             </div>
@@ -35,4 +35,4 @@ const Add = () => {
     )
 }
 
-export default Add
+export default Edit
