@@ -3,6 +3,7 @@ import './ContactList.css'
 import { Table, Button } from 'react-bootstrap';
 
 const ContactList = () => {
+
     return (
         <Table>
             <thead>
