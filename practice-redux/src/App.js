@@ -30,7 +30,7 @@ function App() {
             <Add />
           </>
         </Route>
-        <Route path="/edit">
+        <Route path="/edit/:id">
           <Edit />
         </Route>
       </Switch>
