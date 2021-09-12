@@ -8,7 +8,7 @@ import { useHistory } from 'react-router';
 const ContactList = () => {
 
     const history = useHistory();
-    const onClick = id => history.push(`/edit/:${id}`);
+    const onClick = id => history.push(`/edit/${id}`);
 
     const { contacts } = useSelector(({reducer}) => ({
         contacts: reducer.contacts
