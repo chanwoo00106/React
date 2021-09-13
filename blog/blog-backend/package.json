@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "eslint-config-prettier": "^8.3.0",
     "koa": "^2.13.1"
   },
   "devDependencies": {
