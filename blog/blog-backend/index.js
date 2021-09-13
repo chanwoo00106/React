@@ -1,10 +1,13 @@
 const Koa = require('koa');
 const Router = require('koa-router');
 const api = require('./api');
+const bodyParser = require('koa-bodyparser');
 const app = new Koa();
 const router = new Router();
 
 router.use("/api", api.routes());
+
+app.use(bodyParser());
 
 router.get('/', ctx => {
     ctx.body = '홈';
