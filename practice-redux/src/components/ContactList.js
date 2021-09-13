@@ -11,7 +11,7 @@ const ContactList = () => {
     const onClick = id => history.push(`/edit/${id}`);
 
     const { contacts } = useSelector(({reducer}) => ({
-        contacts: reducer.contacts
+        contacts: reducer
     }));
 
     const dispatch = useDispatch();

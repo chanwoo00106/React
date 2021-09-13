@@ -3,7 +3,6 @@ import { Button } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
 import './Add.css';
-import { add } from '../modules/contacts';
 
 const Add = () => {
     const [input, setInput] = useState({name: "", email: "", phone: ""})
@@ -19,7 +18,7 @@ const Add = () => {
     }
 
     const onSubmit = () => {
-        dispatch(add(input));
+        dispatch({type: "add", payload: input});
         history.push('/');
     }
 
