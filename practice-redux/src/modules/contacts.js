@@ -40,9 +40,10 @@ function reducer(state=initialState, action){
         case ADD:
             return state.concat({id: id++, ...action.payload});
         case DELETE:
-            return state.filter(x => x.id !== action.payload);
+            return state.filter(x => x.id !== action.id);
         case EDIT:
-            return state[action.id - 1] = action.payload;
+            state[action.id - 1] = {id: action.id, ...action.payload};
+            return state;
         default: return state;
     }
 }

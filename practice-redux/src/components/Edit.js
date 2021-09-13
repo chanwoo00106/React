@@ -3,12 +3,11 @@ import { Button } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 import './Add.css';
-import { edit } from '../modules/contacts';
 
 const Edit = () => {
     const { id } = useParams();
     const {contact} = useSelector(({reducer}) => ({
-        contact: reducer.contacts[id - 1]
+        contact: reducer[id - 1]
     }))
     const [input, setInput] = useState({name: contact.name, email: contact.email, phone: contact.phone})
     const history = useHistory();
@@ -24,7 +23,7 @@ const Edit = () => {
     }
 
     const onSubmit = () => {
-        dispatch(edit(id, input));
+        dispatch({type: 'edit', id, payload: input});
         history.push('/');
     }
 

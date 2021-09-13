@@ -2,7 +2,6 @@ import React from 'react';
 import './ContactList.css'
 import { Table, Button } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { remove } from '../modules/contacts';
 import { useHistory } from 'react-router';
 
 const ContactList = () => {
@@ -17,7 +16,7 @@ const ContactList = () => {
     const dispatch = useDispatch();
 
     const onDelete = id => {
-        dispatch(remove(id));
+        if (window.confirm('정말로 삭제하시겠습니까?')) dispatch({type: 'delete', id});
     }
 
     return (
