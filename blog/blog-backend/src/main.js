@@ -5,6 +5,7 @@ import bodyParser from 'koa-bodyparser';
 import mongoose from 'mongoose';
 
 import api from './api';
+import jwtMiddleware from './lib/jwtMiddleware';
 
 const app = new Koa();
 const router = new Router();
@@ -19,6 +20,7 @@ mongoose.connect(MONGO_URL,
 router.use("/api", api.routes());
 
 app.use(bodyParser());
+app.use(jwtMiddleware);
 
 router.get('/', ctx => {
     ctx.body = '홈';
