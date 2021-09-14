@@ -35,7 +35,7 @@ UserSchema.methods.generateToken = function() {
         },
         process.env.JWT_SECRET,
         {
-            expiresIn: '7d' // 7일 동안 유효함
+            expiresIn: '3d' // 3일 동안 유효함
         }
     )
     return token;
