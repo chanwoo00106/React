@@ -48,10 +48,10 @@ export const list = async ctx => {
         return;
     }
     try {
-        const posts = await Post.find().sort({_id: -1}).limit(10).skip((page - 1) * 10).exec();
+        const posts = await Post.find().sort({_id: -1}).limit(10).skip((page - 1) * 10).lean().exec();
         const postCount = await Post.countDocuments().exec();
         ctx.set('Last-Page', Math.ceil(postCount / 10));
-        ctx.body = posts;
+        ctx.body = posts.map(post => ({...post, body: post.body.lenght < 200 ? post.body : `${post.body.slice(0,200)}...`}));
     } catch (e) {
         ctx.throw(500, e);
     }
