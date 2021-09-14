@@ -1,9 +1,12 @@
+require('dotenv').config();
 const Koa = require('koa');
 const Router = require('koa-router');
 const api = require('../api');
 const bodyParser = require('koa-bodyparser');
 const app = new Koa();
 const router = new Router();
+
+const {PORT} = process.env;
 
 router.use("/api", api.routes());
 
@@ -24,6 +27,6 @@ router.get('/about', ctx => {
 
 app.use(router.routes()).use(router.allowedMethods());
 
-app.listen(4000, () => {
+app.listen(PORT || 4000, () => {
     console.log('http://localhost:4000');
 });
