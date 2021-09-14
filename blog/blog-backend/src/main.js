@@ -1,12 +1,20 @@
 require('dotenv').config();
-const Koa = require('koa');
-const Router = require('koa-router');
-const api = require('../api');
-const bodyParser = require('koa-bodyparser');
+import Koa from 'koa';
+import Router from 'koa-router';
+import bodyParser from 'koa-bodyparser';
+import mongoose from 'mongoose';
+
+import api from '../api';
+
 const app = new Koa();
 const router = new Router();
+const {PORT, MONGO_URL} = process.env;
 
-const {PORT} = process.env;
+mongoose.connect(MONGO_URL,
+    err => {
+        if(err) throw err;
+        console.log('connected to MongoDB')
+});
 
 router.use("/api", api.routes());
 
@@ -28,5 +36,5 @@ router.get('/about', ctx => {
 app.use(router.routes()).use(router.allowedMethods());
 
 app.listen(PORT || 4000, () => {
-    console.log('http://localhost:4000');
+    console.log('http://localhost:'+PORT);
 });

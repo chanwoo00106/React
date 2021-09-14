@@ -9,7 +9,6 @@ const posts = [
 ];
 
 // POST
-
 exports.write = ctx => {
     const {title, body} = ctx.request.body;
     postId += 1;
@@ -19,11 +18,9 @@ exports.write = ctx => {
 };
 
 // GET
-
 exports.list = ctx => {
     ctx.body = posts;
 };
-
 
 // FIND post
 exports.read = ctx => {
@@ -39,7 +36,6 @@ exports.read = ctx => {
     }
     ctx.body = post;
 }
-
 
 // DELETE
 exports.remove = ctx => {
@@ -57,7 +53,6 @@ exports.remove = ctx => {
 }
 
 // PUT
-
 exports.replace = ctx => {
     const {id} = ctx.params;
     const index = posts.findIndex(p => p.id.toString() === id);
@@ -76,7 +71,6 @@ exports.replace = ctx => {
 }
 
 // PATCH
-
 exports.update = ctx => {
     const {id} = ctx.params;
     const index = posts.findIndex(p => p.id.toString() === id);
