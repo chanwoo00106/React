@@ -5,14 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "start:dev": "npx nodemon index.js"
+    "start": "node -r esm src/index.js",
+    "start:dev": "npx nodemon -r esm src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "eslint-config-prettier": "^8.3.0",
+    "esm": "^3.2.25",
     "koa": "^2.13.1",
     "koa-bodyparser": "^4.3.0",
     "koa-router": "^10.1.1"
