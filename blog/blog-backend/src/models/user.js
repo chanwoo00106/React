@@ -6,18 +6,24 @@ const UserSchema = new Schema({
     hashedPassword: String,
 });
 
-UserSchema.method.setPassword = async (password) => {
+UserSchema.methods.setPassword = async function(password) {
     const hash = await bcrypt.hash(password, 10);
     this.hashedPassword = hash;
 };
 
-UserSchema.method.checkPassword = async (password) => {
+UserSchema.methods.checkPassword = async function(password) {
     const result = await bcrypt.compare(password, this.hashedPassword);
     return result;
 }
 
-UserSchema.statics.findByUsername = (username) => {
+UserSchema.statics.findByUsername = function(username) {
     return this.findOne({username});
+}
+
+UserSchema.methods.serialize = function() {
+    const data = this.toJSON();
+    delete data.hashedPassword;
+    return data;
 }
 
 const User = mongoose.model('User', UserSchema);
