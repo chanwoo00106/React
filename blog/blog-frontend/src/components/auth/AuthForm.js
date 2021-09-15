@@ -51,7 +51,10 @@ const AuthForm = () => {
             <form>
                 <StyledInput autoComplete="username" name="username" placeholder="아이디" />
                 <StyledInput autoComplete="new-password" name="password" placeholder="비밀번호" type="password" />
-                <Button>로그인</Button>
+                <Button cyan fullWidth>로그인</Button>
+                {
+                    //<Button cyan={true} fullWidth={true}>로그인</Button>와 같은 의미
+                }
             </form>
             <Footer>
                 <Link to="/register">회원가입</Link>
