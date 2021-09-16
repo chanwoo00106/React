@@ -28,6 +28,10 @@ export const register = createAction(REGISTER, ({ username, password }) => ({
     username,
     password,
 }));
+export const login = createAction(LOGIN, ({ username, password }) => ({
+    username,
+    password,
+}));
 
 const registerSaga = createRequestSaga(REGISTER, authAPI.register);
 const loginSaga = createRequestSaga(LOGIN, authAPI.login);
