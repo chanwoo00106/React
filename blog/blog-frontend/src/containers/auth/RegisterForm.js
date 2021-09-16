@@ -2,14 +2,17 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import AuthForm from '../../components/auth/AuthForm';
 import { changeField, initializeForm, register } from '../../modules/auth';
+import { check } from '../../modules/user';
+import { withRouter } from 'react-router-dom';
 
 
-const RegisterForm = () => {
+const RegisterForm = ({ history }) => {
     const dispatch = useDispatch();
-    const { form, auth, authError } = useSelector(({ auth }) => ({
+    const { form, auth, authError, user } = useSelector(({ auth, user }) => ({
         form: auth.register,
         auth: auth.auth,
         authError: auth.authError,
+        user: user.user,
     }));
 
     const onChange = e => {
@@ -45,8 +48,15 @@ const RegisterForm = () => {
         if (auth) {
             console.log('회원가입 성공');
             console.log(auth);
+            dispatch(check());
         }
-    }, [auth, authError]);
+    }, [auth, authError, dispatch]);
+
+    useEffect(() => {
+        if (user) {
+            history.push('/');
+        }
+    }, [user, history]);
 
     return (
         <div>
@@ -60,4 +70,4 @@ const RegisterForm = () => {
     )
 }
 
-export default RegisterForm
+export default withRouter(RegisterForm)
