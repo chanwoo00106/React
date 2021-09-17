@@ -49,7 +49,9 @@ const initialState = {
     login: {
         username: '',
         password: '',
-    }
+    },
+    auth: null,
+    authError: null,
 }
 
 const auth = handleActions(
