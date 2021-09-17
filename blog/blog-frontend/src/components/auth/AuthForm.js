@@ -53,7 +53,14 @@ const textMap = {
     register: '회원가입',
 }
 
-const AuthForm = ({ type, form, onChange, onSubmit }) => {
+const ErrorMessage = styled.div`
+    color: red;
+    text-align: center;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+`;
+
+const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
     const text = textMap[type];
     return (
         <AuthFormBlock>
@@ -64,6 +71,7 @@ const AuthForm = ({ type, form, onChange, onSubmit }) => {
                 {type === 'register' && (
                     <StyledInput autoComplete="new-password" name="passwordConfirm" placeholder="비밀번호 확인" type="password" onChange={onChange} value={form.passwordConfirm} />
                 )}
+                {error && <ErrorMessage>{error}</ErrorMessage>}
                 <ButtonWithMarginTop cyan fullWidth styled={{ marginTop: '1rem' }}>로그인</ButtonWithMarginTop>
             </form>
             <Footer>
