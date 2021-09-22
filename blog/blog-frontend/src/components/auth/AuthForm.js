@@ -44,6 +44,7 @@ const Footer = styled.div`
     }
 `;
 
+<<<<<<< HEAD
 const ButtonWithMarginTop = styled(Button)`
     margin-top: 1rem;
 `;
@@ -73,13 +74,22 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
                 )}
                 {error && <ErrorMessage>{error}</ErrorMessage>}
                 <ButtonWithMarginTop cyan fullWidth styled={{ marginTop: '1rem' }}>로그인</ButtonWithMarginTop>
+=======
+const AuthForm = () => {
+    return (
+        <AuthFormBlock>
+            <h3>로그인</h3>
+            <form>
+                <StyledInput autoComplete="username" name="username" placeholder="아이디" />
+                <StyledInput autoComplete="new-password" name="password" placeholder="비밀번호" type="password" />
+                <Button cyan fullWidth>로그인</Button>
+                {
+                    //<Button cyan={true} fullWidth={true}>로그인</Button>와 같은 의미
+                }
+>>>>>>> parent of 868650a (로그인과 회원가입 페이지 나누기)
             </form>
             <Footer>
-                {type === 'login' ? (
-                    <Link to="/register">회원가입</Link>
-                ) : (
-                    <Link to="/login">로그인</Link>
-                )}
+                <Link to="/register">회원가입</Link>
             </Footer>
         </AuthFormBlock>
     )
