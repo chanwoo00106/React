@@ -72,6 +72,7 @@ const RegisterForm = ({ history }) => {
 
     return (
         <div>
+            {authError}
             <AuthForm
                 type="register"
                 form={form}
