@@ -8,27 +8,27 @@ export const Header = () => {
     return (
         <header>
             <div className="header-logo">
-                <FontAwesomeIcon icon={faFacebook} size="3x" />
+                <FontAwesomeIcon className="logo-icon" icon={faFacebook} size="3x" />
                 <div className="search-div"><input type="search" placeholder="   Facebook 검색" className="search" /></div>
             </div>
             <div>
                 <ul>
-                    <li><a href="#1"><FontAwesomeIcon icon={faHome} size="2x" /></a></li>
-                    <li><a href="#1"><FontAwesomeIcon icon={faUserFriends} size="2x" /></a></li>
-                    <li><a href="#1"><FontAwesomeIcon icon={faTv} size="2x" /></a></li>
-                    <li><a href="#1"><FontAwesomeIcon icon={faUsers} size="2x" /></a></li>
-                    <li><a href="#1"><FontAwesomeIcon icon={faReact} size="2x" /></a></li>
+                    <li><a href="#1"><FontAwesomeIcon className="icons hover-icon" icon={faHome} size="2x" /></a></li>
+                    <li><a href="#1"><FontAwesomeIcon className="icons" icon={faUserFriends} size="2x" /></a></li>
+                    <li><a href="#1"><FontAwesomeIcon className="icons" icon={faTv} size="2x" /></a></li>
+                    <li><a href="#1"><FontAwesomeIcon className="icons" icon={faUsers} size="2x" /></a></li>
+                    <li><a href="#1"><FontAwesomeIcon className="icons" icon={faReact} size="2x" /></a></li>
                 </ul>
             </div>
-            <div>
-                <span>
-                    <FontAwesomeIcon icon={faUserCircle} size="2x" />
-                    <span>변찬우</span>
+            <div className="right-icons">
+                <span className="user">
+                    <span className="right-icon"><FontAwesomeIcon icon={faUserCircle} size="2x" /></span>
+                    <span className="user-name">변찬우</span>
                 </span>
-                <FontAwesomeIcon icon={faBars} size="2x" />
-                <FontAwesomeIcon icon={faFacebookMessenger} size="2x" />
-                <FontAwesomeIcon icon={faBell} size="2x" />
-                <FontAwesomeIcon icon={faSortDown} size="2x" />
+                <span className="right-icon"><FontAwesomeIcon icon={faBars} size="2x" /></span>
+                <span className="right-icon"><FontAwesomeIcon icon={faFacebookMessenger} size="2x" /></span>
+                <span className="right-icon"><FontAwesomeIcon icon={faBell} size="2x" /></span>
+                <span className="right-icon"><FontAwesomeIcon icon={faSortDown} size="2x" /></span>
             </div>
         </header>
     )

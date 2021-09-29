@@ -3,10 +3,15 @@ header {
     background-color: #FFFFFF;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     box-shadow: 0 5px 10px #DDDFE2;
+    height: 70px;
 }
 .header-logo {
     position: relative;
+}
+.logo-icon {
+    color: #087BEA;
 }
 .search-div {
     position: absolute;
@@ -32,4 +37,39 @@ ul {
     list-style: none;
     display: flex;
     gap: 100px;
+}
+
+.icons {
+    color: black;
+}
+
+.hover-icon {
+    color: #1877F2;
+}
+
+.right-icons {
+    display: flex;
+    align-items: center;
+    width: 25%;
+    justify-content: space-between;
+}
+
+.right-icon {
+    background-color: #E4E6EB;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user-name {
+    width: 50px;
+    font-weight: bold;
 }
