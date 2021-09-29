@@ -12,7 +12,7 @@ export const Header = () => {
                 <div className="search-div"><input type="search" placeholder="   Facebook 검색" className="search" /></div>
             </div>
             <div>
-                <ul>
+                <ul className="centerUl">
                     <li><a href="#1"><FontAwesomeIcon className="icons hover-icon" icon={faHome} size="2x" /></a></li>
                     <li><a href="#1"><FontAwesomeIcon className="icons" icon={faUserFriends} size="2x" /></a></li>
                     <li><a href="#1"><FontAwesomeIcon className="icons" icon={faTv} size="2x" /></a></li>

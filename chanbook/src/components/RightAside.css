@@ -1,0 +1,31 @@
+aside {
+    margin-top: 10px;
+    padding-left: 10px;
+    height: 80vh;
+    width: 25%;
+}
+
+.asideUl {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.asideUl li {
+    min-height: 44px;
+}
+
+.asideUl li a {
+    display: flex;
+    width: 100%;
+}
+
+.asideHr {
+    width: 100%;
+}
+
+.quickly {
+    color: #65676B;
+    font-weight: bold;
+    font-size: 1.2rem;
+}

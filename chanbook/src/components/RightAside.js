@@ -1,5 +1,5 @@
 import React from 'react';
-import { } from '@fortawesome/free-brands-svg-icons';
+import './RightAside.css';
 import { faUserCircle, faUserFriends, faUsers, faTv, faHistory, faBookmark, faFlag, faCalendarCheck, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export const RightAside = () => {
     return (
         <aside>
-            <ul>
+            <ul className="asideUl">
                 <li>
                     <a href="#1">
                         <FontAwesomeIcon icon={faUserCircle} size="2x" />
@@ -63,6 +63,8 @@ export const RightAside = () => {
                     </a>
                 </li>
             </ul>
+            <hr className="asideHr" />
+            <div className="quickly">내 바로가기</div>
         </aside>
     )
 }

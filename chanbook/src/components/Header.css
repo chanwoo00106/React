@@ -32,7 +32,7 @@ header {
     height: 40px;
 }
 
-ul {
+.centerUl {
     list-style: none;
     display: flex;
     gap: 100px;
