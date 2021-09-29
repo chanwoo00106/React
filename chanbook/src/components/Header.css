@@ -1,0 +1,35 @@
+header {
+    padding: 5px 20px 0;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 5px 10px #DDDFE2;
+}
+.header-logo {
+    position: relative;
+}
+.search-div {
+    position: absolute;
+    top: 0;
+    width: 82%;
+    height: 100%;
+    display: inline-block;
+}
+.search {
+    margin-top: 50%;
+    transform: translateY(-25%);
+    background: #F0F2F5;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    margin-left: 20px;
+    padding: 7px 16px 9px 10px;
+    text-align: left;
+    height: 40px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 100px;
+}
