@@ -58,7 +58,7 @@ export const RightAside = () => {
                 </li>
                 <li>
                     <a href="#1">
-                        <FontAwesomeIcon icon={faChevronDown} size="2x" />
+                        <span className="more"><FontAwesomeIcon icon={faChevronDown} size="1x" /></span>
                         <p>더보기</p>
                     </a>
                 </li>

@@ -1,8 +1,7 @@
 aside {
     margin-top: 10px;
     padding-left: 10px;
-    height: 80vh;
-    width: 25%;
+    width: 17%;
 }
 
 .asideUl {
@@ -13,15 +12,46 @@ aside {
 
 .asideUl li {
     min-height: 44px;
+    display: flex;
+    align-items: center;
 }
 
 .asideUl li a {
     display: flex;
     width: 100%;
+    padding: 10px 10px 10px 5px;
+    border-radius: 10px;
+    gap: 10px;
+    text-decoration: none;
+    color: black;
+    
+}
+
+.asideUl li a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.asideUl li a:not(:hover) {
+    transition: .2s;
+}
+
+.asideUl li a{
+    align-items: center;
+}
+
+.more {
+    background-color: #E4E6EB;
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .asideHr {
     width: 100%;
+    margin: 5px 0;
 }
 
 .quickly {

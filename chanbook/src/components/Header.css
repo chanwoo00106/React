@@ -1,10 +1,11 @@
 header {
     background-color: #FFFFFF;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     box-shadow: 0 5px 10px #DDDFE2;
     height: 70px;
+    padding: 0 10px;
 }
 .header-logo {
     position: relative;
