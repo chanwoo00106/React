@@ -13,16 +13,16 @@ const Write = () => {
             <hr />
             <div className="bottom">
                 <div>
-                    <FontAwesomeIcon icon={faVideo} size="3x" />
+                    <FontAwesomeIcon icon={faVideo} size="2x" />
                     <span>라이브 방송</span>
                 </div>
                 <div>
-                    <FontAwesomeIcon icon={faImages} size="3x" />
+                    <FontAwesomeIcon icon={faImages} size="2x" />
                     <span>사진/동영상</span>
                 </div>
                 <div>
-                    <FontAwesomeIcon icon={faGrin} size="3x" />
-                    <span>기분 활동</span>
+                    <FontAwesomeIcon icon={faGrin} size="2x" />
+                    <span>기분/활동</span>
                 </div>
             </div>
         </div>
