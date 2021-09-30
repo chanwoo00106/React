@@ -67,6 +67,14 @@ header {
 .user {
     display: flex;
     align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    transition: .2s;
+    padding: 4px;
+}
+
+.user:hover, .right-icon:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .user-name {
