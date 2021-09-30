@@ -2,6 +2,13 @@ aside {
     margin-top: 10px;
     padding-left: 10px;
     width: 17%;
+    position: fixed;
+}
+
+.aside-wrap {
+    margin-top: 10px;
+    padding-left: 10px;
+    width: 17%;
 }
 
 .asideUl {

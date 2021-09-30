@@ -1,0 +1,41 @@
+.content {
+    margin: 30px 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+hr {
+    width: 99%;
+    margin: 5px auto;
+    border: .1px solid #E4E6EB;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.top input {
+    outline: none;
+    border-radius: 50px;
+    border: none;
+    background-color: #E4E6E9;
+    width: 100%;
+    height: 40px;
+    font-size: 1rem;
+}
+
+.top input:hover {
+    background-color: #D2D5D8;
+}
+
+.top input:not(:hover){
+    transition: .2s;
+}
+
+.top input::placeholder {
+    color: #656781;
+    padding-left: 20px;
+}
