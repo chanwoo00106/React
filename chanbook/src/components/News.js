@@ -8,7 +8,7 @@ const News = () => {
     return (
         <NewsS>
             <div className="user">
-                <FontAwesomeIcon icon={faUserCircle} size="2x" />
+                <FontAwesomeIcon className="userCircle" icon={faUserCircle} size="3x" />
                 <span className="information">
                     <div className="name">변찬우</div>
                     <div className="time">3시간 전</div>
@@ -21,12 +21,15 @@ const News = () => {
 
             <div className="thumb-num">
                 <FontAwesomeIcon icon={faThumbsUp} size="1x" />
-                <span>5</span>
+                <span>5억</span>
             </div>
             <hr />
             <Emoji />
             <hr />
-            <div className="comment"></div>
+            <div className="comment">
+                <FontAwesomeIcon className="userCircle" icon={faUserCircle} size="2x" />
+                <input type="text" placeholder="댓글을 입력하세요..." />
+            </div>
         </NewsS>
     )
 }

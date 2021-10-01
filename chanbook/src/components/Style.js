@@ -217,6 +217,18 @@ export const NewsS = styled.div`
     padding: 20px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 
+    .user {
+        display: flex;
+        gap: 10px;
+        .name {
+            font-weight: bold;
+        }
+    }
+
+    .userCircle {
+        color: #C9CCD1;
+    }
+
     .text {
         margin: 10px 0;
     }
@@ -242,15 +254,41 @@ export const NewsS = styled.div`
         text-align: center;
         margin: 5px 0;
         gap: 5px;
+
         div {
             padding: 7px 0;
             border-radius: 10px;
+            color: #65676B;
+
+            svg {
+                margin-right: 5px;
+            }
         }
         div:hover {
             background-color: rgba(0, 0, 0, 0.1);
         }
         div:not(:hover) {
             transition: .2s;
+        }
+    }
+
+    .comment {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+
+        svg {
+            margin-right: 7px;
+        }
+        input {
+            outline: none;
+            border: none;
+            border-radius: 50px;
+            background-color: #F0F2F5;
+            width: 100%;
+            min-height: 35px;
+            padding-left: 10px;
+            font-size: 1rem;
         }
     }
 `;
