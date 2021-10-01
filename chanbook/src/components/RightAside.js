@@ -1,12 +1,12 @@
 import React from 'react';
-import './RightAside.css';
+import { Aside } from './RightAsideStyle';
 import { faUserCircle, faUserFriends, faUsers, faTv, faHistory, faBookmark, faFlag, faCalendarCheck, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 export const RightAside = () => {
     return (
-        <aside>
+        <Aside>
             <ul className="asideUl">
                 <li>
                     <a href="#1">
@@ -65,6 +65,6 @@ export const RightAside = () => {
             </ul>
             <hr className="asideHr" />
             <div className="quickly">내 바로가기</div>
-        </aside>
+        </Aside>
     )
 }
