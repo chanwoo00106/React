@@ -1,5 +1,5 @@
 import React from 'react';
-import { Aside } from './RightAsideStyle';
+import { Aside } from './Style';
 import { faUserCircle, faUserFriends, faUsers, faTv, faHistory, faBookmark, faFlag, faCalendarCheck, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
