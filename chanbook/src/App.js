@@ -1,16 +1,15 @@
 import './App.css';
 import { Contents } from './components/Contents';
 import { Header } from './components/Header';
-import News from './components/News';
 import { RightAside } from './components/RightAside';
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <div className="header-wrap"></div>
       <RightAside />
       <Contents />
-      <News />
     </div>
   );
 }

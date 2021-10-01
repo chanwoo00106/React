@@ -7,7 +7,11 @@ export const HeaderS = styled.header`
     align-items: center;
     box-shadow: 0 5px 10px #DDDFE2;
     height: 70px;
+    width: 100%;
     padding: 0 10px;
+    position: fixed;
+    top: 0;
+
     .header-logo {
         position: relative;
         .logo-icon {
@@ -134,5 +138,119 @@ export const Aside = styled.aside`
         color: #65676B;
         font-weight: bold;
         font-size: 1.2rem;
+    }
+`;
+
+export const Content = styled.div`
+    margin: 30px 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+    .top {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        svg {
+            color: #C9CCD1;
+        }
+        input {
+            outline: none;
+            border-radius: 50px;
+            border: none;
+            background-color: #E4E6E9;
+            width: 100%;
+            height: 40px;
+            font-size: 1rem;
+        }
+        input:hover {
+            background-color: #D2D5D8;
+        }
+        input:not(:hover){
+            transition: .2s;
+        }
+        input::placeholder {
+            color: #656781;
+            padding-left: 20px;
+        }
+    }
+
+    hr {
+        width: 99%;
+        margin: 10px auto;
+        border: .1px solid #E4E6EB;
+    }
+
+    .bottom {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #087BEA;
+            width: 100%;
+            justify-content: center;
+            padding: 10px 0;
+            border-radius: 10px;
+        }
+        div:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        div:not(:hover){
+            transition: .2s;
+        }
+        div span {
+            color: #65676B;
+        }
+    }
+`;
+
+export const NewsS = styled.div`
+    margin: 30px 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+    .text {
+        margin: 10px 0;
+    }
+
+    .img img {
+        max-width: 100%;
+    }
+
+    .thumb-num {
+        margin: 10px 0;
+
+        svg {
+            color: #087BEA;
+            margin-right: 5px;
+        }
+    }
+    hr {
+        border: .1px solid #CED0D4;
+    }
+    .emoji {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        text-align: center;
+        margin: 5px 0;
+        gap: 5px;
+        div {
+            padding: 7px 0;
+            border-radius: 10px;
+        }
+        div:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        div:not(:hover) {
+            transition: .2s;
+        }
     }
 `;

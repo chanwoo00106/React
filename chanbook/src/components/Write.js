@@ -1,11 +1,11 @@
 import React from 'react';
 import { faUserCircle, faVideo, faImages, faGrin } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './Write.css'
+import { Content } from './Style';
 
 const Write = () => {
     return (
-        <div className="content">
+        <Content>
             <div className="top">
                 <FontAwesomeIcon icon={faUserCircle} size="3x" />
                 <input type="text" placeholder={`변찬우님, 무슨 생각을 하고 계신가요?`} />
@@ -25,7 +25,7 @@ const Write = () => {
                     <span>기분/활동</span>
                 </div>
             </div>
-        </div>
+        </Content>
     )
 }
 
