@@ -361,7 +361,7 @@ export const WhiteBg = styled.div`
     z-index: 10;
 `;
 
-export const Popup = styled.div`
+export const MainPopup = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
@@ -370,4 +370,76 @@ export const Popup = styled.div`
     min-width: 500px;
     background-color: #ffffff;
     border-radius: 10px;
+
+    .title {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        .exit {
+            position: absolute;
+            right: 10px;
+            background-color: rgba(225, 225, 225, .7);
+            padding: 5px;
+            border-radius: 50px;
+            svg {
+                height: 22px;
+            }
+            &:hover {
+                background-color: rgba(225, 225, 225, 1);
+            }
+            &:not(:hover) {
+                transition: .2s;
+            }
+        }
+    }
+    hr {
+        border: .1px solid #CED0D4;
+    }
+    .writePadding {
+        padding: 10px;
+        width: 100%;
+        height: 280px;
+
+        .user {
+            display: flex;
+            padding-bottom: 20px;
+            align-items: center;
+            gap: 10px;
+            
+            svg {
+                color: #C9CCD1;
+            }
+            select {
+                border: none;
+                border-radius: 5px;
+                background-color: rgba(225, 225, 225, .7);
+                padding: 2px;
+            }
+        }
+        textarea {
+            resize: none;
+            outline: none;
+            font-size: 1.4rem;
+            font-weight: bold;
+            width: 100%;
+            height: 100%;
+            font-family: 'Segoe UI Historic';
+            border: none;
+        }
+        .add {
+            border: 1px solid #CED0D4;
+            padding: 15px;
+            border-radius: 10px;
+            font-family: inherit;
+        }
+        .submit {
+            margin-top: 15px;
+            width: 100%;
+            height: 30px;
+            border: none;
+            background-color: #1877F2;
+            color: #ffffff;
+            border-radius: 10px;
+        }
+    }
 `;
