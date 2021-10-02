@@ -2,26 +2,37 @@ import React from 'react';
 import { NewsS } from './Style';
 import { faUserCircle, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { numToKorean, FormatOptions } from 'num-to-korean';
 import { Emoji } from './Emoji';
 
-const News = () => {
+const News = ({ name, time, text, img, userImg, like }) => {
     return (
         <NewsS>
             <div className="user">
-                <FontAwesomeIcon className="userCircle" icon={faUserCircle} size="3x" />
+                {userImg ? (
+                    <FontAwesomeIcon className="userCircle" icon={faUserCircle} size="3x" />
+                ) : (
+                    <div></div>
+                )}
                 <span className="information">
-                    <div className="name">최형우</div>
-                    <div className="time">3시간 전</div>
+                    <div className="name">{name}</div>
+                    <div className="time">{time}시간 전</div>
                 </span>
             </div>
-            <div className="text">React Native will rule the world</div>
-            <div className="img">
-                <img src="https://media.vlpt.us/images/koreanhole/post/30323257-52bd-4357-8183-9e8084581caf/thumb.png" alt="contents_image" />
-            </div>
+            <div className="text">{text}</div>
+            {img && img !== 'img' ? (
+                <div className="img">
+                    <img src={img} alt="contents_image" />
+                </div>
+            ) : (
+                <div className="img">
+                    <img src="../img/swift.png" alt="swift_img" />
+                </div>
+            )}
 
             <div className="thumb-num">
                 <FontAwesomeIcon icon={faThumbsUp} size="1x" />
-                <span>11억</span>
+                <span>{numToKorean(like, FormatOptions.MIXED)}</span>
             </div>
             <hr />
             <Emoji />
