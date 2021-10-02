@@ -3,14 +3,20 @@ import { UserS } from './Style'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export const User = () => {
+export const User = ({ user }) => {
     return (
         <UserS>
             <span className="userImg">
-                <FontAwesomeIcon icon={faUserCircle} size="2x" />
+                {user.userImg ? (
+                    <span className="img">
+                        <img src={user.userImg} alt="user_image" />
+                    </span>
+                ) : (
+                    <FontAwesomeIcon icon={faUserCircle} size="2x" />
+                )}
                 <span className="greenCircle"></span>
             </span>
-            <p className="name">최형우</p>
+            <p className="name">{user.name}</p>
         </UserS>
     )
 }

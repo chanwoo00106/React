@@ -342,6 +342,13 @@ export const UserS = styled.div`
     .userImg {
         position: relative;
         margin-right: 10px;
+
+        .img img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+        }
+
         svg {
             color: #C9CCD1;
         }

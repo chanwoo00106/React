@@ -1,6 +1,7 @@
 import React from 'react';
 import { MessageDiv } from './Style';
 import { User } from './User';
+import data from '../db/data.json';
 
 
 export const Message = () => {
@@ -12,7 +13,9 @@ export const Message = () => {
             <hr />
             <div className="Messenger">
                 <h3>연락처</h3>
-                <User />
+                {data.user.map(u => (
+                    <User user={u} />
+                ))}
             </div>
         </MessageDiv>
     )
