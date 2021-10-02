@@ -220,6 +220,16 @@ export const NewsS = styled.div`
     .user {
         display: flex;
         gap: 10px;
+        .userImg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50px;
+            }
+        }
         .name {
             font-weight: bold;
         }
@@ -236,7 +246,7 @@ export const NewsS = styled.div`
     .img {
         display: flex;
         justify-content: center;
-        
+
         img {
             max-width: 100%;
         }

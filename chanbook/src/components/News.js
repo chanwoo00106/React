@@ -10,9 +10,11 @@ const News = ({ name, time, text, img, userImg, like }) => {
         <NewsS>
             <div className="user">
                 {userImg ? (
-                    <FontAwesomeIcon className="userCircle" icon={faUserCircle} size="3x" />
+                    <span className="userImg">
+                        <img src={userImg} alt="userImg" />
+                    </span>
                 ) : (
-                    <div></div>
+                    <FontAwesomeIcon className="userCircle" icon={faUserCircle} size="3x" />
                 )}
                 <span className="information">
                     <div className="name">{name}</div>
