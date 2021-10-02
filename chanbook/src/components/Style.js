@@ -350,3 +350,13 @@ export const UserS = styled.div`
         transition: .2s;
     }
 `;
+
+export const WhiteBg = styled.div`
+    background-color: rgba(225, 225, 225, .5);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+`;
