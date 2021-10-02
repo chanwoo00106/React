@@ -20,13 +20,9 @@ const News = ({ name, time, text, img, userImg, like }) => {
                 </span>
             </div>
             <div className="text">{text}</div>
-            {img && img !== 'img' ? (
+            {img && (
                 <div className="img">
                     <img src={img} alt="contents_image" />
-                </div>
-            ) : (
-                <div className="img">
-                    <img src="../img/swift.png" alt="swift_img" />
                 </div>
             )}
 

@@ -233,8 +233,13 @@ export const NewsS = styled.div`
         margin: 10px 0;
     }
 
-    .img img {
-        max-width: 100%;
+    .img {
+        display: flex;
+        justify-content: center;
+        
+        img {
+            max-width: 100%;
+        }
     }
 
     .thumb-num {

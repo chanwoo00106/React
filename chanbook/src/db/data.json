@@ -27,7 +27,7 @@
             "minute": 40,
             "day": "Sat Oct 02 2021",
             "text": "I hate Swift",
-            "img": "img",
+            "img": "https://fuckingswiftui.com/twitter-card.png",
             "like": 460000000
         }
     ]
