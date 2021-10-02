@@ -352,11 +352,22 @@ export const UserS = styled.div`
 `;
 
 export const WhiteBg = styled.div`
-    background-color: rgba(225, 225, 225, .5);
+    background-color: rgba(225, 225, 225, .7);
     width: 100vw;
     height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 10;
+`;
+
+export const Popup = styled.div`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 500px;
+    min-width: 500px;
+    background-color: #ffffff;
+    border-radius: 10px;
 `;
