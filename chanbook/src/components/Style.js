@@ -292,3 +292,61 @@ export const NewsS = styled.div`
         }
     }
 `;
+
+export const MessageDiv = styled.div`
+    position: fixed;
+    right: 0;
+    width: 20%;
+    padding-right: 5px;
+    top: 70px;
+    padding-top: 10px;
+
+    .sponsored {
+        color: #727478;
+        padding: 15px 0;
+    }
+
+    hr {
+        width: 90%;
+        border: .1px solid #CED0D4;
+    }
+    .Messenger {
+        h3 {
+            margin-top: 10px;
+            padding: 10px 0;
+        }
+    }
+`;
+
+export const UserS = styled.div`
+    display: flex;
+    align-items: center;
+    padding: 10px 7px;
+    border-radius: 10px;
+
+    .userImg {
+        position: relative;
+        margin-right: 10px;
+        svg {
+            color: #C9CCD1;
+        }
+        .greenCircle {
+            width: 10px;
+            height: 10px;
+            background-color: #31A24C;
+            border-radius: 50px;
+            position: absolute;
+            right: 1px;
+            bottom: 1px;
+        }
+    }
+    p {
+        color: #050505;
+    }
+    &:hover {
+        background-color: rgba(0,0,0,.08);
+    }
+    &:not(:hover) {
+        transition: .2s;
+    }
+`;
