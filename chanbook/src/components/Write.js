@@ -3,12 +3,12 @@ import { faUserCircle, faVideo, faImages, faGrin } from '@fortawesome/free-solid
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Content } from './Style';
 
-const Write = () => {
+const Write = ({ onClick }) => {
     return (
         <Content>
             <div className="top">
                 <FontAwesomeIcon icon={faUserCircle} size="3x" />
-                <input type="text" placeholder={`변찬우님, 무슨 생각을 하고 계신가요?`} />
+                <input onClick={onClick} type="text" placeholder={`변찬우님, 무슨 생각을 하고 계신가요?`} />
             </div>
             <hr />
             <div className="bottom">

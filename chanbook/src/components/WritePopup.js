@@ -3,14 +3,14 @@ import { WhiteBg, MainPopup } from './Style'
 import { faEllipsisH, faImages, faLaugh, faMapMarkerAlt, faMicrophone, faTimes, faUserCircle, faUserTag } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export const WritePopup = () => {
+export const WritePopup = ({ onClick }) => {
     return (
-        <WhiteBg>
+        <WhiteBg onClick={onClick}>
             <MainPopup>
                 <div className="title">
                     <h2>게시물 만들기</h2>
                     <span className="exit">
-                        <FontAwesomeIcon icon={faTimes} size="2x" />
+                        <FontAwesomeIcon icon={faTimes} size="2x" onClick={onClick} />
                     </span>
                 </div>
                 <hr />

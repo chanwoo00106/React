@@ -422,13 +422,13 @@ export const MainPopup = styled.div`
             font-size: 1.4rem;
             font-weight: bold;
             width: 100%;
-            height: 100%;
+            height: 95%;
             font-family: 'Segoe UI Historic';
             border: none;
         }
         .add {
             border: 1px solid #CED0D4;
-            padding: 15px;
+            padding: 10px;
             border-radius: 10px;
             font-family: inherit;
             display: flex;
@@ -445,6 +445,12 @@ export const MainPopup = styled.div`
                     svg {
                         display: block;
                     }
+                    &:hover {
+                        background-color: rgba(225, 225, 225, .9);
+                    }
+                    &:not(:hover) {
+                        transition: .2s;
+                    }
                 }
             }
         }
@@ -456,6 +462,13 @@ export const MainPopup = styled.div`
             background-color: #1877F2;
             color: #ffffff;
             border-radius: 10px;
+
+            &:hover {
+                background-color: #1866E3;
+            }
+            &:not(:hover) {
+                transition: .2s;
+            }
         }
     }
 `;

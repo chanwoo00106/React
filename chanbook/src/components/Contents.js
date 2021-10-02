@@ -2,10 +2,10 @@ import React from 'react';
 import Write from './Write';
 import News from './News';
 
-export const Contents = () => {
+export const Contents = ({ onClick }) => {
     return (
         <div className="contents">
-            <Write />
+            <Write onClick={onClick} />
             <News />
         </div>
     )
