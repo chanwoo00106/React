@@ -1,6 +1,6 @@
 import React from 'react'
 import { WhiteBg, MainPopup } from './Style'
-import { faTimes, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisH, faImages, faLaugh, faMapMarkerAlt, faMicrophone, faTimes, faUserCircle, faUserTag } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const WritePopup = () => {
@@ -28,7 +28,12 @@ export const WritePopup = () => {
                     <div className="add">
                         <span>게시물에 추가</span>
                         <div className="icons">
-
+                            <span><FontAwesomeIcon style={{ color: "#45BD62" }} size="lg" icon={faImages} /></span>
+                            <span><FontAwesomeIcon style={{ color: "#1877F2" }} size="lg" icon={faUserTag} /></span>
+                            <span><FontAwesomeIcon style={{ color: "#F9CD65" }} size="lg" icon={faLaugh} /></span>
+                            <span><FontAwesomeIcon style={{ color: "#F5533D" }} size="lg" icon={faMapMarkerAlt} /></span>
+                            <span><FontAwesomeIcon style={{ color: "#F13957" }} size="lg" icon={faMicrophone} /></span>
+                            <span><FontAwesomeIcon style={{ color: "#606770" }} size="lg" icon={faEllipsisH} /></span>
                         </div>
                     </div>
                     <button className="submit">게시</button>

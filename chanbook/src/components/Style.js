@@ -431,6 +431,22 @@ export const MainPopup = styled.div`
             padding: 15px;
             border-radius: 10px;
             font-family: inherit;
+            display: flex;
+            justify-content: space-between;
+
+            .icons {
+                gap: 10px;
+                display: flex;
+                span {
+                    border-radius: 50px;
+                    padding: 8px;
+                    background-color: rgba(225,225,225, .7);
+
+                    svg {
+                        display: block;
+                    }
+                }
+            }
         }
         .submit {
             margin-top: 15px;
