@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const WritePopup = ({ onClick }) => {
     return (
-        <WhiteBg onClick={onClick}>
+        <WhiteBg>
             <MainPopup>
                 <div className="title">
                     <h2>게시물 만들기</h2>
@@ -36,7 +36,7 @@ export const WritePopup = ({ onClick }) => {
                             <span><FontAwesomeIcon style={{ color: "#606770" }} size="lg" icon={faEllipsisH} /></span>
                         </div>
                     </div>
-                    <button className="submit">게시</button>
+                    <button onClick={onClick} className="submit">게시</button>
                 </div>
             </MainPopup>
         </WhiteBg>
