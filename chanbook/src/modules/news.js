@@ -14,9 +14,7 @@ export const addNews = ({name, text, imgUrl}) => ({
 });
 
 
-const initialState = {
-    ...data.write,
-}
+const initialState = [...data.write]
 
 function News(state=initialState, action) {
     switch (action.type) {
