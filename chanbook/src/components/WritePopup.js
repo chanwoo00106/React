@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const WritePopup = ({ onClick }) => {
     const [img, setImg] = useState();
+    const [text, setText] = useState();
 
     const AddFile = e => {
         const url = URL.createObjectURL(e.target.files[0]);
-        console.log(url);
         setImg(url);
     }
 
@@ -18,7 +18,7 @@ export const WritePopup = ({ onClick }) => {
                 <div className="title">
                     <h2>게시물 만들기</h2>
                     <span className="exit">
-                        <FontAwesomeIcon icon={faTimes} size="2x" onClick={onClick} />
+                        <FontAwesomeIcon icon={faTimes} size="2x" onClick={() => onClick} />
                     </span>
                 </div>
                 <hr />
@@ -32,7 +32,7 @@ export const WritePopup = ({ onClick }) => {
                             </select>
                         </div>
                     </div>
-                    <textarea placeholder={`변찬우님, 무슨 색각을 하고 계신가요?`}></textarea>
+                    <textarea onChange={e => setText(e.target.value)} placeholder={`변찬우님, 무슨 색각을 하고 계신가요?`}></textarea>
                     {img && (
                         <>
                             <img src={img} alt="image_sample" />
@@ -54,7 +54,7 @@ export const WritePopup = ({ onClick }) => {
                             <span><FontAwesomeIcon style={{ color: "#606770" }} size="lg" icon={faEllipsisH} /></span>
                         </div>
                     </div>
-                    <button onClick={onClick} className="submit">게시</button>
+                    <button onClick={() => onClick("최형우", text, img)} className="submit">게시</button>
                 </div>
             </MainPopup>
         </WhiteBg>
