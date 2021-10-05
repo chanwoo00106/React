@@ -1,12 +1,15 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import {Like} from '../modules/news'
 import { faThumbsUp } from '@fortawesome/free-regular-svg-icons';
 import { faComment, faShare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export const Emoji = ({onLike, id}) => {
+export const Emoji = ({id}) => {
+    const dispatch = useDispatch();
     return (
         <div className="emoji">
-            <div onClick={() => onLike(id)}>
+            <div onClick={() => dispatch(Like(id))}>
             <FontAwesomeIcon icon={faThumbsUp} size="lg" />
                 <span>좋아요</span>
             </div>

@@ -29,7 +29,7 @@ function News(state=initialState, action) {
         
         case LIKE:
             const like = state.find(i => i.id === action.id);
-            state.filter(i => i.id === action.id);
+            state.filter(i => i.id !== action.id);
             like.like++;
             state.concat(like);
             return state;
