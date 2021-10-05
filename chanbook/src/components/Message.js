@@ -13,8 +13,8 @@ export const Message = () => {
             <hr />
             <div className="Messenger">
                 <h3>연락처</h3>
-                {data.user.map(u => (
-                    <User user={u} />
+                {data.user.map((u, i) => (
+                    <User user={u} key={i} />
                 ))}
             </div>
         </MessageDiv>

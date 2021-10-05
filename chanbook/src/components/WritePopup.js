@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { WhiteBg, MainPopup } from './Style'
 import { faEllipsisH, faImages, faLaugh, faMapMarkerAlt, faMicrophone, faTimes, faUserCircle, faUserTag } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const WritePopup = ({ onClick }) => {
+    const [img, setImg] = useState();
+
+    const AddFile = e => {
+        const url = URL.createObjectURL(e.target.files[0]);
+        console.log(url);
+        setImg(url);
+    }
+
     return (
         <WhiteBg>
             <MainPopup>
@@ -25,10 +33,20 @@ export const WritePopup = ({ onClick }) => {
                         </div>
                     </div>
                     <textarea placeholder={`변찬우님, 무슨 색각을 하고 계신가요?`}></textarea>
+                    {img && (
+                        <>
+                            <img src={img} alt="image_sample" />
+                        </>
+                    )}
                     <div className="add">
                         <span>게시물에 추가</span>
                         <div className="icons">
-                            <span><FontAwesomeIcon style={{ color: "#45BD62" }} size="lg" icon={faImages} /></span>
+                            <span>
+                                <input id="file" type="file" style={{display: 'none'}} onChange={AddFile} />
+                                <label for="file">
+                                    <FontAwesomeIcon style={{ color: "#45BD62" }} size="lg" icon={faImages} />
+                                </label>
+                            </span>
                             <span><FontAwesomeIcon style={{ color: "#1877F2" }} size="lg" icon={faUserTag} /></span>
                             <span><FontAwesomeIcon style={{ color: "#F9CD65" }} size="lg" icon={faLaugh} /></span>
                             <span><FontAwesomeIcon style={{ color: "#F5533D" }} size="lg" icon={faMapMarkerAlt} /></span>

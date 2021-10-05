@@ -5,13 +5,16 @@ import { Header } from './components/Header';
 import { RightAside } from './components/RightAside';
 import { Message } from './components/Message';
 import { WritePopup } from './components/WritePopup';
+import { useDispatch } from 'react-redux';
 
 function App() {
+  const dispatch = useDispatch();
   const [toggle, setToggle] = useState(false);
   const onClick = () => {
     setToggle(!toggle);
     if (toggle) document.querySelector('body').style.overflow = 'visible';
-    else document.querySelector('body').style.overflow = 'hidden'
+    else document.querySelector('body').style.overflow = 'hidden';
+    dispatch({})
   }
 
   return (

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 export const Contents = ({ onClick }) => {
     const data = useSelector(data => data.News);
-    console.log(data)
+
     return (
         <div className="contents">
             <Write onClick={onClick} />

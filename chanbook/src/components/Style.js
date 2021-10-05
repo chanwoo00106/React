@@ -392,6 +392,7 @@ export const MainPopup = styled.div`
     min-width: 500px;
     background-color: #ffffff;
     border-radius: 10px;
+    overflow: auto;
 
     .title {
         display: flex;
@@ -444,7 +445,6 @@ export const MainPopup = styled.div`
             font-size: 1.4rem;
             font-weight: bold;
             width: 100%;
-            height: 95%;
             font-family: 'Segoe UI Historic';
             border: none;
         }
@@ -479,11 +479,12 @@ export const MainPopup = styled.div`
         .submit {
             margin-top: 15px;
             width: 100%;
-            height: 30px;
+            height: 40px;
             border: none;
             background-color: #1877F2;
             color: #ffffff;
             border-radius: 10px;
+            margin-bottom: 20px;
 
             &:hover {
                 background-color: #1866E3;
