@@ -1,6 +1,7 @@
 {
     "write": [
         {
+            "id": 0,
             "name": "최형우",
             "userImg": "https://ih1.redbubble.net/image.1359065021.9702/raf,750x1000,075,t,000000:44f0b734a5.jpg",
             "houre": 15,
@@ -11,6 +12,7 @@
             "like": 1100000000
         },
         {
+            "id": 1,
             "name": "최형우",
             "userImg": "https://ih1.redbubble.net/image.1359065021.9702/raf,750x1000,075,t,000000:44f0b734a5.jpg",
             "houre": 15,
@@ -21,6 +23,7 @@
             "like": 210000000
         },
         {
+            "id": 2,
             "name": "최형우",
             "userImg": "https://ih1.redbubble.net/image.1359065021.9702/raf,750x1000,075,t,000000:44f0b734a5.jpg",
             "houre": 15,
@@ -31,6 +34,7 @@
             "like": 460000000
         },
         {
+            "id": 3,
             "name": "최준성",
             "userImg": "https://scontent-ssn1-1.xx.fbcdn.net/v/t1.18169-9/11064707_700234366763695_2987382214527742257_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=HT1BEKjo3JQAX8IZK7m&tn=wkYsrE0-qwtzLPdp&_nc_ht=scontent-ssn1-1.xx&oh=760801f73596ce212d82e0b39ab84281&oe=617E49C2",
             "houre": 15,
@@ -41,6 +45,7 @@
             "like": 15
         },
         {
+            "id": 4,
             "name": "최준성",
             "userImg": "https://scontent-ssn1-1.xx.fbcdn.net/v/t1.18169-9/11064707_700234366763695_2987382214527742257_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=HT1BEKjo3JQAX8IZK7m&tn=wkYsrE0-qwtzLPdp&_nc_ht=scontent-ssn1-1.xx&oh=760801f73596ce212d82e0b39ab84281&oe=617E49C2",
             "houre": 15,

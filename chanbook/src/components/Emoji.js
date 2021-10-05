@@ -3,11 +3,11 @@ import { faThumbsUp } from '@fortawesome/free-regular-svg-icons';
 import { faComment, faShare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export const Emoji = () => {
+export const Emoji = ({onLike, id}) => {
     return (
         <div className="emoji">
-            <div>
-                <FontAwesomeIcon icon={faThumbsUp} size="lg" />
+            <div onClick={() => onLike(id)}>
+            <FontAwesomeIcon icon={faThumbsUp} size="lg" />
                 <span>좋아요</span>
             </div>
             <div>
