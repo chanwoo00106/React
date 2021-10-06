@@ -4,7 +4,7 @@ import News from './News';
 import { useSelector } from 'react-redux';
 
 export const Contents = ({ onClick }) => {
-    const { data } = useSelector(data => ({data: data.News}));
+    const { data } = useSelector(data => ({data: data.News.write}));
 
     return (
         <div className="contents">

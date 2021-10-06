@@ -1,4 +1,5 @@
 import data from '../db/data.json'
+import produce from 'immer';
 
 const ADDNEWS = 'NEWS/ADD';
 const LIKE = 'NEWS/LIKE';
@@ -18,30 +19,28 @@ export const Like = id => ({type: LIKE, id});
 export const Toggle = () => ({type: TOGGLE});
 
 
-const initialState = [...data.write]
+const initialState = {...data}
 
 function News(state=initialState, action) {
     switch (action.type) {
         case ADDNEWS:
-            state.push({
-                ...action.payload,
-                houre: new Date().getHours(),
-                like: 0,
+            return produce(state, draft => {
+                draft.write.push({
+                    ...action.payload,
+                    houre: new Date().getHours(),
+                    like: 0,
+                });
             });
-            return state;
         
         case LIKE:
-            const like = state.find(i => i.id === action.id);
-            state.filter(i => i.id !== action.id);
-            like.like++;
-            state.concat(like);
-            return state;
+            return produce(state, draft => {
+                draft.write[draft.write.findIndex(action.id)].like += 1;
+            });
 
         case TOGGLE:
-            return {
-                ...state,
-                toggle: !state.toggle
-            }
+            return produce(state, draft => {
+                draft.toggle = !draft.toggle;
+            })
         default: return state;
     }
 }

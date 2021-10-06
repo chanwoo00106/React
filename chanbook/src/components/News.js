@@ -11,7 +11,7 @@ import {Like} from '../modules/news'
 const News = ({ id, name, time, text, img, userImg }) => {
     const dispatch = useDispatch();
     const [like, setLike] = useState( useSelector(state => {
-        const result = state.News.find(i => i.id === id);
+        const result = state.News.write.find(i => i.id === id);
         return result.like
     }));
 
