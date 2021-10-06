@@ -27,7 +27,7 @@ function News(state=initialState, action) {
             return produce(state, draft => {
                 draft.write.push({
                     ...action.payload,
-                    houre: new Date().getHours(),
+                    day: String(new Date()),
                     like: 0,
                 });
             });

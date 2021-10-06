@@ -20,6 +20,23 @@ const News = ({ id, name, time, text, img, userImg }) => {
         setLike(like + 1);
     }
 
+    const timeCalc = time => {
+        const ms = new Date() - new Date(time);
+        return Math.floor(ms / (1000 * 60 * 60 * 24)) <= 0 ? (
+            Math.floor(ms / (1000 * 60 * 60) % 24) <= 0 ? (
+                Math.floor(ms / (1000 * 60) % 60) <= 0 ? (
+                    `${Math.floor((ms / 1000) % 60)}초 전`
+                ) : (
+                    `${Math.floor(ms / (1000 * 60) % 60)}분 전`
+                )
+            ) : (
+                `${Math.floor(ms / (1000 * 60 * 60) % 24)}시간 전`
+            )
+        ) : (
+            `${Math.floor(ms / (1000 * 60 * 60 * 24))}일 전`
+        )
+    }
+
 
     return (
         <NewsS>
@@ -33,7 +50,9 @@ const News = ({ id, name, time, text, img, userImg }) => {
                 )}
                 <span className="information">
                     <div className="name">{name}</div>
-                    <div className="time">{time}시간 전</div>
+                    <div className="time">
+                        {timeCalc(time)}
+                    </div>
                 </span>
             </div>
             <div className="text">{text}</div>

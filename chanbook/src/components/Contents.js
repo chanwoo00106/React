@@ -10,7 +10,7 @@ export const Contents = () => {
         <div className="contents">
             <Write />
             {data.map((d, i) => (
-                <News key={i} id={d.id} name={d.name} time={d.houre} text={d.text} img={d.img} userImg={d.userImg} like={d.like} />
+                <News key={i} id={d.id} name={d.name} time={d.day} text={d.text} img={d.img} userImg={d.userImg} like={d.like} />
             ))}
         </div>
     )

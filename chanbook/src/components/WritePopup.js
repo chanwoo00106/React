@@ -31,7 +31,7 @@ export const WritePopup = () => {
                 <div className="title">
                     <h2>게시물 만들기</h2>
                     <span className="exit">
-                        <FontAwesomeIcon icon={faTimes} size="2x" onClick={() => onClick} />
+                        <FontAwesomeIcon icon={faTimes} size="2x" onClick={onClick} />
                     </span>
                 </div>
                 <hr />

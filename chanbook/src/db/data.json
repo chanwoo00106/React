@@ -6,7 +6,7 @@
             "userImg": "https://ih1.redbubble.net/image.1359065021.9702/raf,750x1000,075,t,000000:44f0b734a5.jpg",
             "houre": 15,
             "minute": 0,
-            "day": "Sat Oct 02 2021",
+            "day": "Sun Oct 03 2021 00:00:00 GMT+0900 (한국 표준시)",
             "text": "React Native will rule the world",
             "img": "https://media.vlpt.us/images/koreanhole/post/30323257-52bd-4357-8183-9e8084581caf/thumb.png",
             "like": 1100000000
@@ -15,9 +15,7 @@
             "id": 1,
             "name": "최형우",
             "userImg": "https://ih1.redbubble.net/image.1359065021.9702/raf,750x1000,075,t,000000:44f0b734a5.jpg",
-            "houre": 15,
-            "minute": 30,
-            "day": "Sat Oct 02 2021",
+            "day": "Sun Oct 03 2021 00:00:00 GMT+0900 (한국 표준시)",
             "text": "I love JS",
             "img": "https://media.vlpt.us/images/hanblueblue/post/3a0b0464-a4f4-44b9-820a-d14e47f98eec/js.png",
             "like": 210000000
@@ -26,9 +24,7 @@
             "id": 2,
             "name": "최형우",
             "userImg": "https://ih1.redbubble.net/image.1359065021.9702/raf,750x1000,075,t,000000:44f0b734a5.jpg",
-            "houre": 15,
-            "minute": 40,
-            "day": "Sat Oct 02 2021",
+            "day": "Sun Oct 03 2021 00:00:00 GMT+0900 (한국 표준시)",
             "text": "I hate Swift",
             "img": "https://fuckingswiftui.com/twitter-card.png",
             "like": 460000000
@@ -37,9 +33,7 @@
             "id": 3,
             "name": "최준성",
             "userImg": "https://scontent-ssn1-1.xx.fbcdn.net/v/t1.18169-9/11064707_700234366763695_2987382214527742257_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=HT1BEKjo3JQAX8IZK7m&tn=wkYsrE0-qwtzLPdp&_nc_ht=scontent-ssn1-1.xx&oh=760801f73596ce212d82e0b39ab84281&oe=617E49C2",
-            "houre": 15,
-            "minute": 40,
-            "day": "Sat Oct 02 2021",
+            "day": "Sun Oct 03 2021 00:00:00 GMT+0900 (한국 표준시)",
             "text": "대리로 골드왔다!! ㄴㅇㅅ",
             "img": "https://cdn.imweb.me/thumbnail/20200923/2a05951bbf02b.png",
             "like": 15
@@ -48,9 +42,7 @@
             "id": 4,
             "name": "최준성",
             "userImg": "https://scontent-ssn1-1.xx.fbcdn.net/v/t1.18169-9/11064707_700234366763695_2987382214527742257_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=HT1BEKjo3JQAX8IZK7m&tn=wkYsrE0-qwtzLPdp&_nc_ht=scontent-ssn1-1.xx&oh=760801f73596ce212d82e0b39ab84281&oe=617E49C2",
-            "houre": 15,
-            "minute": 40,
-            "day": "Sat Oct 02 2021",
+            "day": "Sun Oct 03 2021 00:00:00 GMT+0900 (한국 표준시)",
             "text": "난 사실 루시안 ㅈㄴ 못하고 티모를 더 잘함, 티모 너무 귀엽네 ㅎㅎ",
             "img": "https://scontent-ssn1-1.xx.fbcdn.net/v/t1.18169-9/10366057_711668032226676_4682796952011373822_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=SkwO8nGlPSYAX-QL-aL&_nc_ht=scontent-ssn1-1.xx&oh=d99de1bb6f1ee83d24886adee84f26f5&oe=617EE08B",
             "like": 70
@@ -71,15 +63,15 @@
         },
         {
             "name": "오종진",
-            "userImg": "https://lh3.googleusercontent.com/proxy/Ep4Jjiz8_Xbf6qvt_8UBxNalRVQAUSDUNP2nMXwG0-GuAMRBXy92wVAfyy7EtjJ0wJnmtsMjlkZsB2JQarD41NqbqrBJwjjebAhVBB8O3IG7YhaMTiIyQgq2ShyQxE1j2c4zOQuO-acW6BXOsoo0HdT5CSk"
+            "userImg": "https://lh3.googleusercontent.com/proxy/UoWstAANnPgJVNzoVCfTNDlW1zpQDKu7aSDZHf6vbzLZd76gK3veCplohBzocCECbibEoYNyqKjwcezvs83K2QfeCHRD6PWijW-eOng"
         },
         {
             "name": "임준화",
-            "userImg": "https://lh3.googleusercontent.com/proxy/Ep4Jjiz8_Xbf6qvt_8UBxNalRVQAUSDUNP2nMXwG0-GuAMRBXy92wVAfyy7EtjJ0wJnmtsMjlkZsB2JQarD41NqbqrBJwjjebAhVBB8O3IG7YhaMTiIyQgq2ShyQxE1j2c4zOQuO-acW6BXOsoo0HdT5CSk"
+            "userImg": "https://lh3.googleusercontent.com/proxy/UoWstAANnPgJVNzoVCfTNDlW1zpQDKu7aSDZHf6vbzLZd76gK3veCplohBzocCECbibEoYNyqKjwcezvs83K2QfeCHRD6PWijW-eOng"
         },
         {
             "name": "윤지빈",
-            "userImg": "https://lh3.googleusercontent.com/proxy/Ep4Jjiz8_Xbf6qvt_8UBxNalRVQAUSDUNP2nMXwG0-GuAMRBXy92wVAfyy7EtjJ0wJnmtsMjlkZsB2JQarD41NqbqrBJwjjebAhVBB8O3IG7YhaMTiIyQgq2ShyQxE1j2c4zOQuO-acW6BXOsoo0HdT5CSk"
+            "userImg": "https://lh3.googleusercontent.com/proxy/UoWstAANnPgJVNzoVCfTNDlW1zpQDKu7aSDZHf6vbzLZd76gK3veCplohBzocCECbibEoYNyqKjwcezvs83K2QfeCHRD6PWijW-eOng"
         }
     ],
     "toggle": false
