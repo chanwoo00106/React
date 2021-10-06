@@ -2,17 +2,20 @@ import data from '../db/data.json'
 
 const ADDNEWS = 'NEWS/ADD';
 const LIKE = 'NEWS/LIKE';
+const TOGGLE = 'NEWS/TOGGLE';
 
-export const addNews = (name, text, imgUrl) => ({
+export const addNews = (name, text, imgUrl, userImg) => ({
     type: ADDNEWS,
     payload: {
         name,
         text,
         img: imgUrl,
+        userImg
     }
 });
 
 export const Like = id => ({type: LIKE, id});
+export const Toggle = () => ({type: TOGGLE});
 
 
 const initialState = [...data.write]
@@ -33,6 +36,12 @@ function News(state=initialState, action) {
             like.like++;
             state.concat(like);
             return state;
+
+        case TOGGLE:
+            return {
+                ...state,
+                toggle: !state.toggle
+            }
         default: return state;
     }
 }

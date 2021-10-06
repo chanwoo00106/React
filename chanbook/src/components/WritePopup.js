@@ -54,7 +54,7 @@ export const WritePopup = ({ onClick }) => {
                             <span><FontAwesomeIcon style={{ color: "#606770" }} size="lg" icon={faEllipsisH} /></span>
                         </div>
                     </div>
-                    <button onClick={() => onClick("최형우", text, img)} className="submit">게시</button>
+                    <button onClick={() => onClick("최형우", text, img, "https://ih1.redbubble.net/image.1359065021.9702/raf,750x1000,075,t,000000:44f0b734a5.jpg")} className="submit">게시</button>
                 </div>
             </MainPopup>
         </WhiteBg>
