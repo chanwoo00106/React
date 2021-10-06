@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NewsS } from './Style';
 import { faUserCircle, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { numToKorean, FormatOptions } from 'num-to-korean';
 import { Emoji } from './Emoji';
+import { useSelector, useDispatch } from 'react-redux';
+import {Like} from '../modules/news'
 
-const News = ({ id, name, time, text, img, userImg, like }) => {
+
+const News = ({ id, name, time, text, img, userImg }) => {
+    const dispatch = useDispatch();
+    const [like, setLike] = useState( useSelector(state => {
+        const result = state.News.find(i => i.id === id);
+        return result.like
+    }));
+
+    const onClick = () => {
+        dispatch(Like);
+        setLike(like + 1);
+    }
 
 
     return (
@@ -35,7 +48,7 @@ const News = ({ id, name, time, text, img, userImg, like }) => {
                 <span>{numToKorean(like, FormatOptions.MIXED)}</span>
             </div>
             <hr />
-            <Emoji id={id} />
+            <Emoji onClick={onClick} />
             <hr />
             <div className="comment">
                 <FontAwesomeIcon className="userCircle" icon={faUserCircle} size="2x" />
