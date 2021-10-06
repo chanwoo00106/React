@@ -1,9 +1,23 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addNews, Toggle } from '../modules/news';
 import { faUserCircle, faVideo, faImages, faGrin } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Content } from './Style';
 
-const Write = ({ onClick }) => {
+const Write = () => {
+
+    const dispatch = useDispatch();
+    const {toggle} = useSelector(state => ({toggle: state.News.toggle}))
+    const onClick = (name, text, imgUrl, userImg) => {
+        if (text){
+           dispatch(addNews(name, text, imgUrl, userImg));
+        }
+        dispatch(Toggle())
+        if (toggle) document.querySelector('body').style.overflow = 'visible';
+        else document.querySelector('body').style.overflow = 'hidden';
+    }
+
     return (
         <Content>
             <div className="top">

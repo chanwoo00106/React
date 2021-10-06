@@ -1,15 +1,28 @@
 import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { addNews, Toggle } from '../modules/news';
 import { WhiteBg, MainPopup } from './Style'
 import { faEllipsisH, faImages, faLaugh, faMapMarkerAlt, faMicrophone, faTimes, faUserCircle, faUserTag } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export const WritePopup = ({ onClick }) => {
+export const WritePopup = () => {
     const [img, setImg] = useState();
     const [text, setText] = useState();
 
     const AddFile = e => {
         const url = URL.createObjectURL(e.target.files[0]);
         setImg(url);
+    }
+
+    const dispatch = useDispatch();
+    const {toggle} = useSelector(state => ({toggle: state.News.toggle}))
+    const onClick = (name, text, imgUrl, userImg) => {
+        if (text){
+            dispatch(addNews(name, text, imgUrl, userImg));
+        }
+        dispatch(Toggle())
+        if (toggle) document.querySelector('body').style.overflow = 'visible';
+        else document.querySelector('body').style.overflow = 'hidden';
     }
 
     return (
