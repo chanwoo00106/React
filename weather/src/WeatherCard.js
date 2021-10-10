@@ -1,16 +1,16 @@
 import React from 'react'
 
-const WeatherCard = () => {
+const WeatherCard = ({ data }) => {
     return (
         <div>
             <div className="card">
                 <div className="location">
-                    <h1 className="city">GangJin</h1>
-                    <h3 className="country">Ko</h3>
+                    <h1 className="city">{data.name}</h1>
+                    <h3 className="country">{data.country}</h3>
                 </div>
-                <img className="icon" src="" alt="Icon" />
-                <h1 className="temp">20 &deg;C</h1>
-                <h3 className="conditio" n>Clouds</h3>
+                <img className="icon" src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`} alt="Icon" />
+                <h1 className="temp">{Math.floor(data.main.temp - 273)} &deg;C</h1>
+                <h3 className="conditio">{data.weather[0].description}</h3>
             </div>
         </div>
     )
