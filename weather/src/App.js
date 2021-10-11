@@ -2,45 +2,31 @@ import './App.css';
 import axios from 'axios';
 import WeatherCard from './WeatherCard';
 import { useEffect, useState } from 'react';
-import produce from 'immer';
 import dotenv from "dotenv";
 dotenv.config();
 
-const initialState = [
-  {
-    id: 1,
-    state: 'Gwangju',
-    data: null
-  },
-  {
-    id: 2,
-    state: 'Seoul',
-    data: null
-  }
-]
+const stateList = ['Gwangju', 'Seoul']
 
 function App() {
-  const [data, setData] = useState(initialState);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setData(initialState);
+    setData([]);
     setError(null);
     setLoading(true);
     async function get() {
       try {
-        data.forEach(async (d, i) => {
-          console.log(d.state)
-          await axios.get(
-            `https://api.openweathermap.org/data/2.5/weather?q=${d.state}&appid=${process.env.REACT_APP_API_KEY}`
-          ).then(async response => {
-            console.log(response.data)
-            await setData(produce(data, draft => {
-              draft[i].data = response.data
-            }));
-            console.log(data);
-          })
+        stateList.forEach(async (state, i) => {
+          const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${state}&appid=${process.env.REACT_APP_API_KEY}`);
+          setData([
+            ...data,
+            {
+              id: i,
+              data: res.data,
+            }
+          ])
         })
       } catch (e) {
         setError(e);
@@ -53,7 +39,7 @@ function App() {
 
   if (loading) return <div>로딩중..</div>;
   else if (error) return <div>에러가 발생했습니다</div>;
-  else if (data[1].data === null || data[0].data === null) return null;
+  else if (data === []) return null;
 
   else {
     console.log(data)
