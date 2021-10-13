@@ -13,7 +13,6 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setData([]);
     setError(null);
     setLoading(true);
     async function get() {
@@ -21,11 +20,11 @@ function App() {
         stateList.forEach(async (state, i) => {
           const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${state}&appid=${process.env.REACT_APP_API_KEY}`);
           setData([
-            ...data,
             {
               id: i,
               data: res.data,
-            }
+            },
+            ...data
           ])
         })
       } catch (e) {
