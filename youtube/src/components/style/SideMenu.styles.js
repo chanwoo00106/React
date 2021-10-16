@@ -51,5 +51,9 @@ export const Wrapper = styled.aside`
     .comment {
         padding: 20px;
         color: #606060;
+        font-size: .8rem;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
     }
 `;

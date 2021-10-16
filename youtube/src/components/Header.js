@@ -7,11 +7,13 @@ import { Link } from 'react-router-dom';
 export const Header = () => {
     const [input, setInput] = useState();
 
-    const onChange = e =>
-        setInput(e.target.value);
-
     const onClick = () =>
         setInput("");
+
+    const onSubmit = e => {
+        e.preventDefault();
+        setInput(e.target[0].value)
+    }
 
     return (
         <Wrapper>
@@ -23,9 +25,9 @@ export const Header = () => {
                     </Link>
                 </div>
             </h1>
-            <form className="center">
+            <form className="center" onSubmit={onSubmit}>
                 <div className="input-wrap">
-                    <input placeholder="검색" value={input} onChange={onChange} />
+                    <input placeholder="검색" />
                     <FontAwesomeIcon icon={faKeyboard} size="1x" />
                     {input && <FontAwesomeIcon className="remove" onClick={onClick} icon={faTimes} size="1x" />}
                 </div>
@@ -36,10 +38,10 @@ export const Header = () => {
             </form>
             <div className="end">
                 <div className="buttons">
-                    <Link><FontAwesomeIcon icon={faVideo} size="lg" /></Link>
-                    <Link><FontAwesomeIcon icon={faTh} size="lg" /></Link>
-                    <Link><FontAwesomeIcon icon={faBell} size="lg" /></Link>
-                    <Link><FontAwesomeIcon icon={faUserCircle} size="2x" /></Link>
+                    <Link to="/"><FontAwesomeIcon icon={faVideo} size="lg" /></Link>
+                    <Link to="/"><FontAwesomeIcon icon={faTh} size="lg" /></Link>
+                    <Link to="/"><FontAwesomeIcon icon={faBell} size="lg" /></Link>
+                    <Link to="/"><FontAwesomeIcon icon={faUserCircle} size="2x" /></Link>
                 </div>
             </div>
         </Wrapper>

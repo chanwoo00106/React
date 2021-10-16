@@ -163,14 +163,20 @@ export const SideMenu = () => {
                 </li>
             </ul>
             <hr />
-            <p className="comment">
-                정보 보도자료 저작권 문의하기 크리에이터 광고 개발자<br />
-                약관 개인정보처리방침 정책 및 안전YouTube 작동의 원리 새로운 기능 테스트하기<br />
-                © 2021 Google LLC<br />
-                CEO: 선다 피차이<br />
-                주소: 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.<br />
-                전화: 080-822-1450(무료)
-            </p>
+            <div className="comment">
+                <div>
+                    정보 보도자료 저작권 문의하기 크리에이터 광고 개발자
+                </div>
+                <div>
+                    약관 개인정보처리방침 정책 및 안전<br /><b>YouTube</b> 작동의 원리 새로운 기능 테스트하기
+                </div>
+                <div>
+                    © 2021 Google LLC<br />
+                    CEO: 선다 피차이<br />
+                    주소: 1600 Amphitheatre Parkway,<br />Mountain View, CA 94043, USA.<br />
+                    전화: 080-822-1450(무료)
+                </div>
+            </div>
         </Wrapper>
     )
 }
