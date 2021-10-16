@@ -36,10 +36,10 @@ export const Header = () => {
             </form>
             <div className="end">
                 <div className="buttons">
-                    <FontAwesomeIcon icon={faVideo} size="lg" />
-                    <FontAwesomeIcon icon={faTh} size="lg" />
-                    <FontAwesomeIcon icon={faBell} size="lg" />
-                    <FontAwesomeIcon icon={faUserCircle} size="2x" />
+                    <Link><FontAwesomeIcon icon={faVideo} size="lg" /></Link>
+                    <Link><FontAwesomeIcon icon={faTh} size="lg" /></Link>
+                    <Link><FontAwesomeIcon icon={faBell} size="lg" /></Link>
+                    <Link><FontAwesomeIcon icon={faUserCircle} size="2x" /></Link>
                 </div>
             </div>
         </Wrapper>

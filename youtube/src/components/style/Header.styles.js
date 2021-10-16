@@ -5,8 +5,12 @@ export const Wrapper = styled.div`
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
+    background-color: #ffffffff;
 
     .start {
+        display: flex;
+        align-items: center;
+
         a {
             margin-left: 20px;
 
@@ -37,6 +41,7 @@ export const Wrapper = styled.div`
                 height: 100%;
                 border: none;
                 outline: none;
+                font-size: 1.1rem;
             }
         }
         .search-btn {
@@ -56,5 +61,9 @@ export const Wrapper = styled.div`
         display: flex;
         align-items: center;
         justify-content: space-around;
+
+        svg {
+            color: #030303;
+        }
     }
 `;
