@@ -2,10 +2,12 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     height: 6vh;
+    width: 100%;
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
     background-color: #ffffffff;
+    position: fixed;
 
     .start {
         display: flex;
@@ -66,4 +68,9 @@ export const Wrapper = styled.div`
             color: #030303;
         }
     }
+`;
+
+export const HeaderWrap = styled.div`
+    width: 100%;
+    height: 6vh;
 `;

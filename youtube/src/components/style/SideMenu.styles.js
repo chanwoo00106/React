@@ -6,6 +6,7 @@ export const Wrapper = styled.aside`
     background-color: #ffffffff;
     padding-right: 20px;
     overflow: auto;
+    position: fixed;
 
     li a {
         color: black;
@@ -56,4 +57,9 @@ export const Wrapper = styled.aside`
         display: flex;
         flex-direction: column;
     }
+`;
+
+export const SideWrap = styled.div`
+    height: 94vh;
+    width: 250px;
 `;
