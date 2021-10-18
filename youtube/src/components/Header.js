@@ -12,8 +12,10 @@ export const Header = () => {
 
     const onSubmit = e => {
         e.preventDefault();
-        setInput(e.target[0].value)
     }
+
+    const onChange = e =>
+        setInput(e.target.value)
 
     return (
         <>
@@ -28,7 +30,7 @@ export const Header = () => {
                 </h1>
                 <form className="center" onSubmit={onSubmit}>
                     <div className="input-wrap">
-                        <input placeholder="검색" />
+                        <input placeholder="검색" onChange={onChange} value={input} />
                         <FontAwesomeIcon icon={faKeyboard} size="1x" />
                         {input && <FontAwesomeIcon className="remove" onClick={onClick} icon={faTimes} size="1x" />}
                     </div>

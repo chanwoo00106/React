@@ -1,12 +1,11 @@
 import React from 'react';
 import { Category } from '../components/Category';
+import { ColumnContents } from '../components/ColumnContents';
 import { Header } from '../components/Header';
 import { SideMenu } from '../components/SideMenu';
 import { Grid, Contents } from './style';
-import {useParams} from 'react-router-dom';
 
 export const Quest = () => {
-    const { category } = useParams();
     
     return (
         <div>
@@ -14,11 +13,8 @@ export const Quest = () => {
             <Grid>
                 <SideMenu />
                 <Contents>
-                    {category ? (
-                        <Category category={category} />
-                    ) : (
-                        <Category />
-                    )}
+                    <Category />
+                    <ColumnContents />
                 </Contents>
             </Grid>
         </div>

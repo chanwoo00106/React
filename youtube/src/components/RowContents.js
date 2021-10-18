@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Wrapper } from './style/Contents.styles';
 
 
@@ -9,7 +9,7 @@ const sample = {
 }
 
 export const Contents = () => {
-    const [data, setData] = useState([sample, sample, sample, sample, sample, sample, sample, sample, sample, sample, sample, sample, sample, sample, sample,]);
+    const data = [sample, sample, sample, sample, sample, sample, sample, sample, sample, sample, sample, sample, sample, sample, sample,];
 
     return (
         <Wrapper>

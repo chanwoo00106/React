@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     gap: 5px;
+    margin-bottom: 30px;
     
     a {
         width: 100%;
