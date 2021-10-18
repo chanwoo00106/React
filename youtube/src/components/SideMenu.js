@@ -13,19 +13,19 @@ export const SideMenu = () => {
             <Wrapper>
                 <ul>
                     <li>
-                        <NavLink to="/" exact activeStyle={{background: "rgba(0,0,0,.4)"}}>
+                        <NavLink to="/" exact activeStyle={{background: "rgba(0,0,0,.3)"}}>
                             <FontAwesomeIcon icon={faHome} size="lg" />
                             <p>홈</p>
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/quest" activeStyle={{background: "rgba(0,0,0,.4)"}}>
+                        <NavLink to="/quest" activeStyle={{background: "rgba(0,0,0,.3)"}}>
                             <FontAwesomeIcon icon={faCompass} size="lg" />
                             <p>탐색</p>
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/">
+                        <NavLink to="/subscribe" activeStyle={{background: "rgba(0,0,0,.3)"}}>
                             <FontAwesomeIcon icon={faYoutube} size="lg" />
                             <p>구독</p>
                         </NavLink>
