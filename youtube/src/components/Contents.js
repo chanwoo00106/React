@@ -4,8 +4,8 @@ import { Wrapper } from './style/Contents.styles';
 
 const sample = {
     title: "[Today's Match] Group Stage DAY 4 | 2021 월드 챔피언십",
-    user: 'LCK',
-    img: "https://i.ytimg.com/vi/_-9WoR0X8WE/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBZJpWfCCalYgYxk3mk_Sa8k7QJrQ"
+    user: '신종기',
+    img: "https://www.next-t.co.kr/public/uploads/7b7f7e2138e29e598cd0cdf2c85ea08d.jpg"
 }
 
 export const Contents = () => {

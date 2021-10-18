@@ -23,4 +23,8 @@ export const Wrapper = styled.div`
             background-color: rgba(0,0,0,.1);
         }
     }
+
+    .select {
+        background-color: rgba(0,0,0,.3);
+    }
 `;

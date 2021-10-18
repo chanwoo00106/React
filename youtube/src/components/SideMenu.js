@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { SideWrap, Wrapper } from './style/SideMenu.styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faArchive, faHistory, faPhotoVideo, faChevronDown, faUserCircle, faFilm, faGamepad, faStream, faCog, faTrophy } from '@fortawesome/free-solid-svg-icons';
@@ -13,154 +13,154 @@ export const SideMenu = () => {
             <Wrapper>
                 <ul>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/" exact activeStyle={{background: "rgba(0,0,0,.4)"}}>
                             <FontAwesomeIcon icon={faHome} size="lg" />
                             <p>홈</p>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/quest">
+                        <NavLink to="/quest" activeStyle={{background: "rgba(0,0,0,.4)"}}>
                             <FontAwesomeIcon icon={faCompass} size="lg" />
                             <p>탐색</p>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             <FontAwesomeIcon icon={faYoutube} size="lg" />
                             <p>구독</p>
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
                 <hr />
                 <ul>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             <FontAwesomeIcon icon={faArchive} size="lg" />
                             <p>보관함</p>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             <FontAwesomeIcon icon={faHistory} size="lg" />
                             <p>시청 기록</p>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             <FontAwesomeIcon icon={faPhotoVideo} size="lg" />
                             <p>내 동영상</p>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             <FontAwesomeIcon icon={faClock} size="lg" />
                             <p>나중에 볼 동영상</p>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             <FontAwesomeIcon icon={faThumbsUp} size="lg" />
                             <p>좋아요 표시한 동영상</p>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             <FontAwesomeIcon icon={faChevronDown} size="lg" />
                             <p>더보기</p>
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
                 <hr />
                 <p className="sideTitle">구독</p>
                 <ul>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             <FontAwesomeIcon icon={faUserCircle} size="lg" />
-                            <p>수면재</p>
-                        </Link>
+                            <p>수면제</p>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             <FontAwesomeIcon icon={faUserCircle} size="lg" />
                             <p>baekteun</p>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             <FontAwesomeIcon icon={faUserCircle} size="lg" />
                             <p>기타</p>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             <FontAwesomeIcon icon={faUserCircle} size="lg" />
                             <p>등등</p>
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
                 <hr />
                 <p className="sideTitle"><b>YOUTUBE</b> 더보기</p>
                 <ul>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             <FontAwesomeIcon icon={faYoutube} size="lg" />
                             <p><b>YouTube Premium</b></p>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             <FontAwesomeIcon icon={faFilm} size="lg" />
                             <p>영화</p>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             <FontAwesomeIcon icon={faGamepad} size="lg" />
                             <p>게임</p>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             <FontAwesomeIcon icon={faStream} size="lg" />
                             <p>실시간</p>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             <FontAwesomeIcon icon={faLightbulb} size="lg" />
                             <p>학습</p>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             <FontAwesomeIcon icon={faTrophy} size="lg" />
                             <p>스포츠</p>
-                        </Link>
+                        </NavLink>
                     </li>
                     <hr />
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             <FontAwesomeIcon icon={faCog} size="lg" />
                             <p>설정</p>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             <FontAwesomeIcon icon={faQuestionCircle} size="lg" />
                             <p>신고 기록</p>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             <FontAwesomeIcon icon={faCommentAlt} size="lg" />
                             <p>고객센터</p>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             <FontAwesomeIcon icon={faFlag} size="lg" />
                             <p>의견 보내기</p>
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
                 <hr />
