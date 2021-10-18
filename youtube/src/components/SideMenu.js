@@ -19,7 +19,7 @@ export const SideMenu = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/">
+                        <Link to="/quest">
                             <FontAwesomeIcon icon={faCompass} size="lg" />
                             <p>탐색</p>
                         </Link>
