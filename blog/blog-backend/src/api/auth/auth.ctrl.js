@@ -63,8 +63,9 @@ export const login = async (ctx) => {
       maxAge: 1000 * 60 * 60 * 24 * 7, // 7일
       httpOnly: true,
     });
+    console.log('true');
   } catch (e) {
-    console.log('응 아니야');
+    console.log('false');
     ctx.throw(500, e);
   }
 };
