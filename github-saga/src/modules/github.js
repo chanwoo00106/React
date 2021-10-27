@@ -1,5 +1,6 @@
 export const GET = "GET";
 const SET = "SET";
+const STATUS = "STATUS";
 
 export const get = (id) => ({
   type: GET,
@@ -11,12 +12,26 @@ export const set = (data) => ({
   data,
 });
 
-const initialState = {};
+export const status = (code) => ({
+  type: STATUS,
+  code,
+});
+
+const initialState = { data: undefined, status: undefined };
 
 function github(state = initialState, action) {
   switch (action.type) {
     case SET:
-      return action.data;
+      return {
+        ...state,
+        data: action.data,
+      };
+    case STATUS:
+      return {
+        ...state,
+        status: action.code,
+        data: undefined,
+      };
     default:
       return state;
   }

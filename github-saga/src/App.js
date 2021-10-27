@@ -5,7 +5,7 @@ import { get } from "./modules/github";
 
 function App() {
   const dispatch = useDispatch();
-  const data = useSelector((state) => state);
+  const { data, status } = useSelector((state) => state);
   const [id, setId] = useState("");
 
   const onSubmit = (e) => {
@@ -16,13 +16,22 @@ function App() {
   return (
     <div className="App">
       <form onSubmit={onSubmit}>
-        <input type="text" value={id} onChange={(e) => setId(e.target.value)} />
+        <input
+          placeholder="type your github id"
+          type="text"
+          value={id}
+          onChange={(e) => setId(e.target.value)}
+        />
       </form>
-      {data && (
+      {data !== undefined ? (
         <>
           <h1>{data.login}</h1>
           <p>{data.name}</p>
           <p>{data.company ? data.company : ""}</p>
+        </>
+      ) : (
+        <>
+          <h1>{status ? `Error ${status}` : ""}</h1>
         </>
       )}
     </div>

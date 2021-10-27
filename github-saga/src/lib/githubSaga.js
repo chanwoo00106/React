@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from "redux-saga/effects";
-import { set } from "../modules/github";
+import { set, status } from "../modules/github";
 import { getGithub } from "./api";
 
 function* getSaga(action) {
@@ -7,7 +7,7 @@ function* getSaga(action) {
     const res = yield call(getGithub, action.id);
     yield put(set(res.data));
   } catch (e) {
-    console.log(e.response.status);
+    yield put(status(e.response.status));
   }
 }
 
