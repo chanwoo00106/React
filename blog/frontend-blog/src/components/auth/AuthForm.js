@@ -78,6 +78,8 @@ const AuthForm = ({ type, form, onChange, onSubmit }) => {
             name="passwordConfirm"
             placeholder="비밀번호 확인"
             type="password"
+            onChange={onChange}
+            value={form.passwordConfirm}
           />
         )}
         <ButtonWithMarginTop cyan fullWidth styled={{ marginTop: '1rem' }}>
