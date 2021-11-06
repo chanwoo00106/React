@@ -5,7 +5,7 @@ import AuthForm from '../components/auth/AuthForm';
 export default function LoginPage() {
   return (
     <AuthTemplate>
-      <AuthForm />
+      <AuthForm type="login" />
     </AuthTemplate>
   );
 }
