@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# React-router-dom v6
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+react-router-dom 이 업데이트 되어 정리를 한 번 해보겠다.
 
-## Available Scripts
+## 변경점
 
-In the project directory, you can run:
+- ### Switch가 사라짐
 
-### `yarn start`
+  이제부터는 Switch대신 Routes를 사용하게 됨
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- ### useHistory가 사라짐
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  대신에 useNavigate를 사용하게 됨<br>
+  ex) navigate("/")
 
-### `yarn test`
+- ### useRouteMatch가 사라짐
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  대신에 상대경로를 적는게 가능해 짐<br>
+  ex)
 
-### `yarn build`
+  ```jsx
+  참고로 about 앞에 /를 추가하면 진짜 about페이지로 가게됨
+  <Route path="about" element={<UserAbout />} />
+  <link to="about" />
+  ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ### Route에 children이나 component 대신 element
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  before
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  ```jsx
+  <Route path="/" component={Home} />
+  <Route path="/about">
+    <Home />
+  </Route>
+  ```
 
-### `yarn eject`
+  after
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  ```jsx
+  <Route path="/" element={<Home />} />
+  ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- ### Route는 Routes의 직속 자식이어야 함
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  말그대로 직속 자식이어야 함
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- ### Route에 exect Prop이 사라짐
 
-## Learn More
+  이제는 Route에 기본적으로 exect가 있고 exect를 없애려면 path에 \*을 붙이면 된다
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  ```jsx
+  <Route path="/about/*" element={<About />} />
+  ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- ### Optional URL 파라미터가 사라짐
 
-### Code Splitting
+  전에는 파라미터 뒤에 ?를 붙이면 됐지만<br>
+  지금은 Route를 두 번 쓰면 된다.<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  before
 
-### Analyzing the Bundle Size
+  ```jsx
+  <Route path="/optional/:value?" element={<Optional />}>
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  after
 
-### Making a Progressive Web App
+  ```jsx
+  <Route path="/optional/" element={<Optional />}>
+  <Route path="/optional/:value" element={<Optional />}>
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- ### 새로 추가된 서브 라우트 구현
 
-### Advanced Configuration
+  전에는 서브 라우트를 페이지 안에서 했다면 이제는<br>
+  Route의 children에 넣어주면 된다<br>
+  아래와 같이 작성하면 `/user/about` 로 들어갔을 때 UserAbout 컴포넌트가 열리게 됩니다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  ```jsx
+  <Route path="/user" element={<User />}>
+    <Route path="about" element={<UserAbout />} />
+  </Route>
+  ```
 
-### Deployment
+- ### NavLink에 activeStyle, activeClass가 사라짐
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+  before
 
-### `yarn build` fails to minify
+  ```jsx
+  <NavLink to="/Teemo" activeStyle={{ fontWeight: "bold" }}>
+    Captain Teemo
+  </NavLink>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  <NavLink to="/Teemo" activeClassName="bold">
+    Captain Teemo
+  </NavLink>
+  ```
+
+  after
+
+  ```jsx
+  <NavLink
+    to="/Teemo"
+    style={({ isActice }) => ({ fontWeight: isActive ? "bold" : "normal" })}
+  >
+    Captain Teemo
+  </NavLink>
+
+  <NavLink to="/Teemo" className={({isActive}) => (isAcive ? "bold" : "")}>
+    Captain Teemo
+  </NavLink>
+  ```
+
+대충 이번에 업데이트 된 것들을 정리해 봤는데 이것 말고도 많이 있다고 한다
