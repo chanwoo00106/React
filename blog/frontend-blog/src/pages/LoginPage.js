@@ -1,9 +1,11 @@
 import React from 'react';
+import AuthTemplate from '../components/auth/AuthTemplate';
+import AuthForm from '../components/auth/AuthForm';
 
 export default function LoginPage() {
   return (
-    <div>
-      <h1>로그인</h1>
-    </div>
+    <AuthTemplate>
+      <AuthForm />
+    </AuthTemplate>
   );
 }
