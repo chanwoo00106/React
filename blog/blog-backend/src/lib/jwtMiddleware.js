@@ -19,7 +19,6 @@ const jwtMiddleware = async (ctx, next) => {
         httpOnly: true,
       });
     }
-    console.log(decoded);
     return next();
   } catch (e) {
     // 토큰 검증 실패
