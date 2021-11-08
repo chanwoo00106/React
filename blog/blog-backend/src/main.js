@@ -21,16 +21,6 @@ router.use('/api', api.routes());
 app.use(bodyParser());
 app.use(jwtMiddleware);
 
-app.use(async (ctx, next) => {
-  ctx.set('Access-Control-Allow-Origin', '*');
-  ctx.set(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept',
-  );
-  ctx.set('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
-  await next();
-});
-
 router.get('/', (ctx) => {
   ctx.body = '홈';
 });

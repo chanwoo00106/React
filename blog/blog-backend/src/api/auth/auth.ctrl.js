@@ -7,7 +7,6 @@ export const register = async (ctx) => {
     password: Joi.string().required(),
   });
   const result = schema.validate(ctx.request.body);
-  console.log(ctx.request.body);
   if (result.error) {
     ctx.status = 400;
     ctx.body = result.error;
@@ -39,8 +38,6 @@ export const register = async (ctx) => {
 export const login = async (ctx) => {
   const { username, password } = ctx.request.body;
 
-  console.log(username, password);
-
   if (!username || !password) {
     ctx.status = 401; // Unauthorized
     return;
@@ -58,8 +55,8 @@ export const login = async (ctx) => {
       return;
     }
     ctx.body = user.serialize();
-
     const token = user.generateToken();
+    console.log(token);
     ctx.cookies.set('access_token', token, {
       maxAge: 1000 * 60 * 60 * 24 * 7, // 7일
       httpOnly: true,
