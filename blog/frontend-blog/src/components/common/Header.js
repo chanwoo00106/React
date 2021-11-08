@@ -45,7 +45,7 @@ const Header = ({ user }) => {
             REACTERS
           </Link>
           {user ? (
-            <div>
+            <div className="right">
               <UserInfo>{user.username}</UserInfo>
               <Button>로그아웃</Button>
             </div>
