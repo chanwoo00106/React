@@ -29,6 +29,17 @@ export default function Pagination({ page, lastPage, username, tag }) {
       >
         이전
       </Button>
+      <PageNumber>{page}</PageNumber>
+      <Button
+        disabled={page === 1}
+        to={
+          page === lastPage
+            ? undefined
+            : buildLink({ username, tag, page: page + 1 })
+        }
+      >
+        다음
+      </Button>
     </PaginationBlock>
   );
 }

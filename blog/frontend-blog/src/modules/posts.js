@@ -30,7 +30,7 @@ const posts = handleActions(
     [LIST_POST_SUCCESS]: (state, { payload: posts, meta: response }) => ({
       ...state,
       posts,
-      lastPage: parseInt(response.header['last-page'], 10),
+      lastPage: parseInt(response.headers['last-page'], 10),
     }),
     [LIST_POST_FAILURE]: (state, { payload: error }) => ({
       ...state,

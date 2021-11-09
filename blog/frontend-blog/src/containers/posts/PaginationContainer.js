@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 
 export default function PaginationContainer() {
-  const params = useParams();
+  const { username } = useParams();
   const { lastPage, posts, loading } = useSelector(({ posts, loading }) => ({
     lastPage: posts.lastPage,
     posts: posts.posts,
@@ -13,8 +13,6 @@ export default function PaginationContainer() {
   }));
 
   if (!posts || loading) return null;
-
-  const { username } = params.params;
 
   const { tag, page = 1 } = qs.parse(window.location.search, {
     ignoreQueryPrefix: true,
