@@ -4,6 +4,7 @@ import PostViewer from '../../components/post/PostViewer';
 import { useParams } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
+import PostActionButtons from '../../components/post/PostActionButtons';
 
 export default function PostViewerContainer() {
   const params = useParams();
@@ -22,5 +23,12 @@ export default function PostViewerContainer() {
     };
   }, [dispatch, postId]);
 
-  return <PostViewer post={post} loading={loading} error={error}></PostViewer>;
+  return (
+    <PostViewer
+      post={post}
+      loading={loading}
+      error={error}
+      actionButtons={<PostActionButtons />}
+    ></PostViewer>
+  );
 }
