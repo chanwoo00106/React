@@ -58,6 +58,13 @@ export default function Editor({ title, body, onChangeField }) {
     });
   }, [onChangeField]);
 
+  const mounted = useRef(false);
+  useEffect(() => {
+    if (mounted.current) return;
+    mounted.current = true;
+    quillInstance.current.root.innerHTML = body;
+  }, [body]);
+
   const onChangeTitle = (e) => {
     onChangeField({ key: 'title', value: e.target.value });
   };
@@ -70,7 +77,7 @@ export default function Editor({ title, body, onChangeField }) {
         value={title}
       />
       <QuillWrapper>
-        <div ref={quillElement}></div>
+        <div ref={quillElement} />
       </QuillWrapper>
     </EditorBlock>
   );

@@ -5,8 +5,11 @@ import { useParams } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import PostActionButtons from '../../components/post/PostActionButtons';
+import { setOriginalPost } from '../../modules/write';
+import { useNavigate } from 'react-router';
 
 export default function PostViewerContainer() {
+  const navigate = useNavigate();
   const params = useParams();
   const { postId } = params;
   const dispatch = useDispatch();
@@ -23,12 +26,17 @@ export default function PostViewerContainer() {
     };
   }, [dispatch, postId]);
 
+  const onEdit = () => {
+    dispatch(setOriginalPost(post));
+    navigate('/write');
+  };
+
   return (
     <PostViewer
       post={post}
       loading={loading}
       error={error}
-      actionButtons={<PostActionButtons />}
+      actionButtons={<PostActionButtons onEdit={onEdit} />}
     ></PostViewer>
   );
 }
