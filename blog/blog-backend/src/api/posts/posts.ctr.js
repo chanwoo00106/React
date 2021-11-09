@@ -6,7 +6,6 @@ const { ObjectId } = mongoose.Types;
 
 export const getPostById = async (ctx, next) => {
   const { id } = ctx.params;
-  console.log('hello');
   if (!ObjectId.isValid(id)) {
     ctx.status = 400;
     return;
