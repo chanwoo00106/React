@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import PostActionButtons from '../../components/post/PostActionButtons';
 import { setOriginalPost } from '../../modules/write';
 import { useNavigate } from 'react-router';
+import { removePost } from '../../lib/api/posts';
 
 export default function PostViewerContainer() {
   const navigate = useNavigate();
@@ -31,12 +32,21 @@ export default function PostViewerContainer() {
     navigate('/write');
   };
 
+  const onRemove = async () => {
+    try {
+      await removePost(postId);
+      navigate('/');
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <PostViewer
       post={post}
       loading={loading}
       error={error}
-      actionButtons={<PostActionButtons onEdit={onEdit} />}
+      actionButtons={<PostActionButtons onEdit={onEdit} onRemove={onRemove} />}
     ></PostViewer>
   );
 }
