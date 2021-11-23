@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router";
 import Prism from "prismjs";
 // 여기 css를 수정해서 코드 하이라이팅 커스텀 가능
 import "prismjs/themes/prism.css";
@@ -13,8 +14,15 @@ import "tui-color-picker/dist/tui-color-picker.css";
 import "@toast-ui/editor-plugin-color-syntax/dist/toastui-editor-plugin-color-syntax.css";
 import colorSyntax from "@toast-ui/editor-plugin-color-syntax";
 
-function Editor() {
+function Editor({ setData }) {
   const editorRef = useRef();
+  const navigate = useNavigate();
+
+  const onClick = () => {
+    setData(editorRef.current.getInstance().getHTML());
+    navigate("/");
+  };
+
   return (
     <>
       <MdEditor
@@ -26,9 +34,16 @@ function Editor() {
         height={`600px`}
       />
       <button
-        onClick={() => console.log(editorRef.current.getInstance().getHTML())}
+        style={{
+          padding: "10px 20px",
+          outline: "none",
+          border: "none",
+          borderRadius: "10px",
+          marginTop: "10px",
+        }}
+        onClick={onClick}
       >
-        click
+        submit
       </button>
     </>
   );
