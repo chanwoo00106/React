@@ -1,56 +1,35 @@
-import React from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+import React, { useRef } from "react";
+import Prism from "prismjs";
+// 여기 css를 수정해서 코드 하이라이팅 커스텀 가능
+import "prismjs/themes/prism.css";
 
-function Editor({ value, setValue }) {
-  const modules = {
-    toolbar: [
-      //[{ 'font': [] }],
-      [{ header: [1, 2, false] }],
-      ["bold", "italic", "underline", "strike", "blockquote"],
-      [
-        { list: "ordered" },
-        { list: "bullet" },
-        { indent: "-1" },
-        { indent: "+1" },
-      ],
-      ["link", "image"],
-      [{ align: [] }, { color: [] }, { background: [] }], // dropdown with defaults from theme
-      ["clean"],
-      ["code-block"],
-    ],
-  };
+import "@toast-ui/editor/dist/toastui-editor.css";
+import { Editor as MdEditor } from "@toast-ui/react-editor";
 
-  const formats = [
-    //'font',
-    "header",
-    "bold",
-    "italic",
-    "underline",
-    "strike",
-    "blockquote",
-    "list",
-    "bullet",
-    "indent",
-    "link",
-    "image",
-    "align",
-    "color",
-    "background",
-  ];
+import "@toast-ui/editor-plugin-code-syntax-highlight/dist/toastui-editor-plugin-code-syntax-highlight.css";
+import codeSyntaxHighlight from "@toast-ui/editor-plugin-code-syntax-highlight";
 
+import "tui-color-picker/dist/tui-color-picker.css";
+import "@toast-ui/editor-plugin-color-syntax/dist/toastui-editor-plugin-color-syntax.css";
+import colorSyntax from "@toast-ui/editor-plugin-color-syntax";
+
+function Editor() {
+  const editorRef = useRef();
   return (
     <>
-      <ReactQuill
-        style={{ height: "600px" }}
-        theme="snow"
-        modules={modules}
-        formats={formats}
-        value={value || ""}
-        onChange={(content, delta, source, editor) =>
-          setValue(editor.getHTML())
-        }
+      <MdEditor
+        previewStyle="vertical"
+        initialEditType="markdown"
+        initialValue="# 글 작성"
+        plugins={[colorSyntax, [codeSyntaxHighlight, { highlighter: Prism }]]}
+        ref={editorRef}
+        height={`600px`}
       />
+      <button
+        onClick={() => console.log(editorRef.current.getInstance().getHTML())}
+      >
+        click
+      </button>
     </>
   );
 }
