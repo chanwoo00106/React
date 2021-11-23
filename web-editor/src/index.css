@@ -14,4 +14,10 @@ code {
 
 .App {
   height: 650px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
 }
