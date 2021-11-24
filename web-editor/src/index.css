@@ -7,11 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 .App {
   height: 650px;
   width: 80%;
@@ -20,4 +15,10 @@ code {
 
 .title {
   text-align: center;
+}
+
+pre {
+  background-color: #f5f7f8;
+  padding: 20px;
+  border-radius: 10px;
 }

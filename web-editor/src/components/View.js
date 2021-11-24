@@ -19,7 +19,9 @@ function View({ data }) {
     }
     setUp();
   });
-  return <div dangerouslySetInnerHTML={{ __html: html }}></div>;
+  return (
+    <div className="code" dangerouslySetInnerHTML={{ __html: html }}></div>
+  );
 }
 
 export default View;
