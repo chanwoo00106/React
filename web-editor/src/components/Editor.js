@@ -14,12 +14,12 @@ import "tui-color-picker/dist/tui-color-picker.css";
 import "@toast-ui/editor-plugin-color-syntax/dist/toastui-editor-plugin-color-syntax.css";
 import colorSyntax from "@toast-ui/editor-plugin-color-syntax";
 
-function Editor({ setData }) {
+function Editor({ data, setData }) {
   const editorRef = useRef();
   const navigate = useNavigate();
 
   const onClick = () => {
-    setData(editorRef.current.getInstance().getHTML());
+    setData(editorRef.current.getInstance().getMarkdown());
     navigate("/");
   };
 
@@ -28,7 +28,7 @@ function Editor({ setData }) {
       <MdEditor
         previewStyle="vertical"
         initialEditType="markdown"
-        initialValue="# 글 작성"
+        initialValue={data}
         plugins={[colorSyntax, [codeSyntaxHighlight, { highlighter: Prism }]]}
         ref={editorRef}
         height={`600px`}
