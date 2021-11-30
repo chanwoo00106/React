@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSetRecoilState, useRecoilValue } from "recoil";
 import { todoListState } from "./Atom";
+import { add, remove } from "./todo";
 
 function App() {
   const [input, setInput] = useState("");
@@ -9,25 +10,11 @@ function App() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    setTodoList((oldTodoList) => ({
-      id: oldTodoList.id + 1,
-      todos: [
-        ...oldTodoList.todos,
-        {
-          id: oldTodoList.id,
-          todo: input,
-        },
-      ],
-    }));
+    add(input, setTodoList);
     setInput("");
   };
 
-  const onDoubleClick = (id) => {
-    setTodoList((oldTodoList) => ({
-      id: oldTodoList.id,
-      todos: [...oldTodoList.todos.filter((i) => i.id !== id)],
-    }));
-  };
+  const onDoubleClick = (id) => remove(id, setTodoList);
 
   return (
     <div className="App">
