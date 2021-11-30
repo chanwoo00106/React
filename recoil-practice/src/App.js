@@ -22,6 +22,13 @@ function App() {
     setInput("");
   };
 
+  const onDoubleClick = (id) => {
+    setTodoList((oldTodoList) => ({
+      id: oldTodoList.id,
+      todos: [...oldTodoList.todos.filter((i) => i.id !== id)],
+    }));
+  };
+
   return (
     <div className="App">
       <h1>Recoil 연습</h1>
@@ -35,7 +42,9 @@ function App() {
         <button>add</button>
         <ul>
           {todos.map((i) => (
-            <li key={i.id}>{i.todo}</li>
+            <li onDoubleClick={() => onDoubleClick(i.id)} key={i.id}>
+              {i.todo}
+            </li>
           ))}
         </ul>
       </form>
