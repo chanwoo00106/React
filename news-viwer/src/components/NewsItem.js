@@ -1,42 +1,42 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-export default function NewsItem({ article }) {
-  const NewsItemBlock = styled.div`
-    display: flex;
-    .thumbnail {
-      margin-right: 1rem;
-      img {
-        display: block;
-        width: 160px;
-        height: 100px;
-        object-fit: cover;
-      }
+const NewsItemBlock = styled.div`
+  display: flex;
+  .thumbnail {
+    margin-right: 1rem;
+    img {
+      display: block;
+      width: 160px;
+      height: 100px;
+      object-fit: cover;
     }
-    .contents {
-      h2 {
-        margin: 0;
-        a {
-          color: black;
-          text-decoration: none;
+  }
+  .contents {
+    h2 {
+      margin: 0;
+      a {
+        color: black;
+        text-decoration: none;
 
-          :hover {
-            text-decoration: underline;
-          }
+        :hover {
+          text-decoration: underline;
         }
       }
-      p {
-        margin: 0;
-        line-height: 1.5;
-        margin-top: 0.5rem;
-        white-space: normal;
-      }
     }
-    & {
-      margin-top: 3rem;
+    p {
+      margin: 0;
+      line-height: 1.5;
+      margin-top: 0.5rem;
+      white-space: normal;
     }
-  `;
+  }
+  & {
+    margin-top: 3rem;
+  }
+`;
 
+export default function NewsItem({ article }) {
   const { title, description, url, urlToImage } = article;
 
   return (

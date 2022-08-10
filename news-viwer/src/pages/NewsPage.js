@@ -1,15 +1,18 @@
-import React from 'react'
-import Categories from '../components/Categories'
-import NewsList from '../components/NewsList'
+import React from "react";
+import { useParams } from "react-router-dom";
+import Categories from "../components/Categories";
+import NewsList from "../components/NewsList";
 
-const NewsPage = ({match}) => {
-    const category = match.params.category || 'all';
-    return (
-        <>
-            <Categories />
-            <NewsList category={category} />
-        </>
-    )
-}
+const NewsPage = () => {
+  const params = useParams();
+  const category = params.category;
 
-export default NewsPage
+  return (
+    <>
+      <Categories />
+      <NewsList category={category} />
+    </>
+  );
+};
+
+export default NewsPage;
