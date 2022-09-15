@@ -2,7 +2,7 @@ import { api } from "@lib";
 import { useCallback, useState } from "react";
 
 interface MutationType {
-  method: "get" | "post";
+  method: "get" | "post" | "patch";
   url: string;
 }
 
