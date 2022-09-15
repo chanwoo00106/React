@@ -10,4 +10,8 @@ export const handlers = [
   rest.get("/", (_, res, ctx) => {
     return res(ctx.status(200), ctx.json(todos));
   }),
+  rest.post("/", async (req, res, ctx) => {
+    todos.push(await req.json<Todo>());
+    return res(ctx.status(200), ctx.json({ ok: true }));
+  }),
 ];
