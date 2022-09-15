@@ -18,7 +18,8 @@
     "baseUrl": ".",
     "paths": {
       "@types": ["src/types"],
-      "@types/*": ["src/types/*"]
+      "@lib": ["src/lib"],
+      "@hooks": ["src/hooks"]
     }
   },
   "include": ["src"],

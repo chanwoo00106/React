@@ -1,7 +1,7 @@
 import { rest } from "msw";
 import { Todo } from "@types";
 
-const todos: Todo[] = [];
+const todos: Todo[] = [{ todo: "hi", checked: false, id: 1 }];
 
 export const handlers = [
   rest.get("/", (_, res, ctx) => {
