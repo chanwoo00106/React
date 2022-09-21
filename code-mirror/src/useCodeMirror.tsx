@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { EditorState } from "@codemirror/state";
 import { EditorView, keymap, highlightActiveLine } from "@codemirror/view";
 import { defaultKeymap } from "@codemirror/commands";
-import { history /* historyKeymap */ } from "@codemirror/history";
+import { history, historyKeymap } from "@codemirror/history";
 import { indentOnInput } from "@codemirror/language";
 import { bracketMatching } from "@codemirror/matchbrackets";
 import { lineNumbers, highlightActiveLineGutter } from "@codemirror/gutter";
@@ -28,13 +28,13 @@ const useCodeMirror = <T extends Element>({
     const startState = EditorState.create({
       doc: initialDoc,
       extensions: [
-        keymap.of([...defaultKeymap]),
-        lineNumbers(),
-        highlightActiveLineGutter(),
+        // keymap.of([...defaultKeymap]),
+        // lineNumbers(),
+        // highlightActiveLineGutter(),
         history(),
         indentOnInput(),
-        bracketMatching(),
-        defaultHighlightStyle.fallback,
+        // bracketMatching(),
+        // defaultHighlightStyle.fallback,
         highlightActiveLine(),
         javascript(),
         EditorView.lineWrapping,
