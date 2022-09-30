@@ -1,39 +1,39 @@
-import React from "react";
-// import useCodeMirror from "./useCodeMirror";
-import CodeMirror from "@uiw/react-codemirror";
-import { EditorView, keymap, highlightActiveLine } from "@codemirror/view";
+import React, { useEffect, useRef } from "react";
+import { useCodeMirror } from "@uiw/react-codemirror";
+import {
+  EditorView,
+  highlightActiveLine,
+  keymap,
+  lineNumbers,
+} from "@codemirror/view";
 import { defaultKeymap } from "@codemirror/commands";
-import { history, historyKeymap } from "@codemirror/history";
-import { indentOnInput } from "@codemirror/language";
-import { bracketMatching } from "@codemirror/matchbrackets";
-import { lineNumbers, highlightActiveLineGutter } from "@codemirror/gutter";
-import { defaultHighlightStyle } from "@codemirror/highlight";
 import { javascript } from "@codemirror/lang-javascript";
+import { atomone } from "@uiw/codemirror-theme-atomone";
 
 interface Props {}
 
 const Editor: React.FC<Props> = () => {
-  return (
-    <CodeMirror
-      extensions={[
-        keymap.of([...defaultKeymap, ...(historyKeymap as any)]),
-        // lineNumbers(),
-        // highlightActiveLineGutter(),
-        // history(),
-        // indentOnInput(),
-        // bracketMatching(),
-        // defaultHighlightStyle.fallback,
-        highlightActiveLine(),
-        javascript(),
-        EditorView.lineWrapping,
-        // EditorView.updateListener.of((update) => {
-        //   if (update.changes) {
-        //     onChange && onChange(update.state);
-        //   }
-        // }),
-      ]}
-    />
-  );
+  const editor = useRef<HTMLDivElement>(null);
+  const { setContainer } = useCodeMirror({
+    container: editor.current,
+    theme: atomone,
+    extensions: [
+      lineNumbers(),
+      keymap.of([...defaultKeymap]),
+      highlightActiveLine(),
+      javascript(),
+      EditorView.lineWrapping,
+    ],
+    value: "hello",
+  });
+
+  useEffect(() => {
+    if (editor.current) {
+      setContainer(editor.current);
+    }
+  }, [editor.current]);
+
+  return <div ref={editor} />;
 };
 
 export default Editor;

@@ -1240,7 +1240,7 @@
     style-mod "^4.0.0"
     w3c-keyname "^2.2.4"
 
-"@codemirror/view@^6.0.0", "@codemirror/view@^6.2.4":
+"@codemirror/view@^6.0.0":
   version "6.2.4"
   resolved "https://registry.yarnpkg.com/@codemirror/view/-/view-6.2.4.tgz#dad3511097764ea3280bae7f63b7c1c09db9c21c"
   integrity sha512-Zc5qDv+CD2ubWs6ShGJL0tf4y2w5vObdg7Eus0ouhg9g5lrvsAnwO9PvavDZdK4bpH6O+cnNDRhFlvDuieXo/g==
@@ -2438,6 +2438,22 @@
     "@codemirror/language" "^6.0.0"
     "@codemirror/lint" "^6.0.0"
     "@codemirror/search" "^6.0.0"
+    "@codemirror/state" "^6.0.0"
+    "@codemirror/view" "^6.0.0"
+
+"@uiw/codemirror-theme-atomone@^4.12.3":
+  version "4.12.3"
+  resolved "https://registry.yarnpkg.com/@uiw/codemirror-theme-atomone/-/codemirror-theme-atomone-4.12.3.tgz#5d823c14c52b71c716fa1678452e882cea53b8ea"
+  integrity sha512-vjR/ovdAZRWYovLC/obiXJxdMdbqpVtL5hVpvaJ/99fW7H1/B8ZiVdoI+sKLW095fu5DN/E8yEE6OWvUXIav5w==
+  dependencies:
+    "@uiw/codemirror-themes" "4.12.3"
+
+"@uiw/codemirror-themes@4.12.3":
+  version "4.12.3"
+  resolved "https://registry.yarnpkg.com/@uiw/codemirror-themes/-/codemirror-themes-4.12.3.tgz#b2c8ff64bacfe1f5aecf901ab7a1e6e2aa97b0eb"
+  integrity sha512-5jnhMzubDV6MxKt7bRrUNEE51wssOkDVefKgiok91udSFsbh3Ju3VcCv6abQ+oMPHf67sA84P2jJdK3hGwx8MQ==
+  dependencies:
+    "@codemirror/language" "^6.0.0"
     "@codemirror/state" "^6.0.0"
     "@codemirror/view" "^6.0.0"
 
