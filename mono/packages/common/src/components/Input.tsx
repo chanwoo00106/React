@@ -1,7 +1,11 @@
+import { ChangeEvent } from 'react'
 import '../index.css'
 
 const Input = () => {
-  return <input />
+  const onChange = (e: ChangeEvent<HTMLInputElement>) =>
+    console.log(e.target.value)
+
+  return <input onChange={onChange} />
 }
 
 export default Input
