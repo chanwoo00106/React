@@ -13,6 +13,6 @@
     "@prisma/client": "5.4.2"
   },
   "devDependencies": {
-    "@todo/eslint-config-base": "workspace:^"
+    "eslint-config-base": "workspace:^"
   }
 }

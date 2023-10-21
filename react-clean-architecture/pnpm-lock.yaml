@@ -25,7 +25,7 @@ importers:
         specifier: 5.4.2
         version: 5.4.2(prisma@5.4.2)
     devDependencies:
-      '@todo/eslint-config-base':
+      eslint-config-base:
         specifier: workspace:^
         version: link:../eslint-config-base
 
