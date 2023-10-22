@@ -2,13 +2,13 @@
   "name": "react-clean-architecture",
   "version": "1.0.0",
   "description": "",
-  "scripts": {},
+  "scripts": {
+    "dev": "pnpm --filter @todo/web dev"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@todo/core": "workspace:^"
-  },
+  "dependencies": {},
   "devDependencies": {
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
