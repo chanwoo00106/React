@@ -1,34 +1,21 @@
-import type { AxiosRequestConfig, AxiosResponse } from "axios";
+import axios from "axios";
+import type { Method } from "../Method";
 
-type ResponseType<T> = AxiosResponse<T>;
-type RequestConfigType<T> = AxiosRequestConfig<T>;
+class HttpClient {
+  constructor(private baseURL: string) {}
 
-export interface HttpClient {
-  get<T, D>(
-    url: string,
-    config?: RequestConfigType<D>,
-  ): Promise<ResponseType<T>>;
+  async request<R, D>(method: Method, url: string, data: D): Promise<R>;
+  async request<R>(method: Method, url: string): Promise<R>;
+  async request<R, D>(method: Method, url: string, data?: D): Promise<R> {
+    const res = await axios({
+      baseURL: this.baseURL,
+      method,
+      url,
+      data,
+    });
 
-  post<T, D>(
-    url: string,
-    data?: D,
-    config?: RequestConfigType<D>,
-  ): Promise<ResponseType<T>>;
-
-  put<T, D>(
-    url: string,
-    data?: D,
-    config?: RequestConfigType<D>,
-  ): Promise<ResponseType<T>>;
-
-  patch<T, D>(
-    url: string,
-    data?: D,
-    config?: RequestConfigType<D>,
-  ): Promise<ResponseType<T>>;
-
-  delete<T, D>(
-    url: string,
-    config?: RequestConfigType<D>,
-  ): Promise<ResponseType<T>>;
+    return res.data;
+  }
 }
+
+export default HttpClient;
