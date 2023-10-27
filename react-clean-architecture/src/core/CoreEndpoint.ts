@@ -1,13 +1,15 @@
 import type { Method } from "./Method";
 
-type RouteType = {
+export type RouteType<D> = {
   method: Method;
   url: string;
+  data?: D;
 };
 
 export abstract class CoreEndpoint<Endpoints extends string> {
   static baseURL = "http://localhost:3000";
 
-  public abstract route: Record<Endpoints, RouteType>;
+  public abstract route(endpoint: Endpoints): RouteType<undefined>;
+  public abstract route<D>(endpoint: Endpoints, data: D): RouteType<D>;
   public abstract errorMapper: Record<Endpoints, Record<number, string>>;
 }

@@ -1,15 +1,15 @@
 import HttpClient from "@src/core/HttpClient";
 import type { CoreEndpoint } from "@src/core/CoreEndpoint";
-import type { AuthEndpoints } from "./AuthEndpoint";
+import { AuthEndpoints } from "./AuthEndpoint";
 
 class AuthDataSource extends HttpClient {
   constructor(private endpoint: CoreEndpoint<AuthEndpoints>) {
     super();
   }
 
-  login() {
+  login(data: { email: string }) {
     return this.request(
-      this.endpoint.route.login,
+      this.endpoint.route(AuthEndpoints.login, data),
       this.endpoint.errorMapper.login,
     );
   }
