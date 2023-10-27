@@ -33,6 +33,7 @@ class HttpClient {
     { method, url, data }: RequestType<D>,
     errors: Record<number, string>,
   ): Promise<ResponseType<R>> {
+    console.log(errors);
     try {
       const res = await axios({
         baseURL: this.baseURL,
