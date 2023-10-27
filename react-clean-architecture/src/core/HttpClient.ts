@@ -1,5 +1,6 @@
 import type { Method } from "axios";
-import axios from "axios";
+import axios, { isAxiosError } from "axios";
+import CommonErrorMessage from "./CommonErrorMessage";
 
 export type RequestType<D = undefined> = {
   method: Method;
@@ -20,6 +21,15 @@ export type ResponseType<R> =
 class HttpClient {
   protected baseURL = "http://localhost:3000";
 
+  private errorMapper(error: unknown, errors: Record<number, string>): string {
+    const defaultMessage = CommonErrorMessage.INTERNAL_SERVER_ERROR;
+
+    if (!isAxiosError(error)) return defaultMessage;
+    if (!error?.response?.status) return defaultMessage;
+
+    return errors[error.response.status] ?? defaultMessage;
+  }
+
   protected async request<R, D>(
     config: RequestType<D>,
     errors: Record<number, string>,
@@ -33,7 +43,6 @@ class HttpClient {
     { method, url, data }: RequestType<D>,
     errors: Record<number, string>,
   ): Promise<ResponseType<R>> {
-    console.log(errors);
     try {
       const res = await axios({
         baseURL: this.baseURL,
@@ -49,7 +58,7 @@ class HttpClient {
     } catch (e) {
       return {
         isError: true,
-        message: "",
+        message: this.errorMapper(e, errors),
       };
     }
   }
