@@ -30,16 +30,17 @@ class HttpClient {
     return errors[error.response.status] ?? defaultMessage;
   }
 
-  protected async request<R, D>(
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
+  protected async request<R = any, D = any>(
     config: RequestType<D>,
     errors: Record<number, string>,
-  ): Promise<R | string>;
-  protected async request<R>(
+  ): Promise<ResponseType<R>>;
+  protected async request<R = any>(
     config: RequestType<undefined>,
     errors: Record<number, string>,
-  ): Promise<R | string>;
+  ): Promise<ResponseType<R>>;
 
-  protected async request<R, D = undefined>(
+  protected async request<R, D>(
     { method, url, data }: RequestType<D>,
     errors: Record<number, string>,
   ): Promise<ResponseType<R>> {

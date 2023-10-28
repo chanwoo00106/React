@@ -1,27 +1,33 @@
 import type { CoreEndpoint, RouteType } from "@src/core/CoreEndpoint";
 import AuthErrorMessage from "./AuthErrorMessage";
 
-export enum AuthEndpoints {
+export enum AuthEndpointEnum {
   login = "login",
+  logout = "logout",
 }
 
-class AuthEndpoint implements CoreEndpoint<AuthEndpoints> {
+class AuthEndpoint implements CoreEndpoint<AuthEndpointEnum> {
   protected baseURL = "http://localhost:4000";
 
-  public route(endpoint: AuthEndpoints): RouteType<undefined>;
+  public route(endpoint: AuthEndpointEnum): RouteType<undefined>;
   public route<D>(
-    endpoint: AuthEndpoints,
+    endpoint: AuthEndpointEnum,
     data?: D,
   ): RouteType<undefined> | RouteType<D> {
     switch (endpoint) {
-      case AuthEndpoints.login:
+      case AuthEndpointEnum.login:
         return { method: "post", url: "/auth", data: data };
+      case AuthEndpointEnum.logout:
+        return { method: "delete", url: "/auth" };
     }
   }
 
-  public readonly errorMapper: Record<AuthEndpoints, Record<number, string>> = {
+  public readonly errors: Record<AuthEndpointEnum, Record<number, string>> = {
     login: {
       400: AuthErrorMessage.BAD_REQUEST,
+    },
+    logout: {
+      403: AuthErrorMessage.FORBIDDEN,
     },
   };
 }
