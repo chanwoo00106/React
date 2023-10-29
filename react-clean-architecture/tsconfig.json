@@ -20,6 +20,9 @@
     "paths": {
       "@src/*": ["./src/*"]
     },
+    "types": ["reflect-metadata"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "plugins": [{ "name": "next" }]
   },
   "include": [

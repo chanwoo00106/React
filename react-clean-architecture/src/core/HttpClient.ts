@@ -2,6 +2,8 @@ import type { Method } from "./Method";
 import axios, { isAxiosError } from "axios";
 import CommonErrorMessage from "./CommonErrorMessage";
 import HttpError from "./HttpError";
+import { injectable } from "inversify";
+import "reflect-metadata";
 
 export type RequestType<D = undefined> = {
   method: Method;
@@ -9,6 +11,7 @@ export type RequestType<D = undefined> = {
   data?: D;
 };
 
+@injectable()
 class HttpClient {
   protected baseURL = "http://localhost:3000";
 

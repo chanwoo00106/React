@@ -1,10 +1,17 @@
 import HttpClient from "@src/core/HttpClient";
-import type { CoreEndpoint } from "@src/core/CoreEndpoint";
+import { CoreEndpoint } from "@src/core/CoreEndpoint";
 import { AuthEndpointEnum } from "./AuthEndpoint";
 import type IAuthDataSource from "./interface/IAuthDataSource";
+import { inject, injectable } from "inversify";
+import AuthDI from "./AuthDI";
+import "reflect-metadata";
 
+@injectable()
 class AuthDataSource extends HttpClient implements IAuthDataSource {
-  constructor(private endpoint: CoreEndpoint<AuthEndpointEnum>) {
+  constructor(
+    @inject(AuthDI.AuthEndPoint)
+    private endpoint: CoreEndpoint<AuthEndpointEnum>,
+  ) {
     super();
   }
 

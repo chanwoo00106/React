@@ -13,12 +13,13 @@
   },
   "dependencies": {
     "@prisma/client": "^5.1.1",
-    "@t3-oss/env-nextjs": "^0.7.0",
     "@tanstack/react-query": "^4.32.6",
     "axios": "^1.5.1",
+    "inversify": "^6.0.2",
     "next": "^13.5.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "reflect-metadata": "^0.1.13",
     "superjson": "^1.13.1",
     "zod": "^3.22.4"
   },

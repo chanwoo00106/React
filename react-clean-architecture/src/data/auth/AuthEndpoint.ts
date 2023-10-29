@@ -1,11 +1,14 @@
 import type { CoreEndpoint, RouteType } from "@src/core/CoreEndpoint";
 import AuthErrorMessage from "./AuthErrorMessage";
+import { injectable } from "inversify";
+import "reflect-metadata";
 
 export enum AuthEndpointEnum {
   login = "login",
   logout = "logout",
 }
 
+@injectable()
 class AuthEndpoint implements CoreEndpoint<AuthEndpointEnum> {
   protected baseURL = "http://localhost:4000";
 
