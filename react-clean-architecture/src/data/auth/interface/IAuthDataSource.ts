@@ -1,6 +1,6 @@
 interface IAuthDataSource {
-  login(data: { email: string }): Promise<void | string>;
-  logout(): Promise<void | string>;
+  login(data: { email: string }): Promise<void>;
+  logout(): Promise<void>;
 }
 
 export default IAuthDataSource;
