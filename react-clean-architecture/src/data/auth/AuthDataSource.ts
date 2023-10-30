@@ -3,14 +3,14 @@ import { CoreEndpoint } from "@src/core/CoreEndpoint";
 import { AuthEndpointEnum } from "./AuthEndpoint";
 import type IAuthDataSource from "./interface/IAuthDataSource";
 import { inject, injectable } from "inversify";
-import AuthDI from "./AuthDI";
+import AuthSymbols from "./AuthSymbols";
 import "reflect-metadata";
 import type LoginRequestDto from "./dto/request/LoginRequestDto";
 
 @injectable()
 class AuthDataSource extends HttpClient implements IAuthDataSource {
   constructor(
-    @inject(AuthDI.AuthEndPoint)
+    @inject(AuthSymbols.AuthEndPoint)
     private endpoint: CoreEndpoint<AuthEndpointEnum>,
   ) {
     super();

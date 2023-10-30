@@ -3,12 +3,12 @@ import "reflect-metadata";
 import type IAuthRepository from "./interface/IAuthRepository";
 import type LoginRequestDto from "./dto/request/LoginRequestDto";
 import type IAuthDataSource from "./interface/IAuthDataSource";
-import AuthDI from "./AuthDI";
+import AuthSymbols from "./AuthSymbols";
 
 @injectable()
 class AuthRepository implements IAuthRepository {
   constructor(
-    @inject(AuthDI.AuthDataSource) private authDataSource: IAuthDataSource,
+    @inject(AuthSymbols.AuthDataSource) private authDataSource: IAuthDataSource,
   ) {}
 
   async login(data: LoginRequestDto): Promise<void> {
