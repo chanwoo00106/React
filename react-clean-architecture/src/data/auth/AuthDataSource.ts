@@ -5,6 +5,7 @@ import type IAuthDataSource from "./interface/IAuthDataSource";
 import { inject, injectable } from "inversify";
 import AuthDI from "./AuthDI";
 import "reflect-metadata";
+import type LoginRequestDto from "./dto/request/LoginRequestDto";
 
 @injectable()
 class AuthDataSource extends HttpClient implements IAuthDataSource {
@@ -15,7 +16,7 @@ class AuthDataSource extends HttpClient implements IAuthDataSource {
     super();
   }
 
-  async login(data: { email: string }) {
+  async login(data: LoginRequestDto) {
     await this.request(
       this.endpoint.route(AuthEndpointEnum.login, data),
       this.endpoint.errors.login,

@@ -1,5 +1,7 @@
+import type LoginRequestDto from "../dto/request/LoginRequestDto";
+
 interface IAuthDataSource {
-  login(data: { email: string }): Promise<void>;
+  login(data: LoginRequestDto): Promise<void>;
   logout(): Promise<void>;
 }
 
