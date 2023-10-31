@@ -1,6 +1,6 @@
 import type { Method } from "./Method";
 import axios, { isAxiosError } from "axios";
-import CommonErrorMessage from "./CommonErrorMessage";
+import CommonErrorMessage from "./constants/CommonErrorMessage";
 import HttpError from "./HttpError";
 import { injectable } from "inversify";
 import "reflect-metadata";

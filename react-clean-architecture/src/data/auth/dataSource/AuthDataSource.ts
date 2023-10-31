@@ -1,11 +1,11 @@
-import HttpClient from "@src/core/HttpClient";
-import { CoreEndpoint } from "@src/core/CoreEndpoint";
-import { AuthEndpointEnum } from "./AuthEndpoint";
-import type IAuthDataSource from "./interface/IAuthDataSource";
+import HttpClient from "@src/data/base/HttpClient";
+import { CoreEndpoint } from "@src/data/base/CoreEndpoint";
+import { AuthEndpointEnum } from "@src/data/auth/endpoint/AuthEndpoint";
 import { inject, injectable } from "inversify";
-import AuthSymbols from "./AuthSymbols";
+import AuthSymbols from "@src/data/auth/constants/AuthSymbols";
+import type IAuthDataSource from "@src/data/auth/interface/IAuthDataSource";
+import type LoginRequestDto from "@src/data/auth/dto/request/LoginRequestDto";
 import "reflect-metadata";
-import type LoginRequestDto from "./dto/request/LoginRequestDto";
 
 @injectable()
 class AuthDataSource extends HttpClient implements IAuthDataSource {

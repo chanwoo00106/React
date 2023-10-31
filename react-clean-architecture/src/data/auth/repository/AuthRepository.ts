@@ -1,9 +1,9 @@
 import { inject, injectable } from "inversify";
 import "reflect-metadata";
-import type IAuthRepository from "./interface/IAuthRepository";
-import type LoginRequestDto from "./dto/request/LoginRequestDto";
-import type IAuthDataSource from "./interface/IAuthDataSource";
-import AuthSymbols from "./AuthSymbols";
+import type IAuthRepository from "@src/data/auth/interface/IAuthRepository";
+import type LoginRequestDto from "@src/data/auth/dto/request/LoginRequestDto";
+import type IAuthDataSource from "@src/data/auth/interface/IAuthDataSource";
+import AuthSymbols from "@src/data/auth/constants/AuthSymbols";
 
 @injectable()
 class AuthRepository implements IAuthRepository {

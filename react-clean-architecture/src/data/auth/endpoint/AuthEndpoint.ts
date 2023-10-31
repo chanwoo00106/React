@@ -1,5 +1,5 @@
-import type { CoreEndpoint, RouteType } from "@src/core/CoreEndpoint";
-import AuthErrorMessage from "./AuthErrorMessage";
+import type { CoreEndpoint, RouteType } from "@src/data/base/CoreEndpoint";
+import AuthErrorMessage from "@src/data/auth/constants/AuthErrorMessage";
 import { injectable } from "inversify";
 import "reflect-metadata";
 

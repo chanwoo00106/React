@@ -1,4 +1,4 @@
-import CommonErrorMessage from "@src/core/CommonErrorMessage";
+import CommonErrorMessage from "@src/data/base/constants/CommonErrorMessage";
 
 const AuthErrorMessage = {
   ...CommonErrorMessage,
