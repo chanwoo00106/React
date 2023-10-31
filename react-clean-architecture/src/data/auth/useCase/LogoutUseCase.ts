@@ -1,7 +1,7 @@
 import AuthSymbols from "@src/data/auth/constants/AuthSymbols";
 import { inject, injectable } from "inversify";
 import type IAuthRepository from "@src/data/auth/interface/IAuthRepository";
-import type ILogoutUseCase from "./interface/ILogoutUseCase";
+import type ILogoutUseCase from "../interface/ILogoutUseCase";
 import "reflect-metadata";
 
 @injectable()
