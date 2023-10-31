@@ -5,6 +5,7 @@ import { inject, injectable } from "inversify";
 import AuthSymbols from "@src/data/auth/constants/AuthSymbols";
 import type IAuthDataSource from "@src/data/auth/interface/IAuthDataSource";
 import type LoginRequestDto from "@src/data/auth/dto/request/LoginRequestDto";
+import type LoginResponseDto from "@src/data/auth/dto/response/LoginResponseDto";
 import "reflect-metadata";
 
 @injectable()
@@ -17,7 +18,7 @@ class AuthDataSource extends HttpClient implements IAuthDataSource {
   }
 
   async login(data: LoginRequestDto) {
-    await this.request(
+    return this.request<LoginResponseDto>(
       this.endpoint.route(AuthEndpointEnum.login, data),
       this.endpoint.errors.login,
     );

@@ -1,5 +1,8 @@
-import type IAuthDataSource from "./IAuthDataSource";
+import type LoginRequestDto from "../dto/request/LoginRequestDto";
 
-interface IAuthRepository extends IAuthDataSource {}
+interface IAuthRepository {
+  login(data: LoginRequestDto): Promise<void>;
+  logout(): Promise<void>;
+}
 
 export default IAuthRepository;

@@ -2,12 +2,14 @@ import AuthDataSource from "./dataSource/AuthDataSource";
 import AuthEndpoint from "./endpoint/AuthEndpoint";
 import AuthRepository from "./repository/AuthRepository";
 import AuthSymbols from "./constants/AuthSymbols";
+import AuthLocalDataSource from "./dataSource/AuthLocalDataSource";
 
 import type { Container } from "inversify";
 import type IAuthDataSource from "./interface/IAuthDataSource";
 import type IAuthRepository from "./interface/IAuthRepository";
 import type { CoreEndpoint } from "@src/data/base/CoreEndpoint";
 import type { AuthEndpointEnum } from "./endpoint/AuthEndpoint";
+import type IAuthLocalDataSource from "./interface/IAuthLocalDataSource";
 
 const AuthBind = (container: Container) => {
   container
@@ -19,6 +21,9 @@ const AuthBind = (container: Container) => {
   container
     .bind<IAuthRepository>(AuthSymbols.AuthRepository)
     .to(AuthRepository);
+  container
+    .bind<IAuthLocalDataSource>(AuthSymbols.AuthLocalDataSource)
+    .to(AuthLocalDataSource);
 };
 
 export default AuthBind;
