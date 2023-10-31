@@ -1,3 +1,4 @@
+import { DIProvider } from "@src/libs/DIContext";
 import "@src/styles/globals.css";
 
 import { Inter } from "next/font/google";
@@ -20,7 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className={`font-sans ${inter.variable}`}>{children}</body>
+      <body className={`font-sans ${inter.variable}`}>
+        <DIProvider>{children}</DIProvider>
+      </body>
     </html>
   );
 }
