@@ -1,4 +1,5 @@
 import { DIProvider } from "@src/libs/DIContext";
+import ReactQueryProvider from "@src/libs/ReactQueryProvider";
 import "@src/styles/globals.css";
 
 import { Inter } from "next/font/google";
@@ -22,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`font-sans ${inter.variable}`}>
-        <DIProvider>{children}</DIProvider>
+        <ReactQueryProvider>
+          <DIProvider>{children}</DIProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );
