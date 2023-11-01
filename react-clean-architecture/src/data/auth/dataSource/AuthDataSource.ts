@@ -10,6 +10,8 @@ import "reflect-metadata";
 
 @injectable()
 class AuthDataSource extends HttpClient implements IAuthDataSource {
+  protected baseURL = "http://localhost:4000";
+
   constructor(
     @inject(AuthSymbols.AuthEndPoint)
     private endpoint: CoreEndpoint<AuthEndpointEnum>,

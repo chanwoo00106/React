@@ -1,18 +1,13 @@
-import type { Method } from "./Method";
+import type { RequestType } from "./interface/RequestType";
 import axios, { isAxiosError } from "axios";
 import CommonErrorMessage from "./constants/CommonErrorMessage";
 import HttpError from "./HttpError";
 import { injectable } from "inversify";
 import "reflect-metadata";
-
-export type RequestType<D = undefined> = {
-  method: Method;
-  url: string;
-  data?: D;
-};
+import IHttpClient from "./interface/IHttpClient";
 
 @injectable()
-class HttpClient {
+class HttpClient extends IHttpClient {
   protected baseURL = "http://localhost:3000";
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */
@@ -32,7 +27,7 @@ class HttpClient {
   ): Promise<R>;
 
   protected async request<R, D>(
-    { method, url, data }: RequestType<D>,
+    { method, url, data, headers }: RequestType<D>,
     errors: Record<number, string>,
   ): Promise<R> {
     try {
@@ -41,6 +36,7 @@ class HttpClient {
         method,
         url,
         data,
+        headers,
       });
 
       return res.data;

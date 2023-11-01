@@ -6,12 +6,13 @@ import TokenStore from "./TokenStore";
 import type { Container } from "inversify";
 import type ILocalDataSource from "./interface/ILocalDataSource";
 import type ITokenStore from "./interface/ITokenStore";
+import type IHttpClient from "./interface/IHttpClient";
 
 const BaseBind = (container: Container) => {
   container
     .bind<ILocalDataSource>(BaseSymbols.LocalDataSource)
     .to(LocalDataSource);
-  container.bind<HttpClient>(BaseSymbols.HttpClient).to(HttpClient);
+  container.bind<IHttpClient>(BaseSymbols.HttpClient).to(HttpClient);
   container.bind<ITokenStore>(BaseSymbols.TokenStore).to(TokenStore);
 };
 
