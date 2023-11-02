@@ -9,7 +9,10 @@ import { useQuery } from "@tanstack/react-query";
 
 const LoginForm = () => {
   const logoutUseCase = useInjection<ILogoutUseCase>(AuthSymbols.LogoutUseCase);
-  useQuery({ queryKey: ["logout"], queryFn: () => logoutUseCase.execute() });
+  useQuery({
+    queryKey: ["logout"],
+    queryFn: async () => logoutUseCase.execute(),
+  });
 
   return (
     <form>

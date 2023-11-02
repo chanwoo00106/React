@@ -7,8 +7,6 @@ export type RouteType<D> = {
 };
 
 export abstract class CoreEndpoint<Endpoints extends string> {
-  static baseURL = "http://localhost:3000";
-
   public abstract route(endpoint: Endpoints): RouteType<undefined>;
   public abstract route<D>(endpoint: Endpoints, data: D): RouteType<D>;
   public abstract errors: Record<Endpoints, Record<number, string>>;

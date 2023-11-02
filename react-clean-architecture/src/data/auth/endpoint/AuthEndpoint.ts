@@ -10,8 +10,6 @@ export enum AuthEndpointEnum {
 
 @injectable()
 class AuthEndpoint implements CoreEndpoint<AuthEndpointEnum> {
-  protected baseURL = "http://localhost:4000";
-
   public route(endpoint: AuthEndpointEnum): RouteType<undefined>;
   public route<D>(
     endpoint: AuthEndpointEnum,
