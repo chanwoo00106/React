@@ -31,7 +31,6 @@ class HttpClient extends IHttpClient {
     errors: Record<number, string>,
   ): Promise<R> {
     try {
-      console.log(this.baseURL);
       const res = await axios<R>({
         baseURL: this.baseURL,
         method,
