@@ -1,4 +1,6 @@
+import { InvalidCredentialsError } from '../../../domain/errors/invalidCredentialsError'
 import { mockAuthentication } from '../../../domain/test/mockAuthentication'
+import { HttpStatusCode } from '../../protocols/http/httpResponse'
 import { MockHttpPostClient } from '../../test/mockHttpClient'
 import RemoteAuthentication from './remoteAuthentication'
 import { faker } from '@faker-js/faker'
@@ -24,9 +26,11 @@ describe('RemoteAuthentication', () => {
   test('Should throw InvalidCredentialsError if HttpPostClient returns 401', async () => {
     const url = faker.internet.url()
     const httpPostClient = new MockHttpPostClient()
+    httpPostClient.response = {
+      statusCode: HttpStatusCode.unauthorized,
+    }
     const sut = new RemoteAuthentication(url, httpPostClient)
-    const mockBody = mockAuthentication()
-    await sut.auth(mockBody)
-    expect(httpPostClient.body).toEqual(mockBody)
+    const promise = sut.auth(mockAuthentication())
+    await expect(promise).rejects.toThrow(new InvalidCredentialsError())
   })
 })
