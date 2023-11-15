@@ -20,4 +20,13 @@ describe('RemoteAuthentication', () => {
     await sut.auth(mockBody)
     expect(httpPostClient.body).toEqual(mockBody)
   })
+
+  test('Should throw InvalidCredentialsError if HttpPostClient returns 401', async () => {
+    const url = faker.internet.url()
+    const httpPostClient = new MockHttpPostClient()
+    const sut = new RemoteAuthentication(url, httpPostClient)
+    const mockBody = mockAuthentication()
+    await sut.auth(mockBody)
+    expect(httpPostClient.body).toEqual(mockBody)
+  })
 })
