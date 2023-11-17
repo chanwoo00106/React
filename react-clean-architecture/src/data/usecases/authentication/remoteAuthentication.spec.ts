@@ -45,4 +45,26 @@ describe('RemoteAuthentication', () => {
     const promise = sut.auth(mockAuthentication())
     await expect(promise).rejects.toThrow(new UnexpectedError())
   })
+
+  test('Should throw InvalidCredentialsError if HttpPostClient returns 404', async () => {
+    const url = faker.internet.url()
+    const httpPostClient = new MockHttpPostClient()
+    httpPostClient.response = {
+      statusCode: HttpStatusCode.notFound,
+    }
+    const sut = new RemoteAuthentication(url, httpPostClient)
+    const promise = sut.auth(mockAuthentication())
+    await expect(promise).rejects.toThrow(new UnexpectedError())
+  })
+
+  test('Should throw InvalidCredentialsError if HttpPostClient returns 500', async () => {
+    const url = faker.internet.url()
+    const httpPostClient = new MockHttpPostClient()
+    httpPostClient.response = {
+      statusCode: HttpStatusCode.serverError,
+    }
+    const sut = new RemoteAuthentication(url, httpPostClient)
+    const promise = sut.auth(mockAuthentication())
+    await expect(promise).rejects.toThrow(new UnexpectedError())
+  })
 })

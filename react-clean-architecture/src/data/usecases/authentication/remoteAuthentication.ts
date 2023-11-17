@@ -17,11 +17,12 @@ class RemoteAuthentication {
     })
 
     switch (httpResponse.statusCode) {
+      case HttpStatusCode.ok:
+        break
       case HttpStatusCode.unauthorized:
         throw new InvalidCredentialsError()
-      case HttpStatusCode.badRequest:
-        throw new UnexpectedError()
       default:
+        throw new UnexpectedError()
     }
   }
 }
