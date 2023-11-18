@@ -1,5 +1,6 @@
 import { InvalidCredentialsError } from '../../../domain/errors/invalidCredentialsError'
 import { UnexpectedError } from '../../../domain/errors/unexpectedError'
+import { AccountModels } from '../../../domain/models/accountModels'
 import { AuthenticationParams } from '../../../domain/usecases/authentication'
 import { HttpPostClient } from '../../protocols/http/httpPostClient'
 import { HttpStatusCode } from '../../protocols/http/httpResponse'
@@ -7,7 +8,10 @@ import { HttpStatusCode } from '../../protocols/http/httpResponse'
 class RemoteAuthentication {
   constructor(
     private readonly url: string,
-    private readonly httpClient: HttpPostClient,
+    private readonly httpClient: HttpPostClient<
+      AuthenticationParams,
+      AccountModels
+    >,
   ) {}
 
   async auth(params: AuthenticationParams): Promise<void> {
