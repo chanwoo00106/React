@@ -1,7 +1,10 @@
 import { InvalidCredentialsError } from '../../../domain/errors/invalidCredentialsError'
 import { UnexpectedError } from '../../../domain/errors/unexpectedError'
 import { AccountModels } from '../../../domain/models/accountModels'
-import { mockAuthentication } from '../../../domain/test/mockAuthentication'
+import {
+  mockAccountModel,
+  mockAuthentication,
+} from '../../../domain/test/mockAccount'
 import { AuthenticationParams } from '../../../domain/usecases/authentication'
 import { HttpStatusCode } from '../../protocols/http/httpResponse'
 import { MockHttpPostClient } from '../../test/mockHttpClient'
@@ -75,5 +78,17 @@ describe('RemoteAuthentication', () => {
     }
     const promise = sut.auth(mockAuthentication())
     await expect(promise).rejects.toThrow(new UnexpectedError())
+  })
+
+  test('Should throw InvalidCredentialsError if HttpPostClient returns 200', async () => {
+    const url = faker.internet.url()
+    const { sut, httpPostClient } = makeSut(url)
+    const httpResult = mockAccountModel()
+    httpPostClient.response = {
+      statusCode: HttpStatusCode.ok,
+      body: httpResult,
+    }
+    const account = await sut.auth(mockAuthentication())
+    expect(account).toEqual(httpResult)
   })
 })

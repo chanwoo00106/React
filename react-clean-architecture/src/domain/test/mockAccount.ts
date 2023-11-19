@@ -5,3 +5,6 @@ export const mockAuthentication = (): AuthenticationParams => ({
   email: faker.internet.email(),
   password: faker.internet.password(),
 })
+export const mockAccountModel = () => ({
+  accessToken: faker.string.uuid(),
+})
