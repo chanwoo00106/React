@@ -1,7 +1,7 @@
 import { HttpResponse } from './httpResponse'
 
 export interface HttpPostParams<T> {
-  url?: string
+  url: string
   body?: T
 }
 
