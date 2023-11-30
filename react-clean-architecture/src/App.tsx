@@ -1,7 +1,7 @@
-import Login from './presentation/pages/login/login'
+import Presentation from './presentation'
 
 function App() {
-  return <Login />
+  return <Presentation />
 }
 
 export default App
