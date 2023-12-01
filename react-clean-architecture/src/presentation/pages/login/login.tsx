@@ -6,7 +6,10 @@ const Login = () => {
           This is login page
         </h1>
       </header>
-      <form className='px-4 py-8 border border-black max-w-xl w-11/12 mx-auto rounded-xl shadow flex flex-col gap-4'>
+      <form
+        data-testid='error-wrap'
+        className='px-4 py-8 border border-black max-w-xl w-11/12 mx-auto rounded-xl shadow flex flex-col gap-4'
+      >
         <h2 className='text-2xl text-center'>Login Form</h2>
         <input
           type='email'
