@@ -1,7 +1,5 @@
-import Presentation from './presentation'
-
 function App() {
-  return <Presentation />
+  return <div>hello world</div>
 }
 
 export default App
