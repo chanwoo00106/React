@@ -6,6 +6,8 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",

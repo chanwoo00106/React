@@ -1,7 +1,10 @@
 import HttpClient from '@/domain/base/HttpClient'
 import Method from '@/domain/base/Method'
 import axios from 'axios'
+import { injectable } from 'inversify'
+import 'reflect-metadata'
 
+@injectable()
 class HttpClientImpl implements HttpClient {
   request<R>(
     method: Method.GET | Method.DELETE,
