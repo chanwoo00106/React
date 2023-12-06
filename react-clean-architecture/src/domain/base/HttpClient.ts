@@ -1,6 +1,6 @@
 import Method from './Method'
 
-type RequestConfigType<D, H> =
+export type RequestConfigType<D = any, H = Record<string, any>> =
   | {
       method: Method.POST | Method.PUT | Method.PATCH
       url: string
@@ -12,12 +12,14 @@ type RequestConfigType<D, H> =
       method: Method.GET | Method.DELETE
       url: string
       params?: Record<string, any>
-      body: undefined
+      body?: undefined
       header?: H
     }
 
 export interface RequestType {
-  <R, D, H>(config: RequestConfigType<D, H>): Promise<R>
+  <R = any, D = any, H = Record<string, any>>(
+    config: RequestConfigType<D, H>,
+  ): Promise<R>
 }
 
 interface HttpClient {
