@@ -5,7 +5,14 @@ import 'reflect-metadata'
 
 @injectable()
 class HttpClientImpl implements HttpClient {
-  private httpClient = axios
+  private httpClient
+
+  constructor() {
+    const httpClient = axios.create({ baseURL: 'http://localhost:3000' })
+    httpClient.interceptors.request.use((config) => config)
+
+    this.httpClient = httpClient
+  }
 
   request: RequestType = async (config) => {
     const { data } = await this.httpClient({ ...config })
