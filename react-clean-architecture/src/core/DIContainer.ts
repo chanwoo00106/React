@@ -5,13 +5,21 @@ import BaseSymbols from '@/domain/base/BaseSymbols'
 import HttpClient from '@/domain/base/HttpClient'
 import HttpClientImpl from '@/infra/HttpClientImpl'
 import { Container } from 'inversify'
+import LocalStorage from '@/domain/base/LocalStorage'
+import LocalStorageImpl from '@/infra/LocalStorageImpl'
+import LocalAuthDataSource from '@/domain/auth/dataSource/LocalAuthDataSource'
+import LocalAuthDataSourceImpl from '@/domain/auth/dataSource/LocalAuthDataSourceImpl'
 
 const container = new Container()
 
 container.bind<HttpClient>(BaseSymbols.HttpClient).to(HttpClientImpl)
+container.bind<LocalStorage>(BaseSymbols.LocalStorage).to(LocalStorageImpl)
 
 container
   .bind<AuthRepository>(AuthSymbols.AuthRepository)
   .to(AuthRepositoryImpl)
+container
+  .bind<LocalAuthDataSource>(AuthSymbols.LocalAuthDataSource)
+  .to(LocalAuthDataSourceImpl)
 
 export default container
