@@ -13,6 +13,13 @@ import RemoteAuthDataSourceImpl from '@/domain/auth/dataSource/RemoteAuthDataSou
 import RemoteAuthDataSource from '@/domain/auth/dataSource/RemoteAuthDataSource'
 import SigninUseCaseImpl from '@/domain/auth/useCase/SigninUseCaseImpl'
 import SigninUseCase from '@/domain/auth/useCase/SigninUseCase'
+import RemoteUserDataSource from '@/domain/user/dataSource/RemoteUserDataSource'
+import UserSymbols from '@/domain/user/UserSymbols'
+import RemoteUserDataSourceImpl from '@/domain/user/dataSource/RemoteUserDataSourceImpl'
+import UserRepository from '@/domain/user/repository/UserRepository'
+import UserRepositoryImpl from '@/domain/user/repository/UserRepositoryImpl'
+import FetchMyInfoUseCase from '@/domain/user/usecase/FetchMyInfoUseCase'
+import FetchMyInfoUseCaseImpl from '@/domain/user/usecase/FetchMyInfoUseCaseImpl'
 
 const container = new Container()
 
@@ -29,5 +36,15 @@ container
   .bind<RemoteAuthDataSource>(AuthSymbols.RemoteAuthDataSource)
   .to(RemoteAuthDataSourceImpl)
 container.bind<SigninUseCase>(AuthSymbols.SigninUseCase).to(SigninUseCaseImpl)
+
+container
+  .bind<RemoteUserDataSource>(UserSymbols.RemoteUserDataSource)
+  .to(RemoteUserDataSourceImpl)
+container
+  .bind<UserRepository>(UserSymbols.UserRepository)
+  .to(UserRepositoryImpl)
+container
+  .bind<FetchMyInfoUseCase>(UserSymbols.FetchMyInfoUseCase)
+  .to(FetchMyInfoUseCaseImpl)
 
 export default container
