@@ -7,7 +7,7 @@ export enum HttpStatusCode {
   serverError = 500,
 }
 
-export type HttpResponse = {
+export type HttpResponse<R> = {
   statusCode: number
-  body?: any
+  body?: R
 }
