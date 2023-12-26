@@ -1,8 +1,9 @@
 import {
   HttpPostClient,
   HttpPostParams,
-} from '../protocols/http/HttpPostClient'
-import { HttpResponse, HttpStatusCode } from '../protocols/http/HttpResponse'
+  HttpResponse,
+  HttpStatusCode,
+} from '../protocols/http'
 
 class MockHttpClientSpy<T, R> implements HttpPostClient<T, R> {
   url?: string

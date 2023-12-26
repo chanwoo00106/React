@@ -1,13 +1,12 @@
 import { describe, test, expect } from 'vitest'
 import { RemoteAuthentication } from './RemoteAuthentication'
-import MockHttpClientSpy from '@/data/test/MockHttpClientSpy'
+import { MockHttpClientSpy } from '@/data/test'
 import { faker } from '@faker-js/faker'
-import { MockAuthentication } from '@/domain/test/MockAuthentication'
-import InvalidCredentialsError from '@/domain/errors/InvalidCredentialsError'
-import { HttpStatusCode } from '@/data/protocols/http/HttpResponse'
-import UnexpectedError from '@/domain/errors/UnexpectedError'
-import { AuthenticationParams } from '@/domain/usecases/authentication'
-import { AccountModel } from '@/domain/models/AccountModel'
+import { MockAuthentication, MockAccountModel } from '@/domain/test'
+import { InvalidCredentialsError, UnexpectedError } from '@/domain/errors'
+import { HttpStatusCode } from '@/data/protocols/http'
+import { AuthenticationParams } from '@/domain/usecases'
+import { AccountModel } from '@/domain/models'
 
 type SutTypes = {
   sut: RemoteAuthentication
@@ -74,6 +73,17 @@ describe('RemoteAuthentication', () => {
       statusCode: HttpStatusCode.serverError,
     }
     const promise = sut.auth(MockAuthentication())
-    expect(promise).rejects.toThrow(new UnexpectedError())
+    await expect(promise).rejects.toThrow(new UnexpectedError())
+  })
+
+  test('Should return an AccountModel if HttpPostClient returns 200', async () => {
+    const { sut, httpPostClientSpy } = makeSut()
+    const httpResult = MockAccountModel()
+    httpPostClientSpy.response = {
+      statusCode: HttpStatusCode.ok,
+      body: httpResult,
+    }
+    const account = await sut.auth(MockAuthentication())
+    expect(account).toEqual(httpResult)
   })
 })
