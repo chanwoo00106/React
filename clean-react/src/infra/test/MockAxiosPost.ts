@@ -4,7 +4,8 @@ import { Mocked } from 'vitest'
 
 const MockAxiosPost = (): Mocked<typeof axios> => {
   const mockedAxios = axios as Mocked<typeof axios>
-  mockedAxios.post.mockResolvedValue({
+
+  mockedAxios.post.mockClear().mockResolvedValue({
     data: faker.science.chemicalElement(),
     status: faker.number.int(),
   })
