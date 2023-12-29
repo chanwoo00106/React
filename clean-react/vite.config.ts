@@ -3,10 +3,9 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { configDefaults } from 'vitest/config'
 import { resolve } from 'path'
-import stylex from 'vite-plugin-stylex'
 
 export default defineConfig({
-  plugins: [react(), stylex()],
+  plugins: [react()],
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
