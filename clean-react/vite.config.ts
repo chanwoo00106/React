@@ -14,5 +14,7 @@ export default defineConfig({
   test: {
     exclude: [...configDefaults.exclude],
     include: [resolve(__dirname, 'src/**/*.{test,spec}.ts?(x)')],
+    globals: true,
+    environment: 'jsdom',
   },
 })
