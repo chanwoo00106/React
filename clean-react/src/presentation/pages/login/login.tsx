@@ -10,15 +10,13 @@ const Login = ({ validation }: Props) => {
     email: '',
     password: '',
   })
-
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const input = {
+    const { name, value } = e.target
+    setState({
       ...state,
-      [e.target.name]: e.target.value,
-    }
-
-    setState(input)
-    validation.validate(input)
+      [name]: value,
+    })
+    validation.validate(name, value)
   }
 
   return (
