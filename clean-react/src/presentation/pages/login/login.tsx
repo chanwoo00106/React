@@ -1,8 +1,10 @@
+import { RemoteAuthentication } from '@/data/usecases/authentication/RemoteAuthentication'
 import Validation from '@/presentation/protocols/validation'
 import { ChangeEvent, useState } from 'react'
 
 interface Props {
   validation: Validation
+  authentication: RemoteAuthentication
 }
 
 const Login = ({ validation }: Props) => {

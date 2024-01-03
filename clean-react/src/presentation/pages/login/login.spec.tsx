@@ -3,6 +3,8 @@ import Login from './login'
 import { test, describe, expect } from 'vitest'
 import { ValidationSpy } from '@/presentation/test'
 import { faker } from '@faker-js/faker'
+import { RemoteAuthentication } from '@/data/usecases/authentication/RemoteAuthentication'
+import AxiosHttpClient from '@/infra/http/axiosHttpClient/AxiosHttpClient'
 
 type SutTypes = {
   validationSpy: ValidationSpy
@@ -13,7 +15,17 @@ const makeSut = (): SutTypes => {
   const validationSpy = new ValidationSpy()
   return {
     validationSpy,
-    sut: render(<Login validation={validationSpy} />),
+    sut: render(
+      <Login
+        validation={validationSpy}
+        authentication={
+          new RemoteAuthentication(
+            'http://localhost:3000',
+            new AxiosHttpClient(),
+          )
+        }
+      />,
+    ),
   }
 }
 
