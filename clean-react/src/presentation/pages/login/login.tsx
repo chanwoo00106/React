@@ -3,8 +3,8 @@ import Validation from '@/presentation/protocols/validation'
 import { ChangeEvent, useState } from 'react'
 
 interface Props {
-  validation: Validation
-  authentication: RemoteAuthentication
+  validation?: Validation
+  authentication?: RemoteAuthentication
 }
 
 const Login = ({ validation }: Props) => {
@@ -18,7 +18,7 @@ const Login = ({ validation }: Props) => {
       ...state,
       [name]: value,
     })
-    validation.validate(name, value)
+    validation?.validate(name, value)
   }
 
   return (
