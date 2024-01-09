@@ -1,4 +1,4 @@
-import Login from '@/presentation/pages/login/login'
+import LoginFactory from '@/factories/pages/LoginFactory'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 const Router = () => {
@@ -7,7 +7,7 @@ const Router = () => {
       children: [
         {
           path: '/login',
-          element: <Login />,
+          element: <LoginFactory />,
         },
       ],
     },
