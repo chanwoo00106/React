@@ -1,12 +1,12 @@
 import Login from '@/presentation/pages/login/login'
 import RemoteAuthenticationFactory from '../usecases/RemoteAuthenticationFactory'
-import ValidationSpyFactory from '../validations/ValidationSpyFactory'
+import { LoginValidation } from '@/validations'
 
 const LoginFactory = () => {
   return (
     <Login
-      validation={ValidationSpyFactory}
       authentication={RemoteAuthenticationFactory}
+      validation={LoginValidation}
     />
   )
 }
