@@ -1,23 +1,12 @@
-import { RemoteAuthentication } from '@/data/usecases/authentication/RemoteAuthentication'
 import { AuthenticationParams } from '@/domain/usecases'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
-import { z } from 'zod'
+import { UseFormRegister } from 'react-hook-form'
 
 interface Props {
-  authentication: RemoteAuthentication
-  validation: z.ZodSchema<AuthenticationParams>
+  register: UseFormRegister<AuthenticationParams>
+  onSubmit: () => void
 }
 
-const Login = ({ authentication, validation }: Props) => {
-  const { register, handleSubmit } = useForm<z.infer<typeof validation>>({
-    resolver: zodResolver(validation),
-  })
-
-  const onSubmit = handleSubmit((data) => {
-    authentication.auth(data)
-  })
-
+const View = ({ register, onSubmit }: Props) => {
   return (
     <div
       className='flex justify-center items-center h-full'
@@ -46,4 +35,4 @@ const Login = ({ authentication, validation }: Props) => {
   )
 }
 
-export default Login
+export default View
