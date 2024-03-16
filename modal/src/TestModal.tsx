@@ -22,8 +22,8 @@ const TestModal = ({ resolve, reject }: ModalDefaultProps) => {
       >
         <h1>hello world</h1>
 
-        <button onClick={reject}>No</button>
-        <button onClick={resolve}>Ok</button>
+        <button onClick={() => reject(false)}>No</button>
+        <button onClick={() => resolve(true)}>Ok</button>
       </div>
     </div>
   )

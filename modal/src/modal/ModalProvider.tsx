@@ -1,4 +1,4 @@
-import { ReactNode, createContext } from 'react'
+import { ReactNode, createContext, useState } from 'react'
 import ModalController from './ModalController'
 import ModalContainer from './ModalContainer'
 
@@ -9,7 +9,10 @@ interface Props {
 }
 
 const ModalProvider = ({ children }: Props) => {
-  const modalController = new ModalController()
+  const [, setMount] = useState<boolean>(false)
+  const [modalController] = useState(
+    () => new ModalController(() => setMount((value) => !value)),
+  )
 
   return (
     <ModalContext.Provider value={modalController}>

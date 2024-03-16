@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import useModal from './useModal'
 import { createPortal } from 'react-dom'
 
@@ -5,9 +6,15 @@ const MODAL_ID = 'modal'
 
 const ModalContainer = () => {
   const modalController = useModal()
-  const top = modalController.top
+  const top = modalController.top()
 
-  console.log(top)
+  useEffect(() => {
+    if (document.getElementById(MODAL_ID)) return
+
+    const modalDOM = document.createElement('div')
+    modalDOM.id = MODAL_ID
+    document.body.append(modalDOM)
+  }, [])
 
   if (!top) return null
 
