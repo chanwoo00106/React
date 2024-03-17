@@ -1,12 +1,12 @@
 import { ReactNode } from 'react'
 import Modal, { ModalDefaultProps } from './Modal'
+import notifyManager from './notifyManager'
 
 class ModalController {
-  modalStack: Modal[] = []
-  setMount: () => void
+  #modalStack: Modal[] = []
 
-  constructor(setMount: () => void) {
-    this.setMount = setMount
+  get modalStack() {
+    return this.#modalStack
   }
 
   private handlePromise(
@@ -14,26 +14,25 @@ class ModalController {
     resolver: (value: any) => void,
     value: any,
   ) {
-    console.log('hi')
     resolver(value)
-    this.modalStack = this.modalStack.filter((modal) => modal.key !== key)
-    this.setMount()
+    this.#modalStack = this.#modalStack.filter((modal) => modal.key !== key)
+    notifyManager.run()
   }
 
   top() {
-    return this.modalStack[this.modalStack.length - 1]
+    return this.#modalStack[this.#modalStack.length - 1]
   }
 
   pop() {
     const topModal = this.top()
     topModal.resolve(false)
-    this.modalStack.pop()
-    this.setMount()
+    this.#modalStack.pop()
+    notifyManager.run()
   }
 
   clear() {
     while (this.top()) this.pop()
-    this.setMount()
+    notifyManager.run()
   }
 
   async push(
@@ -42,7 +41,7 @@ class ModalController {
     props?: unknown,
   ) {
     return new Promise((resolve) => {
-      this.modalStack.push(
+      this.#modalStack.push(
         new Modal({
           key,
           Component,
@@ -51,7 +50,7 @@ class ModalController {
         }),
       )
 
-      this.setMount()
+      notifyManager.run()
     })
   }
 }

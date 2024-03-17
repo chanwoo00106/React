@@ -1,6 +1,7 @@
-import { ReactNode, createContext, useState } from 'react'
+import { ReactNode, createContext, useState, useSyncExternalStore } from 'react'
 import ModalController from './ModalController'
 import ModalContainer from './ModalContainer'
+import notifyManager from './notifyManager'
 
 export const ModalContext = createContext<ModalController | null>(null)
 
@@ -9,9 +10,14 @@ interface Props {
 }
 
 const ModalProvider = ({ children }: Props) => {
-  const [, setMount] = useState<boolean>(false)
-  const [modalController] = useState(
-    () => new ModalController(() => setMount((value) => !value)),
+  const [modalController] = useState(() => new ModalController())
+
+  useSyncExternalStore(
+    (callback) => {
+      notifyManager.add(callback)
+      return () => notifyManager.flush()
+    },
+    () => modalController.top(),
   )
 
   return (
