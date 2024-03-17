@@ -1,6 +1,6 @@
 import { ModalDefaultProps } from './modal/Modal'
 
-const TestModal = ({ resolve, reject }: ModalDefaultProps) => {
+const TestModal = ({ resolve }: ModalDefaultProps) => {
   return (
     <div
       style={{
@@ -22,7 +22,7 @@ const TestModal = ({ resolve, reject }: ModalDefaultProps) => {
       >
         <h1>hello world</h1>
 
-        <button onClick={() => reject(false)}>No</button>
+        <button onClick={() => resolve(false)}>No</button>
         <button onClick={() => resolve(true)}>Ok</button>
       </div>
     </div>

@@ -26,7 +26,7 @@ class ModalController {
 
   pop() {
     const topModal = this.top()
-    topModal.reject(`Clear modal ${topModal.key}`)
+    topModal.resolve(false)
     this.modalStack.pop()
     this.setMount()
   }
@@ -48,7 +48,6 @@ class ModalController {
           Component,
           props,
           resolve: (value: any) => this.handlePromise(key, resolve, value),
-          reject: (value: any) => this.handlePromise(key, resolve, value),
         }),
       )
 

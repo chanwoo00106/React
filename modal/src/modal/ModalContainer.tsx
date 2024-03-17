@@ -25,7 +25,6 @@ const ModalContainer = () => {
           key={modal.key}
           {...(modal.props ?? {})}
           resolve={modal.resolve}
-          reject={modal.reject}
         />
       ))}
     </>,
