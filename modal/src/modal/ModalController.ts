@@ -6,7 +6,7 @@ class ModalController {
   #modalStack: Modal[] = []
 
   get modalStack() {
-    return this.#modalStack
+    return [...this.#modalStack]
   }
 
   private handlePromise(
