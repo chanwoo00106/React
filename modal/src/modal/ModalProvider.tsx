@@ -1,16 +1,15 @@
-import { ReactNode, createContext, useState } from 'react'
+import { ReactNode, createContext } from 'react'
 import ModalController from './ModalController'
 import ModalContainer from './ModalContainer'
 
-export const ModalContext = createContext<ModalController | null>(null)
+const modalController = new ModalController()
+export const ModalContext = createContext<ModalController>(modalController)
 
 interface Props {
   children: ReactNode | ReactNode[]
 }
 
 const ModalProvider = ({ children }: Props) => {
-  const [modalController] = useState(() => new ModalController())
-
   return (
     <ModalContext.Provider value={modalController}>
       {children}
