@@ -1,30 +1,12 @@
-import { ModalDefaultProps } from './modal/Modal'
+import { ModalDefaultProps } from 'modal-controller'
 
 const TestModal = ({ resolve }: ModalDefaultProps) => {
   return (
-    <div
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        height: '100%',
-        width: '100%',
-        background: 'rgba(0,0,0,0.7)',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      <div
-        style={{
-          background: '#fff',
-        }}
-      >
-        <h1>hello world</h1>
+    <div>
+      <h1>hello world</h1>
 
-        <button onClick={() => resolve(false)}>No</button>
-        <button onClick={() => resolve(true)}>Ok</button>
-      </div>
+      <button onClick={() => resolve(false)}>No</button>
+      <button onClick={() => resolve(true)}>Ok</button>
     </div>
   )
 }

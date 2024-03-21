@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
-import ModalProvider from './modal/ModalProvider.tsx'
+import { ModalControllerProvider } from 'modal-controller'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ModalProvider>
+    <ModalControllerProvider>
       <App />
-    </ModalProvider>
+    </ModalControllerProvider>
   </React.StrictMode>,
 )

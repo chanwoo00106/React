@@ -1,20 +1,17 @@
 import TestModal from './TestModal'
-import useModal from './modal/useModal'
+import { useModalController } from 'modal-controller'
 
 function App() {
-  const modalController = useModal()
+  const modalController = useModalController()
 
   const onClick = async () => {
-    const first = await modalController.push('TestModal', TestModal)
-    const second = await modalController.push('TestModal1', TestModal)
-    const third = await modalController.push('TestModal2', TestModal)
+    const result = await modalController.push('TestModal', TestModal)
 
-    console.log({ first, second, third })
+    console.log(result)
   }
 
   return (
     <main>
-      <h1>hello world</h1>
       <button onClick={onClick}>open</button>
     </main>
   )
