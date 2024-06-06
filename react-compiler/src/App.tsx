@@ -1,5 +1,12 @@
+import { Suspense } from 'react'
+import PostList from './PostList'
+
 function App() {
-  return <main>hello world</main>;
+  return (
+    <Suspense fallback={'...loading'}>
+      <PostList />
+    </Suspense>
+  )
 }
 
-export default App;
+export default App

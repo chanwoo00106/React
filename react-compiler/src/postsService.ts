@@ -1,8 +1,9 @@
-import axios from "axios";
+import axios from 'axios'
+import { PostType } from './PostType'
 
 export const fetchPostList = async () => {
-  const { data } = await axios.get(
-    "https://jsonplaceholder.typicode.com/posts",
-  );
-  return data;
-};
+  const { data } = await axios.get<PostType[]>(
+    'https://jsonplaceholder.typicode.com/posts',
+  )
+  return data
+}
