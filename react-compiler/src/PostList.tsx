@@ -1,11 +1,15 @@
 import { use } from 'react'
 import Post from './Post'
-import { fetchPostList } from './postsService'
+import { PostType } from './PostType'
 
-const PostList = () => {
-  const posts = use(fetchPostList())
+interface Props {
+  posts: Promise<PostType[]>
+}
 
-  return posts.map((post) => <Post key={post.id} post={post} />)
+const PostList = ({ posts }: Props) => {
+  const data = use(posts)
+
+  return data.map((post) => <Post key={post.id} post={post} />)
 }
 
 export default PostList
