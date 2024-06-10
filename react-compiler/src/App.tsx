@@ -1,13 +1,11 @@
+import { RouterProvider } from 'react-router-dom'
 import { Suspense } from 'react'
-import PostList from './PostList'
-import { fetchPostList } from './postsService'
+import routes from './routes'
 
 function App() {
-  const posts = fetchPostList()
-
   return (
-    <Suspense fallback={'...loading'}>
-      <PostList posts={posts} />
+    <Suspense fallback='loading'>
+      <RouterProvider router={routes} />
     </Suspense>
   )
 }

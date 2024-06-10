@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { PostType } from './PostType'
+import { PostType } from '../types/PostType'
 
 export const fetchPostList = async () => {
   const { data } = await axios.get<PostType[]>(

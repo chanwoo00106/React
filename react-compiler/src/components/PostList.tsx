@@ -1,6 +1,6 @@
 import { use } from 'react'
 import Post from './Post'
-import { PostType } from './PostType'
+import { PostType } from '../types/PostType'
 
 interface Props {
   posts: Promise<PostType[]>
