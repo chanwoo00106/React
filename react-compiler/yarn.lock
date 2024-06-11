@@ -1669,12 +1669,12 @@ queue-microtask@^1.2.2:
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
-react-dom@^19.0.0-rc-1df34bdf62-20240605:
-  version "19.0.0-rc-1df34bdf62-20240605"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-19.0.0-rc-1df34bdf62-20240605.tgz#b55ca54a83aae270797670a4279e8fc6546ae345"
-  integrity sha512-rhPZXaFc9lDagraujwbFFRoV84om75D0VpP1EVcfoclsNdcj7aD+dFgjY6nATQ6n0jNr+OPyH+kagRzfQeuGNQ==
+react-dom@19.0.0-rc-6230622a1a-20240610:
+  version "19.0.0-rc-6230622a1a-20240610"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-19.0.0-rc-6230622a1a-20240610.tgz#98b012ea4412b4050bdcb628520f5a82781d5153"
+  integrity sha512-56G4Pum5E7FeGL1rwHX5IxidSJxQnXP4yORRo0pVeOJuu5DQJvNKpUwmJoftMP/ez0AiglYTY77L2Gs8iyt1Hg==
   dependencies:
-    scheduler "0.25.0-rc-1df34bdf62-20240605"
+    scheduler "0.25.0-rc-6230622a1a-20240610"
 
 react-is@^16.8.4:
   version "16.13.1"
@@ -1701,10 +1701,10 @@ react-router@6.23.1:
   dependencies:
     "@remix-run/router" "1.16.1"
 
-react@^19.0.0-rc-1df34bdf62-20240605:
-  version "19.0.0-rc-1df34bdf62-20240605"
-  resolved "https://registry.yarnpkg.com/react/-/react-19.0.0-rc-1df34bdf62-20240605.tgz#70db3393e161944de985ca728bdf2f2b68ec5c21"
-  integrity sha512-FDsCKRtf4Ee3JzBVu2eZRHSWIV2HBFO8jcnEzhH9l2SG1ouA7pdnAxS3s/vA6EqvNOs0gPXqzqFkMJ5sbwQjIQ==
+react@19.0.0-rc-6230622a1a-20240610:
+  version "19.0.0-rc-6230622a1a-20240610"
+  resolved "https://registry.yarnpkg.com/react/-/react-19.0.0-rc-6230622a1a-20240610.tgz#ffa67d41dedd850630a0a03ea1e1793d45c8391d"
+  integrity sha512-SMgWGY//7nO7F3HMuBfmC15Cr4vTe2tlpSCATfnz/wymSftDOKUqc+0smjRhcUeCFCc1zhOAWJ+N//U5CrmOzQ==
 
 resolve-from@^4.0.0:
   version "4.0.0"
@@ -1755,10 +1755,10 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
-scheduler@0.25.0-rc-1df34bdf62-20240605:
-  version "0.25.0-rc-1df34bdf62-20240605"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.25.0-rc-1df34bdf62-20240605.tgz#ab822795614c309a45e613cd3d0a2664be57fbb3"
-  integrity sha512-MDeym3H4Wj0p9M9/68P3lr+vTiVTtBY7hy5pX0bTRvf5B6pmF2lYEBs7MrwbAJEF9NsDdjGFQViW2jv7Y8DZaQ==
+scheduler@0.25.0-rc-6230622a1a-20240610:
+  version "0.25.0-rc-6230622a1a-20240610"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.25.0-rc-6230622a1a-20240610.tgz#b94132423594d2d6a6bb0a42cacb486392d9108b"
+  integrity sha512-GTIQdJXthps5mgkIFo7yAq03M0QQYTfN8z+GrnMC/SCKFSuyFP5tk2BMaaWUsVy4u4r+dTLdiXH8JEivVls0Bw==
 
 semver@^6.3.1:
   version "6.3.1"
